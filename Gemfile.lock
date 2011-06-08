@@ -86,3 +86,4 @@ DEPENDENCIES
   capistrano
   mysql2 (= 0.2.6)
   rails (= 3.0.7)
+  rake (= 0.9.0)
