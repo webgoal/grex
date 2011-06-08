@@ -4,4 +4,15 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
+module ::Evento
+  class Application
+    include Rake::DSL
+  end
+end
+
+module ::RakeFileUtils
+  extend Rake::FileUtilsExt
+end
+# Rake Fix Code end
+
 Evento::Application.load_tasks
