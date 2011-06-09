@@ -5,20 +5,10 @@ jQuery(document).ready(function(){
 		//jQuery('.console').val(curX + " " + curY);
 	}, false);
 	distance = 100000;
-	jQuery('.trilha').bind('swipeleft', function(e){
-		trilha = jQuery(this);
-		if(trilha.next('.trilha').length){
-			trilha.hide();
-			trilha.next('.trilha').show();
-		}
-	});
-	jQuery('.trilha').bind('swiperight', function(e){
-		trilha = jQuery(this);
-		if(trilha.prev('.trilha').length) {
-			trilha.hide();
-			trilha.prev('.trilha').show();
-		}
-	});
+
+	bindSwipe('.primeiro-dia');
+	bindSwipe('.segundo-dia');
+	bindSwipe('.terceiro-dia');
 	
 	jQuery('.linha:not(.nao-clicavel)').click(function() {
 		linha = jQuery(this)
@@ -33,9 +23,33 @@ jQuery(document).ready(function(){
 				linha.addClass('active').removeClass('load');
 			}, 'json');
 		}
-		
+	});
+	
+	jQuery('div.menu a').each(function() {
+		jQuery(this).click(function() {
+			jQuery('div.menu a').removeClass('active');
+			jQuery('div.dia').hide();
+			jQuery(this).addClass('active');
+			diaSelecionado = jQuery(this).attr('title');
+			jQuery('div.'+diaSelecionado).show();
+		});
 	});
 });
+
+function bindSwipe(dia) {
+	jQuery(dia+' .trilha').bind('swipeleft', function(e){
+		trilha = jQuery(this);
+		if(trilha.next(dia+' .trilha').length){
+			trilha.hide().next(dia+' .trilha').show();
+		}
+	});
+	jQuery(dia+' .trilha').bind('swiperight', function(e){
+		trilha = jQuery(this);
+		if(trilha.prev(dia+' .trilha').length) {
+			trilha.hide().prev(dia+' .trilha').show();
+		}
+	});
+}
 
 
 /*

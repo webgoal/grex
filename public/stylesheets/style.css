@@ -67,18 +67,24 @@ div.menu ul li a.active{
 body{margin:0 auto; padding:0;font-family: Arial; font-size: 0.7em;}
 div.content {margin:70px 0 0 0}
 
-div.linha{ background-color:lightBlue;border:1px solid #ddd; text-align: center; vertical-align: middle;}
+div.linha{
+	background:#88cde4 url("../images/bg_azul.jpg") center bottom repeat-x; text-align: center; vertical-align: middle;
+	border-top: 1px solid #B8E1EF;
+	border-bottom: 1px solid #44B0D4;
+	border-left: 1px solid #036;
+	border-right: 1px solid #036;
+}
 div.linha.quarto-hora{ height:16px; line-height:16px; }
 div.linha.meia-hora{ height:34px; line-height:34px; }
-div.linha.tres-quarto{ height:53px; line-height:53px; }
-div.linha.hora-cheia{ height:70px; line-height:70px; }
-div.linha.hora-meia{ height:106px; line-height:106px; }
+div.linha.tres-quarto{ height:52px; line-height:52px; }
+div.linha.hora-cheia{ height:69px; line-height:69px; }
+div.linha.hora-meia{ height:104px; line-height:104px; }
 div.linha.tres-quarto-hora{ height:124px; line-height:124px; }
-div.linha.duas-horas{ height:142px; line-height:142px; }
+div.linha.duas-horas{ height:139px; line-height:139px; }
 div.hora{background-color:yellow;float:left;width:15%;float:left;text-align:center;}
 
-div.tempo {width: 38px; float:left; font-weight:bold;}
-div.tempo div { background-color: yellow; border: 1px solid #ccc; text-align: center; height: 16px;}
+div.tempo {width: 32px; float:left; font-weight:bold;font-size:1.7em;}
+div.tempo div { background-color: #036; color:white; border-top: 1px outset #046;border-left: 1px solid #046;border-right: 1px solid #046; text-align: center; height: 70px;}
 div.titulo{
 	font-size:1.5em; 
 	font-weight:bold;
@@ -93,7 +99,7 @@ div.titulo span.arrow-left{ background:url(../images/prev.png);display:block;wid
 div.titulo span.arrow-right{background:url(../images/next.png);display:block;width:22px;height:22px;float:right;text-indent:9000px;}
 
 div.trilha {margin:90px 0 0}
-div.trilha div.descricao{width:83.5%;padding:0 0 0 15px;float:left; height: 100%;font-size:1.2em; line-height:30px;}
+div.trilha div.descricao{width:84.5%;padding:0 0 0 15px;float:left; height: 100%;font-size:1.2em; line-height:30px;}
 div.trilha div.descricao.refeicao{background-color:#aaa;}
 
 div.trilha.engenharia,
@@ -101,5 +107,8 @@ div.trilha.gestao,
 div.trilha.relatos,
 div.trilha.auditorio { display: none; }
 
-div.linha.active {background-color: #3a0; }
+div.segundo-dia,
+div.terceiro-dia { display:none; }
+
+div.linha.active{ background:#44cc8b url("../images/bg_verde.jpg") center bottom repeat-x; }
 div.load{ background-image:url(../images/loading.gif);background-repeat: no-repeat;background-position: 100% 0 ; }
