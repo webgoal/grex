@@ -37,13 +37,13 @@ jQuery(document).ready(function(){
 });
 
 function bindSwipe(dia) {
-	jQuery(dia+' .trilha').bind('swipeleft', function(e){
+	jQuery(dia+' .trilha').bind('swipeleft click', function(e){
 		trilha = jQuery(this);
 		if(trilha.next(dia+' .trilha').length){
 			trilha.hide().next(dia+' .trilha').show();
 		}
 	});
-	jQuery(dia+' .trilha').bind('swiperight', function(e){
+	jQuery(dia+' .trilha').bind('swiperight click', function(e){
 		trilha = jQuery(this);
 		if(trilha.prev(dia+' .trilha').length) {
 			trilha.hide().prev(dia+' .trilha').show();
