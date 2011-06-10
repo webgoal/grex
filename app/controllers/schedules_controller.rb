@@ -4,6 +4,7 @@ class SchedulesController < ApplicationController
   respond_to :json
   
   def index
+    @my_user = current_user
   end
   
   def check
