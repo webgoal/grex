@@ -5,4 +5,4 @@ tmp/
 config/deploy.rb
 config/database.yml
 db/schema.rb
-
+*.swp
