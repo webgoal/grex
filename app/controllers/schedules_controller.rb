@@ -9,14 +9,14 @@ class SchedulesController < ApplicationController
   
   def check
     @notebook = Notebook.new
-    @notebook.user_id = 1
+    @notebook.user_id = current_user.id
     @notebook.talk_id = params[:palestra] 
     @notebook.save
     respond_with(@notebook)
   end
   
   def uncheck
-    @notebook = Notebook.find(:first, :conditions => ['talk_id', params[:palestra]])
+    @notebook = Notebook.find(:first, :conditions => {:talk_id => params[:palestra], :user_id => current_user.id})
     @notebook.destroy unless @notebook.nil? 
     respond_with(@notebook)
   end
