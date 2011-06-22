@@ -4,7 +4,6 @@ class CreateAuthorizations < ActiveRecord::Migration
       t.string :provider
       t.string :uid
       t.integer :user_id
-
       t.timestamps
     end
   end
