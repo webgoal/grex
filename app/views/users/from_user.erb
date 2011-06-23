@@ -16,6 +16,16 @@
 		<% for talk in @talks[:first] do %>
 			<div class="linha-nova active">
                 <input type="hidden" value="<%= talk.id %>" >
+				<div class="horario">
+                    <div class="inicio">
+                      <span class="hora"><%= talk.start.hour.to_s.rjust(2, '0') %></span>
+                      <span class="minuto"><%= ':'+talk.start.min.to_s.rjust(2, '0') %></span>
+                    </div>
+                    <div class="fim">
+                      <span class="hora"><%= talk.end.hour.to_s.rjust(2, '0') %></span>
+                      <span class="minuto"><%= ':'+talk.end.min.to_s.rjust(2, '0') %></span>
+                    </div>
+                </div>
                 <div class="descricao">
                     <p><%= talk.title %></p>
                     <p class="palestrante"><%= print_speakers talk.speakers %></p>
@@ -27,6 +37,16 @@
 		<% for talk in @talks[:second] do %>
 			<div class="linha-nova active">
                 <input type="hidden" value="<%= talk.id %>" >
+				<div class="horario">
+                    <div class="inicio">
+                      <span class="hora"><%= talk.start.hour.to_s.rjust(2, '0') %></span>
+                      <span class="minuto"><%= ':'+talk.start.min.to_s.rjust(2, '0') %></span>
+                    </div>
+                    <div class="fim">
+                      <span class="hora"><%= talk.end.hour.to_s.rjust(2, '0') %></span>
+                      <span class="minuto"><%= ':'+talk.end.min.to_s.rjust(2, '0') %></span>
+                    </div>
+                </div>
                 <div class="descricao">
                     <p><%= talk.title %></p>
                     <p class="palestrante"><%= print_speakers talk.speakers %></p>
@@ -38,6 +58,16 @@
 		<% for talk in @talks[:third] do %>
 			<div class="linha-nova active">
                 <input type="hidden" value="<%= talk.id %>" >
+				<div class="horario">
+                    <div class="inicio">
+                      <span class="hora"><%= talk.start.hour.to_s.rjust(2, '0') %></span>
+                      <span class="minuto"><%= ':'+talk.start.min.to_s.rjust(2, '0') %></span>
+                    </div>
+                    <div class="fim">
+                      <span class="hora"><%= talk.end.hour.to_s.rjust(2, '0') %></span>
+                      <span class="minuto"><%= ':'+talk.end.min.to_s.rjust(2, '0') %></span>
+                    </div>
+                </div>
                 <div class="descricao">
                     <p><%= talk.title %></p>
                     <p class="palestrante"><%= print_speakers talk.speakers %></p>

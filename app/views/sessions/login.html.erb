@@ -2,5 +2,8 @@
 	<h1>grex</h1>
 	<h2>Aproveite o Agile Brazil 2011</h2>
       <%= link_to("Logar no Twitter", "/auth/twitter") %>
+	<% if flash[:notice] %>
+		<div class="notice"><%= flash[:notice] %></div>
+	<% end %>
 </div>
 

@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
   
   def session_control
-    redirect_to("/") unless signed_in? 
+    redirect_to("/", :notice => "Voce deve estar logado") unless signed_in? 
   end
 
   def signed_in?

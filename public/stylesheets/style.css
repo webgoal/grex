@@ -143,12 +143,17 @@ body{
     font-weight: bold;
     height: 32px;
     margin-left: 10px;
-    padding: 10px 5px 0px;
+    padding: 10px 5px 0;
 	padding-top:10px;
     width: auto;
 }
+.linha-nova.now {
+	background-color:#edf
+}
+
 .from-user .linha-nova .descricao{
-	.height: 33px;
+	float: left;
+	margin-left:10px;
 }
 
 div.content {
@@ -203,16 +208,15 @@ a.btn-vo{
 }
 
 span.quantidade{
-	padding:0 0 0 15px;
-}
-
-.descricao{
-/*	float:left;*/
+	padding:0 0 0 10px;
+	background:url("../images/icon-participantes.png") no-repeat left;
+	display:block;
 }
 
 .descricao p span{
 	background-color: yellow;
-	padding:2px;
+	padding:0 2px;
+	margin:0 0 0 15px;
 }
 
 .detail-talk div {
@@ -234,6 +238,7 @@ span.quantidade{
     float:right;
 }
 
+
 .detail-talk .title {
     height:40px;
 }
@@ -253,6 +258,13 @@ span.quantidade{
 
 .detail-talk .type, .detail-talk .speakers, .detail-talk .room, .detail-talk .quemvai p {
     border-bottom:1px solid #ccc;
+}
+
+.notice {
+	padding: 30px 0;
+	font-size: 1.1em;
+	color: #FCDCDC;
+	font-weight: bold;
 }
 
 /*div.header{

@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   
-  before_filter :session_control, :except => [:login, :create]
+  before_filter :session_control, :except => [:login, :create, :failure]
   
   def create
     auth = request.env['omniauth.auth']
@@ -9,6 +9,10 @@ class SessionsController < ApplicationController
     end
     self.current_user = @auth.user
     redirect_to "/schedules"
+  end
+  
+  def failure
+    redirect_to "/", :notice => "Erro ao conectar com twitter"
   end
   
   def login
