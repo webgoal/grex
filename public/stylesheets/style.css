@@ -38,7 +38,7 @@ body{
 }
 
 .header{
-	background-color:#333;
+	background: #333 url('../images/bg-header.jpg');
 	height:40px;
 	padding:5px 10px;
 	
