@@ -185,16 +185,15 @@ a.btn-vo{
 }
 
 span.quantidade{
-	padding:0 0 0 15px;
-}
-
-.descricao{
-/*	float:left;*/
+	padding:0 0 0 10px;
+	background:url("../images/icon-participantes.png") no-repeat left;
+	display:block;
 }
 
 .descricao p span{
 	background-color: yellow;
-	padding:2px;
+	padding:0 2px;
+	margin:0 0 0 15px;
 }
 
 
