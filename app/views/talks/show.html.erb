@@ -1,17 +1,23 @@
-<div><%= @talk.start.strftime('%d/%m %H:%M') %><%= @talk.end.strftime('%H:%M') %></div>
-
-<div><%= @talk.title %></div>
-
-<div><%= @talk.type %> - <%= @talk.level %></div>
-
-<div>
-<% @talk.speakers.each do |speaker| %>
-    <%= speaker.name %>
-<% end %>
+<div class="header">
+  <a href="/schedules" class="twitter">Voltar</a>
 </div>
+<div class="detail-talk">
+    <div class='top'>
+        <div class="date"><%= @talk.start.strftime('%d/%m %H:%M') %> ~ <%= @talk.end.strftime('%H:%M') %></div>
+        <div class="quantidade">8</div>
+    </div>
 
-<div><%= @talk.room %> <%= @talk.track %></div>
+    <div>
+        <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
+        <span class="title"><%= @talk.title %></span>
+    </div>
 
-<div><%= @talk.description %></div>
+    <div><%= @talk.type %> <%= @talk.level %></div>
 
+    <div><%= @talk.speakers.map {|speaker| speaker.name}.join(', ') %></div>
+
+    <div><%= @talk.room %> <%= @talk.track %></div>
+
+    <div><%= @talk.description %></div>
+</div>
 
