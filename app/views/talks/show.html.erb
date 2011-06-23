@@ -4,20 +4,32 @@
 <div class="detail-talk">
     <div class='top'>
         <div class="date"><%= @talk.start.strftime('%d/%m %H:%M') %> ~ <%= @talk.end.strftime('%H:%M') %></div>
-        <div class="quantidade">8</div>
+        <div class="quantidade"><%= @talk.viewers %></div>
     </div>
 
-    <div>
-        <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
-        <span class="title"><%= @talk.title %></span>
+    <div class="title <%=is_talk_selected? @talk.id, @user_tracks %>">
+        <input type="hidden" value="<%= @talk.id %>" />
+        <div class="escolha">
+            <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
+        </div>
+        <p><%= @talk.title %></p>
     </div>
 
-    <div><%= @talk.type %> <%= @talk.level %></div>
+    <div class="type"><%= @talk.type %> <%= @talk.level %></div>
 
-    <div><%= @talk.speakers.map {|speaker| speaker.name}.join(', ') %></div>
+    <div class="speakers"><%= print_speakers @talk.speakers %></div>
 
-    <div><%= @talk.room %> <%= @talk.track %></div>
+    <div class="room"><%= @talk.room %> <%= @talk.track %></div>
 
-    <div><%= @talk.description %></div>
+    <div class="descricao"><%= @talk.description %></div>
+    
+    <div class="quemvai">
+        <p>Quem Vai (<%= @talk.viewers %>)</p>
+        <ul>
+        <% @talk.users.each do |user| %>
+            <img src="<%=user.avatar%>" title="<%=user.twitter%>"/>
+        <% end %>
+        </ul>
+    </div>
 </div>
 

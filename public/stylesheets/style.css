@@ -153,13 +153,18 @@ body{
     font-weight: bold;
     height: 32px;
     margin-left: 10px;
-    padding: 10px 5px 0px;
+    padding: 10px 5px 0;
 	padding-top:10px;
     width: auto;
     
 }
+.linha-nova.now {
+	background-color:#edf
+}
+
 .from-user .linha-nova .descricao{
-	.height: 33px;
+	float: left;
+	margin-left:10px;
 }
 
 
@@ -212,7 +217,7 @@ a.btn-vo{
 	outline:0;
 }
 
-.linha-nova.active a.btn-vo{
+.active a.btn-vo{
 	background-position:left;
 }
 
@@ -236,7 +241,7 @@ span.quantidade{
 }
 
 .detail-talk .top {
-    height:40px;
+    height:45px;
 }
 
 .detail-talk .date {
@@ -246,6 +251,36 @@ span.quantidade{
 .detail-talk .quantidade {
     float:right;
 }
+
+
+.detail-talk .title {
+    height:40px;
+}
+
+.detail-talk .title .escolha {
+    height:auto;
+}
+
+.detail-talk .title p {
+    margin:3px;
+    line-height:15px;
+}
+
+.detail-talk .type {
+    clear:both;
+}
+
+.detail-talk .type, .detail-talk .speakers, .detail-talk .room, .detail-talk .quemvai p {
+    border-bottom:1px solid #ccc;
+}
+
+.notice {
+	padding: 30px 0;
+	font-size: 1.1em;
+	color: #FCDCDC;
+	font-weight: bold;
+}
+
 /*div.header{
 	height: 30px;
 	width: 1730px;
