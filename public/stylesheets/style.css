@@ -197,8 +197,24 @@ span.quantidade{
 	padding:2px;
 }
 
+.detail-talk div {
+    padding: 2px 7px;
+    background-color:#FFF;
+    line-height:40px;
+    font-size:14px;
+}
 
+.detail-talk .top {
+    height:40px;
+}
 
+.detail-talk .date {
+    float:left;
+}
+
+.detail-talk .quantidade {
+    float:right;
+}
 /*div.header{
 	height: 30px;
 	width: 1730px;
