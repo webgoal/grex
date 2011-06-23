@@ -17,7 +17,7 @@
                 </div>
                 <div class="descricao">
                     <p><%= talk.title %></p>
-                    <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+                    <p class="palestrante"><%= print_speakers talk.speakers %></p>
                     <p><%= talk.type %> <span class='<%= normalize_string(talk.level) unless talk.level.nil?%>' ><%= talk.level %></p> 
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="descricao">
                     <p><%= talk.title %></p>
-                    <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+                    <p class="palestrante"><%= print_speakers talk.speakers %></p>
                     <p><%= talk.type %> <span class='<%= normalize_string(talk.level) unless talk.level.nil?%>' ><%= talk.level %></p> 
                 </div>
             </div>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="descricao">
                     <p><%= talk.title %></p>
-                    <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+                    <p class="palestrante"><%= print_speakers talk.speakers %></p>
                     <p><%= talk.type %> <span class='<%= normalize_string(talk.level) unless talk.level.nil?%>' ><%= talk.level %></p> 
                 </div>
             </div>
