@@ -33,7 +33,7 @@
                     <span class="quantidade"><%= talk.viewers %></span>
                 </div>
                 <div class="descricao">
-                    <p><%= talk.title %></p>
+                    <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
 	                <p><%= talk.type %><%= show_talk_level talk.level %></p>
               	</div>
@@ -60,7 +60,7 @@
                     <span class="quantidade"><%= talk.viewers %></span>
                 </div>
                 <div class="descricao">
-                    <p><%= talk.title %></p>
+                    <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
 	                <p><%= talk.type %><%= show_talk_level talk.level %></p>
                 </div>
@@ -87,7 +87,7 @@
                     <span class="quantidade"><%= talk.viewers %></span>
                 </div>
                 <div class="descricao">
-                    <p><%= talk.title %></p>
+                    <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
 	                <p><%= talk.type %><%= show_talk_level talk.level %></p>
                 </div>
@@ -114,7 +114,7 @@
                     <span class="quantidade"><%= talk.viewers %></span>
                 </div>
                 <div class="descricao">
-                    <p><%= talk.title %></p>
+                    <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
 	                <p><%= talk.type %><%= show_talk_level talk.level %></p>
                 </div>
@@ -141,7 +141,7 @@
                     <span class="quantidade"><%= talk.viewers %></span>
                 </div>
                 <div class="descricao">
-                    <p><%= talk.title %></p>
+                    <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
 	                <p><%= talk.type %><%= show_talk_level talk.level %></p>
                 </div>

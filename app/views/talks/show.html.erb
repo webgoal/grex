@@ -27,7 +27,7 @@
         <p>Quem Vai (<%= @talk.viewers %>)</p>
         <ul>
         <% @talk.users.each do |user| %>
-            <img src="<%=user.avatar%>" title="<%=user.twitter%>"/>
+            <a href="<%= url_for "/users/from_user/#{user.id}" %>"><img src="<%=user.avatar%>" title="<%=user.twitter%>"/></a>
         <% end %>
         </ul>
     </div>
