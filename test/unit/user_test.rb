@@ -7,4 +7,10 @@ class UserTest < ActiveSupport::TestCase
     assert list.size == 2
     assert_equal [5, 1], list 
   end
+  
+  def test_list_talk_ids_without_date
+    list = User.talk_ids 1
+    assert list.size == 3
+    assert_equal [5, 1, 2], list
+  end
 end

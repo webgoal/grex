@@ -1,4 +1,6 @@
 Evento::Application.routes.draw do
+  get "users/list"
+
   get "user/list"
 
   match '/auth/twitter/callback', :to => 'sessions#create'

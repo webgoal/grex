@@ -29,7 +29,7 @@ tdd:
   end: 2011-06-30 19:00:00
   description: nil
 
-LT1:
+LT:
   id: 5
   title: "LIGHTNING TALKS 1"
   language: "Português"
