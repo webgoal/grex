@@ -237,6 +237,14 @@ span.quantidade{
 .detail-talk .quantidade {
     float:right;
 }
+
+.notice {
+	padding: 30px 0;
+	font-size: 1.1em;
+	color: #FCDCDC;
+	font-weight: bold;
+}
+
 /*div.header{
 	height: 30px;
 	width: 1730px;
