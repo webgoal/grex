@@ -1,5 +1,8 @@
 @CHARSET "UTF-8";
 
+body{
+	background-color:#ff9900;
+}
 
 div.header{
 	height: 30px;
@@ -18,13 +21,35 @@ div.header h1{
 	overflow: hidden;
 }
 
-div.autenticacao{
-        height: 20px;
-        background-color: red;
-        top: 30px;
-        left: 0;
-        position: fixed;
+#inicial{
+	width:290px;
+	margin:0 auto;
+	text-align:center;
+	padding:140px 10px 100px 10px;
 }
+
+#inicial h1{
+	display:block;
+	width:133px;
+	height:52px;
+	background:url('../images/logo.png') no-repeat;
+	text-indent:-9999px;
+	margin:0 auto 40px;
+}
+
+#inicial a{
+	display:block;
+	width:283px;
+	height:43px;
+	line-height:43px;
+	background:url('../images/btn-logar.png') no-repeat;
+	text-decoration:none;
+	color:#000;
+	font-weight:bold;
+	font-size:18px;
+	margin:0 auto;
+}
+
 
 div.menu{
 	background: #40B3D9 url('../images/menu.jpg');
