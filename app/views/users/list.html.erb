@@ -11,6 +11,7 @@
 		<% for talk in @talks[:first] do %>
 			<div class="linha-nova active">
                 <input type="hidden" value="<%= talk.id %>" >
+                <div class="horario">
                     <div class="inicio">
                       <span class="hora"><%= talk.start.hour.to_s.rjust(2, '0') %></span>
                       <span class="minuto"><%= ':'+talk.start.min.to_s.rjust(2, '0') %></span>
