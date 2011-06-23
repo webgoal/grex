@@ -1,4 +1,8 @@
 Evento::Application.routes.draw do
+  get "users/list"
+
+  get "user/list"
+
   match '/auth/twitter/callback', :to => 'sessions#create'
   
   # The priority is based upon order of creation:
@@ -50,7 +54,7 @@ Evento::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "sessions#login"
 
   # See how all your routes lay out with "rake routes"
 

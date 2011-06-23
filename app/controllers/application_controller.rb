@@ -1,9 +1,15 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :session_control
+  
   protected
   def current_user
     @current_user ||= User.find_by_id(session[:user_id])
+  end
+  
+  def session_control
+    redirect_to("/") unless signed_in? 
   end
 
   def signed_in?
