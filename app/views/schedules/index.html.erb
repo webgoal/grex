@@ -62,7 +62,7 @@
                 <div class="descricao">
                     <p><%= talk.title %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-                    <p><%= talk.type %> <span class='<%= ActiveSupport::Multibyte::Chars.new(talk.level.downcase).normalize(:kd).gsub(/[^\x00-\x7F]/,'').to_s unless talk.level.nil?%>' ><%= talk.level %></p> 
+	                <p><%= talk.type %><%= show_talk_level talk.level %></p>
                 </div>
             </div>
 		<% end %>
@@ -89,7 +89,7 @@
                 <div class="descricao">
                     <p><%= talk.title %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-                    <p><%= talk.type %> <span class='<%= ActiveSupport::Multibyte::Chars.new(talk.level.downcase).normalize(:kd).gsub(/[^\x00-\x7F]/,'').to_s unless talk.level.nil?%>' ><%= talk.level %></p> 
+	                <p><%= talk.type %><%= show_talk_level talk.level %></p>
                 </div>
             </div>
 		<% end %>
@@ -116,7 +116,7 @@
                 <div class="descricao">
                     <p><%= talk.title %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-                    <p><%= talk.type %> <span class='<%= ActiveSupport::Multibyte::Chars.new(talk.level.downcase).normalize(:kd).gsub(/[^\x00-\x7F]/,'').to_s unless talk.level.nil?%>' ><%= talk.level %></p> 
+	                <p><%= talk.type %><%= show_talk_level talk.level %></p>
                 </div>
             </div>
 		<% end %>
@@ -143,7 +143,7 @@
                 <div class="descricao">
                     <p><%= talk.title %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-                    <p><%= talk.type %> <span class='<%= ActiveSupport::Multibyte::Chars.new(talk.level.downcase).normalize(:kd).gsub(/[^\x00-\x7F]/,'').to_s unless talk.level.nil?%>' ><%= talk.level %></p> 
+	                <p><%= talk.type %><%= show_talk_level talk.level %></p>
                 </div>
             </div>
 		<% end %>
