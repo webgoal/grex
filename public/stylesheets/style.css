@@ -346,6 +346,12 @@ span.quantidade{
 	padding:0 0 0 10px;
 	background:url("../images/icon-participantes.png") no-repeat left;
 	display:block;
+	margin:4px 0 0 0;
+}
+
+.descricao p a{
+	color:#333;
+	text-decoration:none;
 }
 
 .descricao p span{
