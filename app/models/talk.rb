@@ -10,12 +10,12 @@ class Talk < ActiveRecord::Base
     self.by_day(date).from_track(track).in_order
   end
   
+  def viewers 
+    Talk.find(self.id).users.count
+  end
+  
   #Sobrescreve o nome da coluna de herança padrão do Rails type para type_id, evita conflitos
   set_inheritance_column do
     original_inheritance_column + "_id"
-  end
-
-  def viewers 
-    Talk.find(self.id).users.count
   end
 end
