@@ -129,6 +129,10 @@ body{
 	padding:0 10px;
 }
 
+.menu li a.active {
+	text-decoration: underline;
+}
+
 div.content {
 	
 }

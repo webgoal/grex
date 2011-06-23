@@ -1,13 +1,13 @@
 <div class="header">
   <h1>grex</h1>
-  <a href="" title="jeffalbuquerque" class="twitter">@<%= current_user.twitter if signed_in? %></a>
-  <%= link_to "Log out", "/sessions/logout", {:class=>'sair', :title => 'Sair'} if signed_in? %></a>
+  <%= link_to "@"+current_user.twitter, "/users/list", { :class=>'twitter', :title => "@"+current_user.twitter } if signed_in? %>
+  <%= link_to "Log out", "/sessions/logout", { :class=>'sair', :title => 'Sair' } if signed_in? %></a>
 </div>
 <div class="menu">
   <ul>
-	<li><a href="/schedules?date=2011-06-29" title="primeiro-dia" class="active" >29/06</a></li>
-  	<li><a href="/schedules?date=2011-06-30" title="segundo-dia">30/06</a></li>
-  	<li><a href="/schedules?date=2011-07-01" title="terceiro-dia">01/07</a></li>
+	<li><a href="/schedules?date=2011-06-29" title="primeiro-dia" class="<%= "active" if @date == "2011-06-29"%>" >29/06</a></li>
+  	<li><a href="/schedules?date=2011-06-30" title="segundo-dia" class="<%= "active" if @date == "2011-06-30"%>">30/06</a></li>
+  	<li><a href="/schedules?date=2011-07-01" title="terceiro-dia" class="<%= "active" if @date == "2011-07-01"%>">01/07</a></li>
   </ul>
 </div>
 
