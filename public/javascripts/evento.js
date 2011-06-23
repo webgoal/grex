@@ -20,16 +20,19 @@ function bindSwipe(dia) {
 
 function setupVouNaoVou() {
 	jQuery('a.btn-vo').click(function() {
-		linha = jQuery(this)
+		link = jQuery(this);
+		linha = link.parent().parent();
 		linha.addClass('load');
 		palestraId = linha.find('input[type=hidden]').val();
 		if (linha.hasClass('active')) {
 			jQuery.get('/schedules/uncheck', { 'palestra': palestraId }, function(data) {
-				linha.removeClass('active').removeClass('load');
+				linha.removeClass('active');
+				linha.removeClass('load');
 			}, 'json');
 		} else {
 			jQuery.get('/schedules/check', { 'palestra': palestraId }, function(data) {
-				linha.addClass('active').removeClass('load');
+				linha.addClass('active');
+				linha.removeClass('load');
 			}, 'json');
 		}
 	});

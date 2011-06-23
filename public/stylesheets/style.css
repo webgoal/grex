@@ -298,5 +298,5 @@ div.trilha.gestao,
 div.trilha.relatos,
 div.trilha.auditorio { display: none; }
 
-div.linha.active{ background:#44cc8b url("../images/bg_verde.jpg") center bottom repeat-x; }
+div.linha-nova.active a.btn-vo{ background:transparent url("../images/checked.png") none; }
 div.load{ background-image:url(../images/loading.gif);background-repeat: no-repeat;background-position: 100% 0 ; }
