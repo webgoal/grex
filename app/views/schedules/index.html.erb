@@ -1,7 +1,7 @@
 <div class="header">
   <h1>grex</h1>
-  <a href="" title="jeffalbuquerque" class="twitter">@jeffalbuquerque</a>
-  <a href="" title="Sair do grex" class="sair">Sair</a>
+  <a href="" title="jeffalbuquerque" class="twitter">@<%= current_user.twitter if signed_in?%></a>
+  <a href="" title="Sair do grex" class="sair"><%= link_to "Log out", "/sessions/logout" if signed_in?%></a>
 </div>
 <div class="menu">
   <ul>
@@ -43,7 +43,7 @@
                 <input type="hidden" value="<%= talk.id %>" >
                 <div class="escolha">
                     <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
-                    <span class="quantidade">999</span>
+                    <span class="quantidade"><%= talk.viewers %></span>
                 </div>
                 <div class="descricao">
                     <p><%= talk.title %></p>
@@ -60,7 +60,7 @@
                 <input type="hidden" value="<%= talk.id %>" >
                 <div class="escolha">
                     <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
-                    <span class="quantidade">999</span>
+                    <span class="quantidade"><%= talk.viewers %></span>
                 </div>
                 <div class="descricao">
                     <p><%= talk.title %></p>
@@ -77,7 +77,7 @@
                 <input type="hidden" value="<%= talk.id %>" >
                 <div class="escolha">
                     <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
-                    <span class="quantidade">999</span>
+                    <span class="quantidade"><%= talk.viewers %></span>
                 </div>
                 <div class="descricao">
                     <p><%= talk.title %></p>
@@ -94,7 +94,7 @@
                 <input type="hidden" value="<%= talk.id %>" >
                 <div class="escolha">
                     <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
-                    <span class="quantidade">999</span>
+                    <span class="quantidade"><%= talk.viewers %></span>
                 </div>
                 <div class="descricao">
                     <p><%= talk.title %></p>
@@ -111,7 +111,7 @@
                 <input type="hidden" value="<%= talk.id %>" >
                 <div class="escolha">
                     <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
-                    <span class="quantidade">999</span>
+                    <span class="quantidade"><%= talk.viewers %></span>
                 </div>
                 <div class="descricao">
                     <p><%= talk.title %></p>

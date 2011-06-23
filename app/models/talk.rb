@@ -14,4 +14,8 @@ class Talk < ActiveRecord::Base
   set_inheritance_column do
     original_inheritance_column + "_id"
   end
+
+  def viewers 
+    Talk.find(self.id).users.count
+  end
 end

@@ -13,4 +13,10 @@ class TalkTest < ActiveSupport::TestCase
     assert relatos.size == 1
     assert_equal "Priorizando a Felicidade", relatos[0].title
   end
+  
+  def test_viewers
+    talk = Talk.new
+    talk.id = 2
+    assert_equal 2, talk.viewers
+  end
 end
