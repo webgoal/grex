@@ -1,25 +1,58 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
-  language: 
-  level: MyString
+  title: Como formar um programador 10x
+  language: Português
+  level: Iniciante
   attendees_limit: 1
-  type: MyString
-  translation: false
-  duration: 9.99
-  start: 2011-06-13 16:51:38
-  end: 2011-06-13 16:51:38
-  description: MyText
+  type: Palestra
+  track: Engenharia
+  duration: 45
+  room: nil
+  translation: 0
+  start: 2011-06-29 15:30:00
+  end: 2011-06-29 16:15:00
+  description: nil
 
 two:
-  title: MyString
-  language: 
-  level: MyString
-  attendees_limit: 1
-  type: MyString
+  title: Tente Desenvolver Diferente com TDD
+  language: Português
+  level: Iniciante
+  attendees_limit: 0
+  type: Tutorial
   translation: false
-  duration: 9.99
-  start: 2011-06-13 16:51:38
-  end: 2011-06-13 16:51:38
-  description: MyText
+  track: Engenharia
+  duration: 120
+  start: 2011-06-30 17:00:00
+  end: 2011-06-30 19:00:00
+  description: nil
+
+three:
+  title: "2012: o ano em que a Terra acabou, porque o software travou"
+  language: "Português"
+  level: "Todos"
+  attendees_limit: 0
+  type: "Keynote"
+  track: "Geral"
+  room: nil
+  translation: false
+  duration: 90
+  start: "2011-07-01 09:00:00"
+  end: "2011-07-01 10:30:00"
+  description: nil
+  created_at: "2011-06-22 20:27:12"
+  updated_at: nil
+ 
+four:
+  title: "Priorizando a Felicidade"
+  language: "Inglês"
+  level: "Todos"
+  attendees_limit: 0
+  type: "Keynote"
+  track: "Geral;Engenharia;Relatos;Gestão;Auditório Principal"
+  room: nil
+  translation: false
+  duration: 90
+  start: "2011-06-30 09:00:00"
+  end: "2011-06-30 10:30:00"
+  description: nil

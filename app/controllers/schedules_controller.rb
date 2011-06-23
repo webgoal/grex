@@ -5,6 +5,16 @@ class SchedulesController < ApplicationController
   
   def index
     @my_user = current_user
+    
+    params[:date] ||= "2011-06-29"
+    
+    @tracks = {
+      :geral => Talk.track_day(params[:date], "geral"),
+      :engenharia => Talk.track_day(params[:date], "engenharia"),
+      :relatos => Talk.track_day(params[:date], "relatos"),
+      :gestao => Talk.track_day(params[:date], "gestao"),
+      :principal => Talk.track_day(params[:date], "principal")
+    }
   end
   
   def check
