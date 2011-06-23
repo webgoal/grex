@@ -133,8 +133,18 @@ div.content {
 	
 }
 
+div.horario {
+	float: left;
+    margin: 0 6px 0 0;
+    width: 30px;
+}
+div.horario div.inicio {border-bottom: 1px solid #bbb;}
+div.horario div.fim {}
+div.horario span.hora {font-size:120%;margin:0 -4px 0 0; font-weight:bold;}
+div.horario span.minuto {}
+
 .linha-nova{
-	height:63px;
+	height:55px;
 	border-top:solid 1px #CCC;
 	border-botton:solid 1px #CCC;
 	background-color:#FFF;
@@ -154,6 +164,7 @@ div.content {
 	float:left;
 	weight:32px;
 	margin:0 5px 0 0;
+	height:63px;
 }
 
 a.btn-vo{
@@ -161,14 +172,12 @@ a.btn-vo{
 	height:33px;
 	width:32px;
 	text-indent:-9999px;
-	background-color:#CCC;
-	border:solid 1px #000;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	box-shadow:inset 0 0 3px #000000;
-	-moz-box-shadow:inset 0 0 3px #000000;
-	-webkit-box-shadow:inset 0 0 3px #000000;
+	background:url("../images/checked.png") no-repeat right;
+	outline:0;
+}
+
+.linha-nova.active a.btn-vo{
+	background-position:left;
 }
 
 span.quantidade{
@@ -176,7 +185,7 @@ span.quantidade{
 }
 
 .descricao{
-	float:left;
+/*	float:left;*/
 }
 
 .descricao p span{
@@ -298,5 +307,5 @@ div.trilha.gestao,
 div.trilha.relatos,
 div.trilha.auditorio { display: none; }
 
-div.linha-nova.active a.btn-vo{ background:transparent url("../images/checked.png") none; }
+
 div.load{ background-image:url(../images/loading.gif);background-repeat: no-repeat;background-position: 100% 0 ; }
