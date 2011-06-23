@@ -2,6 +2,10 @@ jQuery(document).ready(function(){
 	bindSwipe('.dia');
 	setupVouNaoVou();
 	exibirPalestraAtual();
+	jQuery('.menu a').click(function(e){
+		e.preventDefault();
+		jQuery('body').load(this.href);
+	});
 });
 
 function bindSwipe(dia) {
