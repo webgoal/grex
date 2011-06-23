@@ -15,6 +15,8 @@ class SchedulesController < ApplicationController
       :gestao => Talk.track_day(params[:date], "gestao"),
       :principal => Talk.track_day(params[:date], "principal")
     }
+    @user_tracks = User.talk_ids current_user.id, params[:date]
+    p @user_tracks
   end
   
   def check
@@ -26,11 +28,8 @@ class SchedulesController < ApplicationController
   end
   
   def uncheck
-    @notebook = Notebook.find(:first, :conditions => {:talk_id => params[:palestra], :user_id => current_user.id})
-    @notebook.destroy unless @notebook.nil? 
-    respond_with(@notebook)
+    current_user.talks.delete(Talk.find(params[:palestra]))
+    respond_with({})
   end
-  
-  def v
-  end
+
 end

@@ -34,96 +34,32 @@
     <div class="trilha geral">
 		<div class="titulo">Geral<span class="arrow-right">&raquo;</span></div>
 		<% for talk in @tracks[:geral] do %>
-			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
+			<div class="linha meia-hora <%=is_talk_selected? talk.id, @user_tracks%>"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
 		<% end %>
-		<!--
-  	    <div class="linha meia-hora"><input type="hidden" value="200" ><div class="descricao">Credenciamento</div></div>
-    	<div class="linha meia-hora"><input type="hidden" value="201" ><div class="descricao">Abertura</div></div>
-    	<div class="linha hora-meia"><input type="hidden" value="202" ><div class="descricao">Liderança adaptável: acelerando a agilidade organizacional</div></div>
-    	<div class="linha meia-hora nao-clicavel"><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha duas-horas"><input type="hidden" value="203" ><div class="descricao">Da visão a produção - Criando produtos e lançando ao mercado</div></div>
-    	<div class="linha hora-meia nao-clicavel"><div class="descricao refeicao">Almo&ccedil;o</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="204" ><div class="descricao">LIGHTNING TALKS 1</div></div>
-    	<div class="linha tres-quarto"><input type="hidden" value="205" ><div class="descricao">Exploring User Wish through Mindmapping</div></div>
-    	<div class="linha tres-quarto nao-clicavel"><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="206" ><div class="descricao">A sociedade do Dojo e os grupos de Capoeira</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="207" ><div class="descricao">Da Essência à Necessidade - Os Mitos do Mundo Ágil!</div></div>
-		-->
     </div>
     <div class="trilha engenharia" >
     	<div class="titulo"><span class="arrow-left"></span>Engenharia<span class="arrow-right"></span></div>
 		<% for talk in @tracks[:engenharia] do %>
 			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
 		<% end %>
-		<!--
-    	<div class="linha meia-hora"><input type="hidden" value="200" ><div class="descricao">Credenciamento</div></div>
-    	<div class="linha meia-hora"><input type="hidden" value="201" ><div class="descricao">Abertura</div></div>
-    	<div class="linha hora-meia"><input type="hidden" value="208" ><div class="descricao">Liderança adaptável: acelerando a agilidade organizacional</div></div>
-    	<div class="linha meia-hora"><div class="descricao refeicao">Coffee-break</div></div>
-  	    <div class="linha hora-cheia"><input type="hidden" value="209" ><div class="descricao">A importancia dos testes de regressao</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="210" ><div class="descricao">Continuous Inspection - Uma abordagem efetiva para melhoria contínua da qualidade de software</div></div>
-    	<div class="linha hora-meia"><div class="descricao refeicao">Almo&ccedil;o</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="211" ><div class="descricao">Quando o design apodrece, TDD &eacute; seu melhor amigo</div></div>
-    	<div class="linha tres-quarto"><input type="hidden" value="212" ><div class="descricao">Como formar um programador 10x</div></div>
-  	    <div class="linha tres-quarto"><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha duas-horas"><input type="hidden" value="213" ><div class="descricao">Tente Desenvolver Diferente com TDD</div></div>
--->
     </div>
     <div class="trilha relatos" >
     	<div class="titulo"><span class="arrow-left"></span>Relatos<span class="arrow-right"></span></div>
 		<% for talk in @tracks[:relatos] do %>
 			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
 		<% end %>
-		<!--
-    	<div class="linha meia-hora"><input type="hidden" value="200" ><div class="descricao">Credenciamento</div></div>
-    	<div class="linha meia-hora"><input type="hidden" value="201" ><div class="descricao">Abertura</div></div>
-  	    <div class="linha hora-meia"><input type="hidden" value="214" ><div class="descricao">Lideran&ccedil;a adapt&aacute;vel: acelerando a agilidade organizacional</div></div>
-    	<div class="linha meia-hora"><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="215" ><div class="descricao">A escola do s&eacute;culo XXI tem que ser &aacute;gil, lean e empreendedora. Ponto.</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="216" ><div class="descricao">There and back again (L&aacute; e de Volta Outra Vez)</div></div>
-  	    <div class="linha hora-meia"><div class="descricao refeicao">Almo&ccedil;o</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="217" ><div class="descricao">"COWBLAM! nossa metodologia &eacute; a melhor!"</div></div>
-    	<div class="linha tres-quarto"><input type="hidden" value="218" ><div class="descricao">GreenBar - Inserindo cultura de testes automatizados na sua empresa</div></div>
-    	<div class="linha tres-quarto"><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="219" ><div class="descricao">Scrum na Horta</div></div>
-  		<div class="linha hora-cheia"><input type="hidden" value="220" ><div class="descricao">Problemas e solu&ccedil;&otilde;es no desenvolvimento remoto: duas empresas, um projeto</div></div>
-		-->
     </div>
     <div class="trilha gestao" >
     	<div class="titulo"><span class="arrow-left"></span>Gest&atilde;o<span class="arrow-right"></span></div>
 		<% for talk in @tracks[:gestao] do %>
 			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
 		<% end %>
-		<!--
-    	<div class="linha meia-hora"><input type="hidden" value="200" ><div class="descricao">Credenciamento</div></div>
-    	<div class="linha meia-hora"><input type="hidden" value="201" ><div class="descricao">Abertura</div></div>
-  	    <div class="linha hora-meia"><input type="hidden" value="221" ><div class="descricao">Lideran&ccedil;a adapt&aacute;vel: acelerando a agilidade organizacional</div></div>
-    	<div class="linha meia-hora"><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha duas-horas"><input type="hidden" value="222" ><div class="descricao">The Agile city-building game</div></div>
-    	<div class="linha hora-meia"><div class="descricao refeicao">Almo&ccedil;o</div></div>
-    	<div class="linha tres-quarto-hora"><input type="hidden" value="223" ><div class="descricao">Scrum com Equipes Distribuídas</div></div>
-  	    <div class="linha tres-quarto"><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha duas-horas"><input type="hidden" value="224" ><div class="descricao">Reservoir Dogs - a shot at agile portfolio management</div></div>
-		-->
     </div>
     <div class="trilha auditorio" >
     	<div class="titulo"><span class="arrow-left"></span>Audit&oacute;rio</div>
 		<% for talk in @tracks[:principal] do %>
 			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
 		<% end %>
-		<!--
-    	<div class="linha meia-hora"><input type="hidden" value="200" ><div class="descricao">Credenciamento</div></div>
-  	    <div class="linha meia-hora"><input type="hidden" value="201" ><div class="descricao">Abertura</div></div>
-    	<div class="linha hora-meia"><input type="hidden" value="225" ><div class="descricao">Lideran&ccedil;a adapt&aacute;vel: acelerando a agilidade organizacional</div></div>
-    	<div class="linha meia-hora"><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="226" ><div class="descricao">Agile Transitions - Culture of Change or Change of Culture?</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="227" ><div class="descricao">Prepare a Sandwich like an Agile Business Analyst</div></div>
-  	    <div class="linha hora-meia"><div class="descricao refeicao">Almo&ccedil;o</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="228" ><div class="descricao">Desenvolvendo outside in com BDD</div></div>
-    	<div class="linha tres-quarto"><input type="hidden" value="229" ><div class="descricao">Gerenciando sua dívida técnica</div></div>
-    	<div class="linha tres-quarto"><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha duas-horas"><input type="hidden" value="230" ><div class="descricao">Manifesto for Meta-Agile - Coaching para Agilidade além da própria Agilidade</div></div>
-		-->
     </div>
   </div>
 

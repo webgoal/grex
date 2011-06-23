@@ -1,6 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+dez:
+  id: 1
   title: Como formar um programador 10x
   language: Português
   level: Iniciante
@@ -14,7 +15,8 @@ one:
   end: 2011-06-29 16:15:00
   description: nil
 
-two:
+tdd:
+  id: 2
   title: Tente Desenvolver Diferente com TDD
   language: Português
   level: Iniciante
@@ -27,7 +29,25 @@ two:
   end: 2011-06-30 19:00:00
   description: nil
 
-three:
+LT1:
+  id: 5
+  title: "LIGHTNING TALKS 1"
+  language: "Português"
+  level: nil
+  attendees_limit: 0
+  type: nil
+  track: "Geral"
+  room: nil
+  translation: false
+  duration: 60
+  start: "2011-06-29 14:30:00"
+  end: "2011-06-29 15:30:00"
+  description: nil
+  created_at: "2011-06-23 02:55:14"
+  updated_at: nil
+
+terra:
+  id: 3
   title: "2012: o ano em que a Terra acabou, porque o software travou"
   language: "Português"
   level: "Todos"
@@ -43,7 +63,8 @@ three:
   created_at: "2011-06-22 20:27:12"
   updated_at: nil
  
-four:
+felicidade:
+  id: 4
   title: "Priorizando a Felicidade"
   language: "Inglês"
   level: "Todos"
