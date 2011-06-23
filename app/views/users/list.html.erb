@@ -1,6 +1,6 @@
 <div class="header">
   <h1>grex</h1>
-  <a href="/schedules" class="twitter">Voltar</a>
+	<a href="/schedules" class="voltar">Voltar</a>
   <%= link_to "@"+current_user.twitter, "/users/list", { :class=>'twitter', :title => "@"+current_user.twitter } if signed_in? %>
   <%= link_to "Log out", "/sessions/logout", { :class=>'sair', :title => 'Sair' } if signed_in? %></a>
 </div>
