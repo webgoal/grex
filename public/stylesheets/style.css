@@ -322,6 +322,13 @@ div.descricao{
 	padding: 0 10px;
 }
 
+.ver-detalhes a{
+	display:block;
+	height:63px;
+	text-decoration: none;	
+	color:
+}
+
 a.btn-vo{
 	display:block;
 	height:33px;
