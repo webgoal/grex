@@ -1,6 +1,7 @@
 jQuery(document).ready(function(){
 	bindSwipe('.dia');
 	setupVouNaoVou();
+	exibirPalestraAtual();
 });
 
 function bindSwipe(dia) {
@@ -35,5 +36,18 @@ function setupVouNaoVou() {
 				linha.removeClass('load');
 			}, 'json');
 		}
+	});
+}
+
+function exibirPalestraAtual() {
+	now = Math.round((new Date()).getTime() / 1000) - (new Date().getTimezoneOffset() * 60);
+	jQuery('.linha-nova').removeClass('now');
+	jQuery('div.horario').each(function(){
+	    me = jQuery(this);
+	    start = me.find('.start').val();
+	    end = me.find('.end').val();
+	    if ((start-now) <= 0 && (end-now) > 0) {
+	        me.parent().addClass('now');
+	    }
 	});
 }

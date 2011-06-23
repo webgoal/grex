@@ -12,6 +12,8 @@
 			<div class="linha-nova active">
                 <input type="hidden" value="<%= talk.id %>" >
                 <div class="horario">
+                    <%= hidden_field_tag("start_#{talk.start.to_time.to_i}", talk.start.to_time.to_i, {:class => 'start'}) %> 
+                    <%= hidden_field_tag("end_#{talk.end.to_time.to_i}"    , talk.end.to_time.to_i  , {:class => 'end'  }) %> 
                     <div class="inicio">
                       <span class="hora"><%= talk.start.hour.to_s.rjust(2, '0') %></span>
                       <span class="minuto"><%= ':'+talk.start.min.to_s.rjust(2, '0') %></span>
@@ -37,6 +39,8 @@
 			<div class="linha-nova active">
                 <input type="hidden" value="<%= talk.id %>" >
 				<div class="horario">
+                    <%= hidden_field_tag("start_#{talk.start.to_time.to_i}", talk.start.to_time.to_i, {:class => 'start'}) %> 
+                    <%= hidden_field_tag("end_#{talk.end.to_time.to_i}"    , talk.end.to_time.to_i  , {:class => 'end'  }) %> 
                     <div class="inicio">
                       <span class="hora"><%= talk.start.hour.to_s.rjust(2, '0') %></span>
                       <span class="minuto"><%= ':'+talk.start.min.to_s.rjust(2, '0') %></span>
@@ -62,6 +66,8 @@
 			<div class="linha-nova active">
                 <input type="hidden" value="<%= talk.id %>" >
 				<div class="horario">
+                    <%= hidden_field_tag("start_#{talk.start.to_time.to_i}", talk.start.to_time.to_i, {:class => 'start'}) %> 
+                    <%= hidden_field_tag("end_#{talk.end.to_time.to_i}"    , talk.end.to_time.to_i  , {:class => 'end'  }) %> 
                     <div class="inicio">
                       <span class="hora"><%= talk.start.hour.to_s.rjust(2, '0') %></span>
                       <span class="minuto"><%= ':'+talk.start.min.to_s.rjust(2, '0') %></span>

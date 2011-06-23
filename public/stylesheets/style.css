@@ -147,6 +147,10 @@ body{
 	padding-top:10px;
     width: auto;
 }
+.linha-nova.now {
+	background-color:#edf
+}
+
 .from-user .linha-nova .descricao{
 	float: left;
 	margin-left:10px;
