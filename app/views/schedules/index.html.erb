@@ -10,48 +10,115 @@
   	<li><a href="/schedules?date=2011-07-01" title="terceiro-dia">01/07</a></li>
   </ul>
 </div>
+
 <div class="linha-nova">
-  <div class="vo">
-    <a href="#" title="vonumvo" class="btn-vo">Eu vo!</a>
+  <div class="escolha">
+    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
   <span class="quantidade">999</span> 
   </div>
- <div class="jeff">
+ <div class="descricao">
      <p>Liderança adaptável: acelerando a agilidade organizacional</p>
      <p class="palestrante">Nome do Palestrante, Segundo Palestrante</p>
-     <p>Tipo(palestra)</p>
-     <p>Grau(iniciante)</p> 
+     <p>Palestra <span class="iniciante">Iniciante</span></p>
  </div>
 </div>
+
 <div class="content">
   <div class="primeiro-dia dia">
+    <!--<div class="trilha geral">
+		<div class="titulo">Geral</div>
+		<% for talk in @tracks[:geral] do %>
+			<div class="linha meia-hora <%=is_talk_selected? talk.id, @user_tracks%>">
+    			 <input type="hidden" value="<%= talk.id %>" >
+    	         <div class="descricao">
+    	           <%=talk.title%>
+    	         </div>
+            </div>
+		<% end %>
+    </div>-->
     <div class="trilha geral">
 		<div class="titulo">Geral</div>
 		<% for talk in @tracks[:geral] do %>
-			<div class="linha meia-hora <%=is_talk_selected? talk.id, @user_tracks%>"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
+			<div class="linha-nova <%=is_talk_selected? talk.id, @user_tracks%>">
+                <input type="hidden" value="<%= talk.id %>" >
+                <div class="escolha">
+                    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
+                    <span class="quantidade">999</span>
+                </div>
+                <div class="descricao">
+                    <p><%= talk.title %></p>
+                    <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+                    <p><%= talk.type %> <span class='<%= ActiveSupport::Multibyte::Chars.new(talk.level.downcase).normalize(:kd).gsub(/[^\x00-\x7F]/,'').to_s unless talk.level.nil?%>' ><%= talk.level %></p> 
+                </div>
+            </div>
 		<% end %>
     </div>
     <div class="trilha engenharia" >
     	<div class="titulo"><span class="arrow-left"></span>Engenharia<span class="arrow-right"></span></div>
 		<% for talk in @tracks[:engenharia] do %>
-			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
+			<div class="linha-nova <%=is_talk_selected? talk.id, @user_tracks%>">
+                <input type="hidden" value="<%= talk.id %>" >
+                <div class="escolha">
+                    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
+                    <span class="quantidade">999</span>
+                </div>
+                <div class="descricao">
+                    <p><%= talk.title %></p>
+                    <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+                    <p><%= talk.type %> <span class='<%= ActiveSupport::Multibyte::Chars.new(talk.level.downcase).normalize(:kd).gsub(/[^\x00-\x7F]/,'').to_s unless talk.level.nil?%>' ><%= talk.level %></p> 
+                </div>
+            </div>
 		<% end %>
     </div>
     <div class="trilha relatos" >
     	<div class="titulo"><span class="arrow-left"></span>Relatos<span class="arrow-right"></span></div>
 		<% for talk in @tracks[:relatos] do %>
-			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
+			<div class="linha-nova <%=is_talk_selected? talk.id, @user_tracks%>">
+                <input type="hidden" value="<%= talk.id %>" >
+                <div class="escolha">
+                    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
+                    <span class="quantidade">999</span>
+                </div>
+                <div class="descricao">
+                    <p><%= talk.title %></p>
+                    <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+                    <p><%= talk.type %> <span class='<%= ActiveSupport::Multibyte::Chars.new(talk.level.downcase).normalize(:kd).gsub(/[^\x00-\x7F]/,'').to_s unless talk.level.nil?%>' ><%= talk.level %></p> 
+                </div>
+            </div>
 		<% end %>
     </div>
     <div class="trilha gestao" >
     	<div class="titulo"><span class="arrow-left"></span>Gest&atilde;o<span class="arrow-right"></span></div>
 		<% for talk in @tracks[:gestao] do %>
-			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
+			<div class="linha-nova <%=is_talk_selected? talk.id, @user_tracks%>">
+                <input type="hidden" value="<%= talk.id %>" >
+                <div class="escolha">
+                    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
+                    <span class="quantidade">999</span>
+                </div>
+                <div class="descricao">
+                    <p><%= talk.title %></p>
+                    <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+                    <p><%= talk.type %> <span class='<%= ActiveSupport::Multibyte::Chars.new(talk.level.downcase).normalize(:kd).gsub(/[^\x00-\x7F]/,'').to_s unless talk.level.nil?%>' ><%= talk.level %></p> 
+                </div>
+            </div>
 		<% end %>
     </div>
     <div class="trilha auditorio" >
     	<div class="titulo"><span class="arrow-left"></span>Audit&oacute;rio</div>
 		<% for talk in @tracks[:principal] do %>
-			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
+			<div class="linha-nova <%=is_talk_selected? talk.id, @user_tracks%>">
+                <input type="hidden" value="<%= talk.id %>" >
+                <div class="escolha">
+                    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
+                    <span class="quantidade">999</span>
+                </div>
+                <div class="descricao">
+                    <p><%= talk.title %></p>
+                    <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+                    <p><%= talk.type %> <span class='<%= ActiveSupport::Multibyte::Chars.new(talk.level.downcase).normalize(:kd).gsub(/[^\x00-\x7F]/,'').to_s unless talk.level.nil?%>' ><%= talk.level %></p> 
+                </div>
+            </div>
 		<% end %>
     </div>
   </div>
