@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :talks, :join_table => "notebooks", :foreign_key => "user_id"
 
   def self.create_from_hash!(hash)
-    create(:twitter => hash['user_info']['nickname'])
+    create(:twitter => hash['user_info']['nickname'], :avatar =>  hash['user_info']['image'])
   end
   
   def talk_ids(date = nil)
