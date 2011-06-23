@@ -1,44 +1,57 @@
 <div class="header">
-  <h1>Even.to</h1>
+  <h1>grex</h1>
+  <%= link_to "@"+current_user.twitter, "/users/list", { :class=>'twitter', :title => "@"+current_user.twitter } if signed_in? %>
+  <%= link_to "Log out", "/sessions/logout", { :class=>'sair', :title => 'Sair' } if signed_in? %></a>
 </div>
-<div class="autenticacao">
-    <% if signed_in? %>
-      <%= current_user.twitter %>
-      <%= link_to "Log out", "/sessions/logout" %>
-    <% else %>
-      <%= link_to("Logar", "/auth/twitter") %>
-    <% end %>
-</div>
+
 <div class="content">
-  <div class="tempo">
-  	<div>08</div>
-  	<div>09</div>
-  	<div>10</div>
-  	<div>11</div>
-  	<div>12</div>
-  	<div>13</div>
-  	<div>14</div>
-  	<div>15</div>
-  	<div>16</div>
-  	<div>17</div>
-  	<div>18</div>
-  </div>
-  <div class="primeiro-dia dia">
+  <div class="dia">
     <div class="trilha geral">
-		<div class="linha hora-cheia">29/06</div>
+		<div class="titulo">29/06</div>
 		<% for talk in @talks[:first] do %>
-			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
+			<div class="linha-nova active">
+                <input type="hidden" value="<%= talk.id %>" >
+                <div class="escolha">
+                    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
+                    <span class="quantidade"><%= talk.viewers %></span>
+                </div>
+                <div class="descricao">
+                    <p><%= talk.title %></p>
+                    <p class="palestrante"><%= print_speakers talk.speakers %></p>
+                    <p><%= talk.type %> <span class='<%= normalize_string(talk.level) unless talk.level.nil?%>' ><%= talk.level %></p> 
+                </div>
+            </div>
 		<% end %>
-		<div class="linha hora-cheia">30/06</div>
+		<div class="titulo">30/06</div>
 		<% for talk in @talks[:second] do %>
-			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
+			<div class="linha-nova active">
+                <input type="hidden" value="<%= talk.id %>" >
+                <div class="escolha">
+                    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
+                    <span class="quantidade"><%= talk.viewers %></span>
+                </div>
+                <div class="descricao">
+                    <p><%= talk.title %></p>
+                    <p class="palestrante"><%= print_speakers talk.speakers %></p>
+                    <p><%= talk.type %> <span class='<%= normalize_string(talk.level) unless talk.level.nil?%>' ><%= talk.level %></p> 
+                </div>
+            </div>
 		<% end %>
-		<div class="linha hora-cheia">01/07</div>
+		<div class="titulo">01/07</div>
 		<% for talk in @talks[:third] do %>
-			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
+			<div class="linha-nova active">
+                <input type="hidden" value="<%= talk.id %>" >
+                <div class="escolha">
+                    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
+                    <span class="quantidade"><%= talk.viewers %></span>
+                </div>
+                <div class="descricao">
+                    <p><%= talk.title %></p>
+                    <p class="palestrante"><%= print_speakers talk.speakers %></p>
+                    <p><%= talk.type %> <span class='<%= normalize_string(talk.level) unless talk.level.nil?%>' ><%= talk.level %></p> 
+                </div>
+            </div>
 		<% end %>
     </div>
-  </div>
-
 </div>
 
