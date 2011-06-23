@@ -133,6 +133,24 @@ body{
 	text-decoration: underline;
 }
 
+.linha-nova .twitter {
+	border: 1px solid #000000;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 3px #000000 inset;
+    color: #FFFFFF;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    height: 32px;
+    margin-left: 10px;
+    padding: 10px 5px 0px;
+	padding-top:10px;
+    width: auto;
+}
+.from-user .linha-nova .descricao{
+	.height: 33px;
+}
+
 div.content {
 	
 }
@@ -196,8 +214,24 @@ span.quantidade{
 	margin:0 0 0 15px;
 }
 
+.detail-talk div {
+    padding: 2px 7px;
+    background-color:#FFF;
+    line-height:40px;
+    font-size:14px;
+}
 
+.detail-talk .top {
+    height:40px;
+}
 
+.detail-talk .date {
+    float:left;
+}
+
+.detail-talk .quantidade {
+    float:right;
+}
 /*div.header{
 	height: 30px;
 	width: 1730px;
