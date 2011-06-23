@@ -289,14 +289,14 @@ div.trilha {margin:110px 0 0;}
 div.trilha div.descricao{width:85.5%;padding:0 0 0 15px;float:left; height: 100%;font-size:1.2em; line-height:30px;}
 div.trilha div.descricao.refeicao{background:#F39E16 url("../images/bg_laranja.jpg") center bottom repeat-x; text-align: center; vertical-align: middle;}
 
-div.trilha.engenharia,
-div.trilha.gestao,
-div.trilha.relatos,
-div.trilha.auditorio { display: none; }
 
 div.segundo-dia,
 div.terceiro-dia { display:none; }
 */
+div.trilha.engenharia,
+div.trilha.gestao,
+div.trilha.relatos,
+div.trilha.auditorio { display: none; }
 
 div.linha.active{ background:#44cc8b url("../images/bg_verde.jpg") center bottom repeat-x; }
 div.load{ background-image:url(../images/loading.gif);background-repeat: no-repeat;background-position: 100% 0 ; }

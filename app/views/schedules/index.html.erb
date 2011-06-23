@@ -1,7 +1,7 @@
 <div class="header">
   <h1>grex</h1>
-  <a href="" title="jeffalbuquerque" class="twitter">@<%= current_user.twitter if signed_in?%></a>
-  <a href="" title="Sair do grex" class="sair"><%= link_to "Log out", "/sessions/logout" if signed_in?%></a>
+  <a href="" title="jeffalbuquerque" class="twitter">@<%= current_user.twitter if signed_in? %></a>
+  <%= link_to "Log out", "/sessions/logout", {:class=>'sair', :title => 'Sair'} if signed_in? %></a>
 </div>
 <div class="menu">
   <ul>
@@ -11,31 +11,8 @@
   </ul>
 </div>
 
-<div class="linha-nova">
-  <div class="escolha">
-    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
-  <span class="quantidade">999</span> 
-  </div>
- <div class="descricao">
-     <p>Liderança adaptável: acelerando a agilidade organizacional</p>
-     <p class="palestrante">Nome do Palestrante, Segundo Palestrante</p>
-     <p>Palestra <span class="iniciante">Iniciante</span></p>
- </div>
-</div>
-
 <div class="content">
-  <div class="primeiro-dia dia">
-    <!--<div class="trilha geral">
-		<div class="titulo">Geral</div>
-		<% for talk in @tracks[:geral] do %>
-			<div class="linha meia-hora <%=is_talk_selected? talk.id, @user_tracks%>">
-    			 <input type="hidden" value="<%= talk.id %>" >
-    	         <div class="descricao">
-    	           <%=talk.title%>
-    	         </div>
-            </div>
-		<% end %>
-    </div>-->
+  <div class="dia">
     <div class="trilha geral">
 		<div class="titulo">Geral</div>
 		<% for talk in @tracks[:geral] do %>
@@ -54,7 +31,7 @@
 		<% end %>
     </div>
     <div class="trilha engenharia" >
-    	<div class="titulo"><span class="arrow-left"></span>Engenharia<span class="arrow-right"></span></div>
+    	<div class="titulo">Engenharia</div>
 		<% for talk in @tracks[:engenharia] do %>
 			<div class="linha-nova <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -71,7 +48,7 @@
 		<% end %>
     </div>
     <div class="trilha relatos" >
-    	<div class="titulo"><span class="arrow-left"></span>Relatos<span class="arrow-right"></span></div>
+    	<div class="titulo">Relatos</div>
 		<% for talk in @tracks[:relatos] do %>
 			<div class="linha-nova <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -88,7 +65,7 @@
 		<% end %>
     </div>
     <div class="trilha gestao" >
-    	<div class="titulo"><span class="arrow-left"></span>Gest&atilde;o<span class="arrow-right"></span></div>
+    	<div class="titulo">Gest&atilde;o</div>
 		<% for talk in @tracks[:gestao] do %>
 			<div class="linha-nova <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -105,7 +82,7 @@
 		<% end %>
     </div>
     <div class="trilha auditorio" >
-    	<div class="titulo"><span class="arrow-left"></span>Audit&oacute;rio</div>
+    	<div class="titulo">Audit&oacute;rio</div>
 		<% for talk in @tracks[:principal] do %>
 			<div class="linha-nova <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -120,155 +97,6 @@
                 </div>
             </div>
 		<% end %>
-    </div>
-  </div>
-
-  <div class="segundo-dia dia">
-    <div class="trilha geral">
-        <div class="titulo">Geral<span class="arrow-right">&raquo;</span></div>
-  	    <div class="linha meia-hora"><input type="hidden" value="200" ><div class="descricao">Credenciamento</div></div>
-    	<div class="linha meia-hora"><input type="hidden" value="201" ><div class="descricao">Avisos</div></div>
-    	<div class="linha hora-meia"><input type="hidden" value="202" ><div class="descricao">Priorizando a Felicidade</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="203" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha duas-horas"><input type="hidden" value="204" ><div class="descricao">Jogando com valores ágeis</div></div>
-    	<div class="linha hora-meia nao-clicavel"><input type="hidden" value="205" ><div class="descricao refeicao">Almo&ccedil;o</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="206" ><div class="descricao">Integrando equipes ágeis. Um overview sobre os problemas em escalar agilidade</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="207" ><div class="descricao">Patrocinador</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="208" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="209" ><div class="descricao">Retrospectivas Ágeis</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="210" ><div class="descricao">Ágil como Bruce Lee</div></div>
-    </div>
-    <div class="trilha engenharia" >
-    	<div class="titulo"><span class="arrow-left"></span>Engenharia<span class="arrow-right"></span></div>
-  	    <div class="linha meia-hora"><input type="hidden" value="200" ><div class="descricao">Credenciamento</div></div>
-    	<div class="linha meia-hora"><input type="hidden" value="201" ><div class="descricao">Avisos</div></div>
-    	<div class="linha hora-meia"><input type="hidden" value="202" ><div class="descricao">Priorizando a Felicidade</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="203" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="202" ><div class="descricao">`Design Up Front` (na dose certa) pode fazer bem ao seu projeto!</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="202" ><div class="descricao">Desmistificando o Trunk Based Development</div></div>
-    	<div class="linha hora-meia nao-clicavel"><input type="hidden" value="205" ><div class="descricao refeicao">Almo&ccedil;o</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="206" ><div class="descricao">Testes unitários com C++</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="207" ><div class="descricao">Patrocinador</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="208" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha duas-horas"><input type="hidden" value="209" ><div class="descricao">Coding Dojo: Formato Kake</div></div>
-    </div>
-    <div class="trilha relatos" >
-    	<div class="titulo"><span class="arrow-left"></span>Relatos<span class="arrow-right"></span></div>
-        <div class="titulo">Geral<span class="arrow-right">&raquo;</span></div>
-  	    <div class="linha meia-hora"><input type="hidden" value="200" ><div class="descricao">Credenciamento</div></div>
-    	<div class="linha meia-hora"><input type="hidden" value="201" ><div class="descricao">Avisos</div></div>
-    	<div class="linha hora-meia"><input type="hidden" value="202" ><div class="descricao">Priorizando a Felicidade</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="203" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="204" ><div class="descricao">Startup em uma grande empresa: a evolução de um processo</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="204" ><div class="descricao">Como uma Empresa de Mecatrônica Aderiu a Taskboards e Kanbans na sua Gestão à Vista</div></div>
-    	<div class="linha hora-meia nao-clicavel"><input type="hidden" value="205" ><div class="descricao refeicao">Almo&ccedil;o</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="206" ><div class="descricao">StoryTouch: de protótipo a produto</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="207" ><div class="descricao">Patrocinador</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="208" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="209" ><div class="descricao">Scrum e a Espiral Positiva</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="210" ><div class="descricao">Dar caos à ordem</div></div>
-    </div>
-    <div class="trilha gestao" >
-    	<div class="titulo"><span class="arrow-left"></span>Gest&atilde;o<span class="arrow-right"></span></div>
-  	    <div class="linha meia-hora"><input type="hidden" value="200" ><div class="descricao">Credenciamento</div></div>
-    	<div class="linha meia-hora"><input type="hidden" value="201" ><div class="descricao">Avisos</div></div>
-    	<div class="linha hora-meia"><input type="hidden" value="202" ><div class="descricao">Priorizando a Felicidade</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="203" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha duas-horas"><input type="hidden" value="204" ><div class="descricao">Usando indicadores para Auxiliar a Dar Mais Visibilidade e a Melhorar o Desempenho</div></div>
-    	<div class="linha hora-meia nao-clicavel"><input type="hidden" value="205" ><div class="descricao refeicao">Almo&ccedil;o</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="206" ><div class="descricao">Todo mundo nasce ágil</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="207" ><div class="descricao">Patrocinador</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="208" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="209" ><div class="descricao">LIGHTNING TALKS 3</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="210" ><div class="descricao">Otimizando a entrega de valor - Além de custo, prazo e escopo</div></div>
-    </div>
-    <div class="trilha auditorio" >
-    	<div class="titulo"><span class="arrow-left"></span>Audit&oacute;rio</div>
-  	    <div class="linha meia-hora"><input type="hidden" value="200" ><div class="descricao">Credenciamento</div></div>
-    	<div class="linha meia-hora"><input type="hidden" value="201" ><div class="descricao">Avisos</div></div>
-    	<div class="linha hora-meia"><input type="hidden" value="202" ><div class="descricao">Priorizando a Felicidade</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="203" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="204" ><div class="descricao">Learning Kaizen from TOYOTA</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="204" ><div class="descricao">O grandiosismo dos loucos</div></div>
-    	<div class="linha hora-meia nao-clicavel"><input type="hidden" value="205" ><div class="descricao refeicao">Almo&ccedil;o</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="206" ><div class="descricao">LIGHTNING TALKS 2</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="207" ><div class="descricao">Patrocinador</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="208" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="209" ><div class="descricao">Agile Transitions - Culture of Change or Change of Culture?</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="210" ><div class="descricao">Prepare a Sandwich like an Agile Business Analyst</div></div>
-    </div>
-  </div>
-
-  <div class="terceiro-dia dia">
-    <div class="trilha geral">
-        <div class="titulo">Geral<span class="arrow-right">&raquo;</span></div>
-  	    <div class="linha meia-hora"><input type="hidden" value="200" ><div class="descricao">Credenciamento</div></div>
-    	<div class="linha meia-hora"><input type="hidden" value="201" ><div class="descricao">Avisos</div></div>
-    	<div class="linha hora-meia"><input type="hidden" value="202" ><div class="descricao">2012: o ano em que a Terra parou acabou, porque o software travou</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="203" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="204" ><div class="descricao">Individuals and interactions over process and tools</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="204" ><div class="descricao">Avançando nos Fundamentos do Lean Thinking</div></div>
-    	<div class="linha hora-meia nao-clicavel"><input type="hidden" value="205" ><div class="descricao refeicao">Almo&ccedil;o</div></div>
-    	<div class="linha duas-horas"><input type="hidden" value="206" ><div class="descricao">Negociando limites</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="208" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha duas-horas"><input type="hidden" value="210" ><div class="descricao">Prepare a Sandwich like an Agile Business Analyst</div></div>
-    </div>
-    <div class="trilha engenharia" >
-    	<div class="titulo"><span class="arrow-left"></span>Engenharia<span class="arrow-right"></span></div>
-  	    <div class="linha meia-hora"><input type="hidden" value="200" ><div class="descricao">Credenciamento</div></div>
-    	<div class="linha meia-hora"><input type="hidden" value="201" ><div class="descricao">Avisos</div></div>
-    	<div class="linha hora-meia"><input type="hidden" value="202" ><div class="descricao">2012: o ano em que a Terra parou acabou, porque o software travou</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="203" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha duas-horas"><input type="hidden" value="204" ><div class="descricao">Mantendo a Qualidade dos Códigos de Teste</div></div>
-    	<div class="linha hora-meia nao-clicavel"><input type="hidden" value="205" ><div class="descricao refeicao">Almo&ccedil;o</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="206" ><div class="descricao">Scala ao Resgate: Testes de Software mais expressivos e com menos código na JVM</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="207" ><div class="descricao">LIGHTNING TALKS 4</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="208" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="209" ><div class="descricao">Testes em ambientes Ágeis</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="210" ><div class="descricao">Otimização de execução de testes através de níveis</div></div>
-    </div>
-    <div class="trilha relatos" >
-    	<div class="titulo"><span class="arrow-left"></span>Relatos<span class="arrow-right"></span></div>
-    	<div class="titulo"><span class="arrow-left"></span>Engenharia<span class="arrow-right"></span></div>
-  	    <div class="linha meia-hora"><input type="hidden" value="200" ><div class="descricao">Credenciamento</div></div>
-    	<div class="linha meia-hora"><input type="hidden" value="201" ><div class="descricao">Avisos</div></div>
-    	<div class="linha hora-meia"><input type="hidden" value="202" ><div class="descricao">2012: o ano em que a Terra parou acabou, porque o software travou</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="203" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="204" ><div class="descricao">Como fazer com que seu futuro PO exerça o seu papel efetivamente</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="204" ><div class="descricao">O Raio-X de um projeto Ágil: erros e acertos no desenvolvimento de uma plataforma de serviços</div></div>
-    	<div class="linha hora-meia nao-clicavel"><input type="hidden" value="205" ><div class="descricao refeicao">Almo&ccedil;o</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="206" ><div class="descricao">Porque é difícil trabalhar com os valores ageis em projetos de escopo fechado</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="207" ><div class="descricao">A universidade é o Dojo! Coding Dojo para o ensino de OO</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="208" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="209" ><div class="descricao">Escalando agile na GVT Telecom - um case real</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="210" ><div class="descricao">Nearshore Agile</div></div>
-    </div>
-    <div class="trilha gestao" >
-    	<div class="titulo"><span class="arrow-left"></span>Gest&atilde;o<span class="arrow-right"></span></div>
-  	    <div class="linha meia-hora"><input type="hidden" value="200" ><div class="descricao">Credenciamento</div></div>
-    	<div class="linha meia-hora"><input type="hidden" value="201" ><div class="descricao">Avisos</div></div>
-    	<div class="linha hora-meia"><input type="hidden" value="202" ><div class="descricao">2012: o ano em que a Terra parou acabou, porque o software travou</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="203" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha duas-horas"><input type="hidden" value="204" ><div class="descricao">The Agile city-building game</div></div>
-    	<div class="linha hora-meia nao-clicavel"><input type="hidden" value="205" ><div class="descricao refeicao">Almo&ccedil;o</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="206" ><div class="descricao">Trabalhando de forma eficaz com mentalidade legada</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="207" ><div class="descricao">Visões de Mercado sobre Equipes de Trabalho Autogerenciadas</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="208" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="209" ><div class="descricao">Tudo o que você precisa saber sobre contratos ágeis de software</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="210" ><div class="descricao">Ciclos de Avaliação de Pressupostos: Entendendo Lean, Kanban e Agilidade sob uma nova perspectiva</div></div>
-    </div>
-    <div class="trilha auditorio" >
-    	<div class="titulo"><span class="arrow-left"></span>Audit&oacute;rio</div>
-  	    <div class="linha meia-hora"><input type="hidden" value="200" ><div class="descricao">Credenciamento</div></div>
-    	<div class="linha meia-hora"><input type="hidden" value="201" ><div class="descricao">Avisos</div></div>
-    	<div class="linha hora-meia"><input type="hidden" value="202" ><div class="descricao">2012: o ano em que a Terra parou acabou, porque o software travou</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="203" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha duas-horas"><input type="hidden" value="204" ><div class="descricao">Manifesto for Meta-Agile - Coaching para Agilidade além da própria Agilidade</div></div>
-    	<div class="linha hora-meia nao-clicavel"><input type="hidden" value="205" ><div class="descricao refeicao">Almo&ccedil;o</div></div>
-    	<div class="linha duas-horas"><input type="hidden" value="207" ><div class="descricao">Dez anos depois, você realmente sabe o que é um produto com valor agregado?</div></div>
-    	<div class="linha meia-hora nao-clicavel"><input type="hidden" value="208" ><div class="descricao refeicao">Coffee-break</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="209" ><div class="descricao">Lean Startup</div></div>
-    	<div class="linha hora-cheia"><input type="hidden" value="210" ><div class="descricao">Slicing and dicing your user stories</div></div>
     </div>
   </div>
   <div class="tempo">
