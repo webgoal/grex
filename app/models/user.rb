@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
     create(:twitter => hash['user_info']['nickname'])
   end
   
-  def self.talk_ids(user_id, date = nil)
-    base_query = self.find(user_id).talks.select('id').order('start')
+  def talk_ids(date = nil)
+    base_query = User.find(self.id).talks.select('id').order('start')
     base_query = base_query.by_day(date) unless date.nil? 
     base_query.map{|x| x.id}
   end
