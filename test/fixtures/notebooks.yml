@@ -17,3 +17,7 @@ bamonde_1:
 bamonde_2:
   user_id: 2
   talk_id: 4
+
+bamonde_3:
+  user_id: 2
+  talk_id: 2

@@ -1,5 +1,5 @@
 <div class="header">
-  <h1>Even.to</h1>
+  <h1>Grex</h1>
 </div>
 <div class="autenticacao">
     <% if signed_in? %>
@@ -34,31 +34,31 @@
     <div class="trilha geral">
 		<div class="titulo">Geral<span class="arrow-right">&raquo;</span></div>
 		<% for talk in @tracks[:geral] do %>
-			<div class="linha meia-hora <%=is_talk_selected? talk.id, @user_tracks%>"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
+			<div class="linha meia-hora <%=is_talk_selected? talk.id, @user_tracks%>"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div><div class="viewers"><%= talk.viewers %></div></div>
 		<% end %>
     </div>
     <div class="trilha engenharia" >
     	<div class="titulo"><span class="arrow-left"></span>Engenharia<span class="arrow-right"></span></div>
 		<% for talk in @tracks[:engenharia] do %>
-			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
+			<div class="linha meia-hora <%=is_talk_selected? talk.id, @user_tracks%>"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div><div class="viewers"><%= talk.viewers %></div></div>
 		<% end %>
     </div>
     <div class="trilha relatos" >
     	<div class="titulo"><span class="arrow-left"></span>Relatos<span class="arrow-right"></span></div>
 		<% for talk in @tracks[:relatos] do %>
-			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
+			<div class="linha meia-hora <%=is_talk_selected? talk.id, @user_tracks%>"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div><div class="viewers"><%= talk.viewers %></div></div>
 		<% end %>
     </div>
     <div class="trilha gestao" >
     	<div class="titulo"><span class="arrow-left"></span>Gest&atilde;o<span class="arrow-right"></span></div>
 		<% for talk in @tracks[:gestao] do %>
-			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
+			<div class="linha meia-hora <%=is_talk_selected? talk.id, @user_tracks%>"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div><div class="viewers"><%= talk.viewers %></div></div>
 		<% end %>
     </div>
     <div class="trilha auditorio" >
     	<div class="titulo"><span class="arrow-left"></span>Audit&oacute;rio</div>
 		<% for talk in @tracks[:principal] do %>
-			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
+			<div class="linha meia-hora <%=is_talk_selected? talk.id, @user_tracks%>"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div><div class="viewers"><%= talk.viewers %></div></div>
 		<% end %>
     </div>
   </div>
