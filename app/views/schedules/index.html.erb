@@ -1,13 +1,7 @@
 <div class="header">
-  <h1>Even.to</h1>
-</div>
-<div class="autenticacao">
-    <% if signed_in? %>
-      <%= current_user.twitter %>
-      <%= link_to "Log out", "/sessions/logout" %>
-    <% else %>
-      <%= link_to("Logar", "/auth/twitter") %>
-    <% end %>
+  <h1>grex</h1>
+  <a href="" title="jeffalbuquerque" class="twitter">@jeffalbuquerque</a>
+  <a href="" title="Sair do grex" class="sair">Sair</a>
 </div>
 <div class="menu">
   <ul>
@@ -16,23 +10,22 @@
   	<li><a href="/schedules?date=2011-07-01" title="terceiro-dia">01/07</a></li>
   </ul>
 </div>
-<div class="content">
-  <div class="tempo">
-  	<div>08</div>
-  	<div>09</div>
-  	<div>10</div>
-  	<div>11</div>
-  	<div>12</div>
-  	<div>13</div>
-  	<div>14</div>
-  	<div>15</div>
-  	<div>16</div>
-  	<div>17</div>
-  	<div>18</div>
+<div class="linha-nova">
+  <div class="vo">
+    <a href="#" title="vonumvo" class="btn-vo">Eu vo!</a>
+  <span class="quantidade">999</span> 
   </div>
+ <div class="jeff">
+     <p>Liderança adaptável: acelerando a agilidade organizacional</p>
+     <p class="palestrante">Nome do Palestrante, Segundo Palestrante</p>
+     <p>Tipo(palestra)</p>
+     <p>Grau(iniciante)</p> 
+ </div>
+</div>
+<div class="content">
   <div class="primeiro-dia dia">
     <div class="trilha geral">
-		<div class="titulo">Geral<span class="arrow-right">&raquo;</span></div>
+		<div class="titulo">Geral</div>
 		<% for talk in @tracks[:geral] do %>
 			<div class="linha meia-hora"><input type="hidden" value="<%= talk.id %>" ><div class="descricao"><%=talk.title%></div></div>
 		<% end %>
@@ -67,7 +60,7 @@
     	<div class="linha tres-quarto"><input type="hidden" value="212" ><div class="descricao">Como formar um programador 10x</div></div>
   	    <div class="linha tres-quarto"><div class="descricao refeicao">Coffee-break</div></div>
     	<div class="linha duas-horas"><input type="hidden" value="213" ><div class="descricao">Tente Desenvolver Diferente com TDD</div></div>
--->
+
     </div>
     <div class="trilha relatos" >
     	<div class="titulo"><span class="arrow-left"></span>Relatos<span class="arrow-right"></span></div>
@@ -274,6 +267,19 @@
     	<div class="linha hora-cheia"><input type="hidden" value="209" ><div class="descricao">Lean Startup</div></div>
     	<div class="linha hora-cheia"><input type="hidden" value="210" ><div class="descricao">Slicing and dicing your user stories</div></div>
     </div>
+  </div>
+  <div class="tempo">
+  	<div>08</div>
+  	<div>09</div>
+  	<div>10</div>
+  	<div>11</div>
+  	<div>12</div>
+  	<div>13</div>
+  	<div>14</div>
+  	<div>15</div>
+  	<div>16</div>
+  	<div>17</div>
+  	<div>18</div>
   </div>
 
 </div>
