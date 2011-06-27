@@ -121,7 +121,7 @@ body{
 	border-top:solid 1px #CCC;
 	border-bottom:solid 1px #CCC;
 	color:#000;
-	font-size:14px;
+	font-size:1.5em;
 	font-weight:bold;
 	text-align:center;
 	clear:both;
@@ -240,7 +240,7 @@ body{
 	height:40px;
 	text-decoration:none;
 	color:#000;
-	font-size:14px;
+	font-size:1.5em;
 	font-weight:bold; 
 	
 	background-color:#CCC;
@@ -353,7 +353,6 @@ span.quantidade{
 
 .descricao p span{
 	padding:0 2px;
-	margin:0 0 0 15px;
 }
 
 .descricao p span.todos{
@@ -379,7 +378,6 @@ span.quantidade{
     padding: 2px 7px;
     background-color:#FFF;
     line-height:40px;
-    font-size:14px;
 }
 
 .detail-talk .top {
@@ -387,7 +385,9 @@ span.quantidade{
 }
 
 .detail-talk .date {
-    float:left;
+	float: left;
+	font-size: 1.5em;
+	font-weight: bold;
 }
 
 .detail-talk .quantidade {
@@ -397,6 +397,7 @@ span.quantidade{
 
 .detail-talk .title {
     height:40px;
+	font-size: 1.5em;
 }
 
 .detail-talk .title .escolha {
@@ -423,113 +424,6 @@ span.quantidade{
 	font-weight: bold;
 }
 
-/*div.header{
-	height: 30px;
-	width: 1730px;
-	background: #036 url('../images/topo.jpg');
-	position: fixed;
-	top: 0;
-	left: 0; 
-}
-
-div.header h1{
-	background: url('../images/evento.gif') 10px 0 no-repeat;
-	height: 28px;
-	margin: 0;
-	text-indent: -5000em;
-	overflow: hidden;
-}
-
-
-
-
-div.menu{
-	background: #40B3D9 url('../images/menu.jpg');
-	height: 40px;			
-	width: 1730px;
-	position: fixed;
-	top: 50px;
-	left: 0;
-}
-
-div.menu ul{
-	padding: 0;
-	margin: 10px 0 0;
-}
-
-div.menu ul li{
-	list-style-type: none;
-	height: 30px;			
-	width: 80px;
-	margin: 0 5px 0;
-	display: block;
-	float: left;
-}
-
-div.menu ul li a{
-	background-color: #84CAE0;
-	color: #fff;
-	font-family: Arial;
-	font-size: 16px;
-	font-weight: bold;
-	line-height: 30px;
-	text-align: center;
-	text-decoration: none;
-	display: block;
-	-webkit-border-top-left-radius: 5px;
-	-webkit-border-top-right-radius: 5px;
-	-moz-border-radius-topleft: 5px;
-	-moz-border-radius-topright: 5px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-}
-
-div.menu ul li a.active{
-	background-color: #FFF;
-	color: #069;
-}
-
-
-
-div.linha{
-	background:#88cde4 url("../images/bg_azul.jpg") center bottom repeat-x; text-align: center; vertical-align: middle;
-	border-top: 1px solid #B8E1EF;
-	border-bottom: 1px solid #44B0D4;
-	border-left: 1px solid #036;
-	border-right: 1px solid #036;
-}
-div.linha.quarto-hora{ height:16px; line-height:16px; }
-div.linha.meia-hora{ height:34px; line-height:34px; }
-div.linha.tres-quarto{ height:52px; line-height:52px; }
-div.linha.hora-cheia{ height:69px; line-height:69px; }
-div.linha.hora-meia{ height:104px; line-height:104px; }
-div.linha.tres-quarto-hora{ height:124px; line-height:124px; }
-div.linha.duas-horas{ height:139px; line-height:139px; }
-div.hora{background-color:yellow;float:left;width:15%;float:left;text-align:center;}
-
-div.tempo {width: 32px; float:left; font-weight:bold;font-size:1.7em;}
-div.tempo div { background-color: #036; color:white; border-top: 1px outset #046;border-left: 1px solid #046;border-right: 1px solid #046; text-align: center; height: 70px;}
-div.titulo{
-	font-size:1.5em; 
-	font-weight:bold;
-	text-align:center;
-	background:white;
-	padding:2px 0;
-	position:fixed;
-	top:84px;
-	width:100%;
-}
-div.titulo span.arrow-left{ background:url(../images/prev.png);display:block;width:22px;height:22px;float:left;text-indent:9000px;}
-div.titulo span.arrow-right{background:url(../images/next.png);display:block;width:22px;height:22px;float:right;text-indent:9000px;}
-
-div.trilha {margin:110px 0 0;}
-div.trilha div.descricao{width:85.5%;padding:0 0 0 15px;float:left; height: 100%;font-size:1.2em; line-height:30px;}
-div.trilha div.descricao.refeicao{background:#F39E16 url("../images/bg_laranja.jpg") center bottom repeat-x; text-align: center; vertical-align: middle;}
-
-
-div.segundo-dia,
-div.terceiro-dia { display:none; }
-*/
 div.trilha.engenharia,
 div.trilha.gestao,
 div.trilha.relatos,

@@ -35,7 +35,7 @@
                 <div class="descricao">
                     <p class="ver-detalhes"><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-	                <p><%= talk.type %><%= show_talk_level talk.level %></p>
+	                <p><%= talk.type %> - <%= show_talk_level talk.level %></p>
               	</div>
             </div>
 		<% end %>
@@ -62,7 +62,7 @@
                 <div class="descricao">
                     <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-	                <p><%= talk.type %><%= show_talk_level talk.level %></p>
+	                <p><%= talk.type %> - <%= show_talk_level talk.level %></p>
                 </div>
             </div>
 		<% end %>
@@ -89,7 +89,7 @@
                 <div class="descricao">
                     <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-	                <p><%= talk.type %><%= show_talk_level talk.level %></p>
+	                <p><%= talk.type %> - <%= show_talk_level talk.level %></p>
                 </div>
             </div>
 		<% end %>
@@ -116,7 +116,7 @@
                 <div class="descricao">
                     <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-	                <p><%= talk.type %><%= show_talk_level talk.level %></p>
+	                <p><%= talk.type %> - <%= show_talk_level talk.level %></p>
                 </div>
             </div>
 		<% end %>
@@ -143,7 +143,7 @@
                 <div class="descricao">
                     <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-	                <p><%= talk.type %><%= show_talk_level talk.level %></p>
+	                <p><%= talk.type %> - <%= show_talk_level talk.level %></p>
                 </div>
             </div>
 		<% end %>
