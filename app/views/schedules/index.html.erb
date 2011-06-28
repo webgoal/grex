@@ -25,6 +25,7 @@
 				</ul>
 			<span class="nav-next">&gt;</span>
 		</div>
+        <div class="slider">
 		<% for talk in @tracks[:geral] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -43,6 +44,7 @@
               	</div>
             </div>
 		<% end %>
+		</div>
     </div>
     <div class="trilha engenharia">
     	<div class="titulo-lista">
@@ -57,6 +59,7 @@
 					</ul>
 			<span class="nav-next">&gt;</span>
 		</div>
+        <div class="slider">
 		<% for talk in @tracks[:engenharia] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <div class="horario">
@@ -75,6 +78,7 @@
                 </div>
             </div>
 		<% end %>
+        </div>
     </div>
     <div class="trilha relatos" >
     	<div class="titulo-lista">
@@ -89,6 +93,7 @@
 				</ul>
 			<span class="nav-next">&gt;</span>
 		</div>
+        <div class="slider">
 		<% for talk in @tracks[:relatos] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -107,6 +112,7 @@
                 </div>
             </div>
 		<% end %>
+        </div>
     </div>
     <div class="trilha gestao" >
     	<div class="titulo-lista">
@@ -121,6 +127,7 @@
 				</ul>
 			<span class="nav-next">&gt;</span>
 		</div>
+        <div class="slider">
 		<% for talk in @tracks[:gestao] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -139,6 +146,7 @@
                 </div>
             </div>
 		<% end %>
+        </div>
     </div>
     <div class="trilha auditorio">
 		<div class="titulo-lista">
@@ -153,6 +161,7 @@
 				</ul>
 			<span class="nav-next">&gt;</span>
 		</div>
+        <div class="slider">
 		<% for talk in @tracks[:principal] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -171,7 +180,7 @@
                 </div>
             </div>
 		<% end %>
+        </div>
     </div>
   </div>
 </div>
-
