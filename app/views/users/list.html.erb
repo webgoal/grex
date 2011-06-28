@@ -1,5 +1,5 @@
 <div class="header">
-	<h1>grex</h1>
+	<h1><%= link_to "grex", "/", {:title => 'grex' } %></a></h1>
 	<a href="/schedules" class="voltar">Voltar</a>
    <%= link_to "Sair", "/sessions/logout", { :class=>'sair', :title => 'Sair' } if signed_in? %></a>
 </div>

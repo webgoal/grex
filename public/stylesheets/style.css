@@ -48,7 +48,7 @@ body{
 	font-size:18px;
 	margin:0;
 	float:left;
-	line-height:34px;
+	line-height:30px;
 }
 
 .header h1 a{
@@ -78,7 +78,7 @@ body{
 
 .header a.twitter{
 	background:url("../images/seta-lista-vou.png") no-repeat scroll 96% 63%;
-	padding:0 20px 0 0;
+	padding:0 16px 0 0;
 }
 
 .header a.twitter img{
@@ -90,8 +90,8 @@ body{
 }
 
 .header a.voltar{
-	background:#333 url('../images/seta-header-voltar.png') no-repeat 5% center;
-	padding:0 10px 0 20px;
+	background:url('../images/seta-header-voltar.png') no-repeat 5% center;
+	padding:0 10px 0 12px;
 }
 
 
@@ -135,93 +135,25 @@ body{
 	border-top:0;
 }
 
-.nav-quatro-foward{
+span.nav-next, span.nav-back{
+	display:block;
+	width:22px;
+	height:40px;
 	text-indent:-99999px;
-	width: 40px;
-	height: 10px;
-	margin:18px 15px 0 0;
-	background: #FFF url('../images/navegacao-trilhas.gif') no-repeat;
-	position: absolute;
-	top:0;
-	right:0;
 }
 
-.nav-tres-foward{
-	text-indent:-99999px;
-	width: 30px;
-	height: 10px;
-	margin:18px 15px 0 0;
-	background: #FFF url('../images/navegacao-trilhas.gif') no-repeat;
-	position: absolute;
-	top:0;
-	right:0;
+span.nav-next{
+	background:url('../images/arrow-right.png') no-repeat center;
+	float:right;
+	margin:0 5px 0 0;
 }
 
-.nav-dois-foward{
-	text-indent:-99999px;
-	width: 20px;
-	height: 10px;
-	margin:18px 15px 0 0;
-	background: #FFF url('../images/navegacao-trilhas.gif') no-repeat;
-	position: absolute;
-	top:0;
-	right:0;
+span.nav-back{
+	background:url('../images/arrow-left.png') no-repeat center;
+	float:left;
+	margin:0 0 0 5px;
 }
 
-.nav-um-foward{
-	text-indent:-99999px;
-	width: 10px;
-	height: 10px;
-	margin:18px 15px 0 0;
-	background: #FFF url('../images/navegacao-trilhas.gif') no-repeat;
-	position: absolute;
-	top:0;
-	right:0;
-}
-
-.nav-quatro-back{
-	text-indent:-99999px;
-	width: 40px;
-	height: 10px;
-	margin:15px 0 0 18px;
-	background: #FFF url('../images/navegacao-trilhas.gif') no-repeat;
-	position: absolute;
-	top:0;
-	left:0;
-}
-
-.nav-tres-back{
-	text-indent:-99999px;
-	width: 30px;
-	height: 10px;
-	margin:15px 0 0 18px;
-	background: #FFF url('../images/navegacao-trilhas.gif') no-repeat;
-	position: absolute;
-	top:0;
-	left:0;
-}
-
-.nav-dois-back{
-	text-indent:-99999px;
-	width: 20px;
-	height: 10px;
-	margin:15px 0 0 18px;
-	background: #FFF url('../images/navegacao-trilhas.gif') no-repeat;
-	position: absolute;
-	top:0;
-	left:0;
-}
-
-.nav-um-back{
-	text-indent:-99999px;
-	width: 10px;
-	height: 10px;
-	margin:15px 0 0 18px;
-	background: #FFF url('../images/navegacao-trilhas.gif') no-repeat;
-	position: absolute;
-	top:0;
-	left:0;
-}
 
 
 .titulo.nav-engenharia{

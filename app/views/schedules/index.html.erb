@@ -14,7 +14,7 @@
 <div class="content">
   <div class="dia">
     <div class="trilha geral">
-		<div class="titulo-lista">Geral <span class="nav-quatro-foward">****</span></div>
+		<div class="titulo-lista">Geral <span class="nav-next">&gt;</span></div>
 		<% for talk in @tracks[:geral] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -35,7 +35,7 @@
 		<% end %>
     </div>
     <div class="trilha engenharia" >
-    	<div class="titulo-lista"><span class="nav-um-back">*</span>Engenharia<span class="nav-tres-foward">***</span></div>
+    	<div class="titulo-lista"><span class="nav-back">&lt;</span>Engenharia<span class="nav-next">&gt;</span></div>
 		<% for talk in @tracks[:engenharia] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <div class="horario">
@@ -50,13 +50,13 @@
                 <div class="descricao">
                     <p class="ver-detalhes"><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-	                <p><%= talk.type %> - <%= show_talk_level talk.level %></p>
+	                <p class="tipo"><%= talk.type %> - <%= show_talk_level talk.level %></p>
                 </div>
             </div>
 		<% end %>
     </div>
     <div class="trilha relatos" >
-    	<div class="titulo-lista"><span class="nav-dois-back">**</span>Relatos<span class="nav-dois-foward">**</span></div>
+    	<div class="titulo-lista"><span class="nav-back">&lt;</span>Relatos<span class="nav-next">&gt;</span></div>
 		<% for talk in @tracks[:relatos] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -71,13 +71,13 @@
                 <div class="descricao">
                     <p class="ver-detalhes"><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-	                <p><%= talk.type %> - <%= show_talk_level talk.level %></p>
+	                <p class="tipo"><%= talk.type %> - <%= show_talk_level talk.level %></p>
                 </div>
             </div>
 		<% end %>
     </div>
     <div class="trilha gestao" >
-    	<div class="titulo-lista"><span class="nav-tres-back">***</span>Gest&atilde;o<span class="nav-um-foward">*</span></div>
+    	<div class="titulo-lista"><span class="nav-back">&lt;</span>Gest&atilde;o<span class="nav-next">&gt;</span></div>
 		<% for talk in @tracks[:gestao] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -92,13 +92,13 @@
                 <div class="descricao">
                     <p class="ver-detalhes"><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-	                <p><%= talk.type %> - <%= show_talk_level talk.level %></p>
+	                <p class="tipo"><%= talk.type %> - <%= show_talk_level talk.level %></p>
                 </div>
             </div>
 		<% end %>
     </div>
     <div class="trilha auditorio" >
-    	<div class="titulo-lista"><span class="nav-quatro-back">****</span>Audit&oacute;rio</div>
+    	<div class="titulo-lista"><span class="nav-back">&lt;</span>Audit&oacute;rio<span class="nav-next">&gt;</span></div>
 		<% for talk in @tracks[:principal] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -113,7 +113,7 @@
                 <div class="descricao">
                     <p class="ver-detalhes"><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-	                <p><%= talk.type %> - <%= show_talk_level talk.level %></p>
+	                <p class="tipo"><%= talk.type %> - <%= show_talk_level talk.level %></p>
                 </div>
             </div>
 		<% end %>
