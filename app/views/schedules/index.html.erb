@@ -14,7 +14,17 @@
 <div class="content">
   <div class="dia">
     <div class="trilha geral">
-		<div class="titulo-lista">Geral <span class="nav-next">&gt;</span></div>
+		<div class="titulo-lista">
+				<span class="trial-title">Geral</span>
+				<ul class="ball">
+					<li class="active">1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+				</ul>
+			<span class="nav-next">&gt;</span>
+		</div>
         <div class="slider">
 		<% for talk in @tracks[:geral] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
@@ -36,8 +46,19 @@
 		<% end %>
 		</div>
     </div>
-    <div class="trilha engenharia" >
-    	<div class="titulo-lista"><span class="nav-back">&lt;</span>Engenharia<span class="nav-next">&gt;</span></div>
+    <div class="trilha engenharia">
+    	<div class="titulo-lista">
+				<span class="nav-back">&lt;</span>
+					<span class="trial-title">Engenharia</span>
+					<ul class="ball">
+						<li>1</li>
+						<li class="active">2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+					</ul>
+			<span class="nav-next">&gt;</span>
+		</div>
         <div class="slider">
 		<% for talk in @tracks[:engenharia] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
@@ -60,7 +81,18 @@
         </div>
     </div>
     <div class="trilha relatos" >
-    	<div class="titulo-lista"><span class="nav-back">&lt;</span>Relatos<span class="nav-next">&gt;</span></div>
+    	<div class="titulo-lista">
+				<span class="trial-title">Relatos</span>
+				<span class="nav-back">&lt;</span>
+				<ul class="ball">
+					<li>1</li>
+					<li>2</li>
+					<li class="active">3</li>
+					<li>4</li>
+					<li>5</li>
+				</ul>
+			<span class="nav-next">&gt;</span>
+		</div>
         <div class="slider">
 		<% for talk in @tracks[:relatos] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
@@ -83,7 +115,18 @@
         </div>
     </div>
     <div class="trilha gestao" >
-    	<div class="titulo-lista"><span class="nav-back">&lt;</span>Gest&atilde;o<span class="nav-next">&gt;</span></div>
+    	<div class="titulo-lista">
+				<span class="trial-title">Gest&atilde;o</span>
+				<span class="nav-back">&lt;</span>
+				<ul class="ball">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li class="active">4</li>
+					<li>5</li>
+				</ul>
+			<span class="nav-next">&gt;</span>
+		</div>
         <div class="slider">
 		<% for talk in @tracks[:gestao] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
@@ -105,8 +148,19 @@
 		<% end %>
         </div>
     </div>
-    <div class="trilha auditorio" >
-    	<div class="titulo-lista"><span class="nav-back">&lt;</span>Audit&oacute;rio</div>
+    <div class="trilha auditorio">
+		<div class="titulo-lista">
+				<span class="trial-title">Audit&oacute;rio</span>
+				<span class="nav-back">&lt;</span>
+				<ul class="ball">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li class="active">5</li>
+				</ul>
+			<span class="nav-next">&gt;</span>
+		</div>
         <div class="slider">
 		<% for talk in @tracks[:principal] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
@@ -130,4 +184,3 @@
     </div>
   </div>
 </div>
-

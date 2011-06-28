@@ -1,5 +1,5 @@
 <div class="header">
-  <h1>grex</h1>
+	<h1><%= link_to "grex", "/", {:title => 'grex' } %></a></h1>
   <%= link_to "@"+current_user.twitter, "/users/list", { :class=>'twitter', :title => "@"+current_user.twitter } if signed_in? %>
   <%= link_to "Sair", "/sessions/logout", { :class=>'sair', :title => 'Sair' } if signed_in? %>
 </div>

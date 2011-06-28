@@ -13,7 +13,7 @@ jQuery(document).ready(function(){
 		trilhaVisivel.offset({ top: this.top, left: 0 })
 		inicio = 0;
 	}, false);
-	
+
 	bindSwipe();
 	setupVouNaoVou();
 	exibirPalestraAtual();
