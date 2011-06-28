@@ -137,7 +137,7 @@ body{
 
 span.nav-next, span.nav-back{
 	display:block;
-	width:22px;
+	width:40px;
 	height:40px;
 	text-indent:-99999px;
 }
