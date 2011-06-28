@@ -1,4 +1,10 @@
 jQuery(document).ready(function(){
+	document.addEventListener('touchstart', function(event) {
+		curX = event.touches[0].pageX;
+		curY = event.touches[0].pageY;
+		jQuery('.menu ul li a').html(curX + " " + curY);
+	}, false);
+	
 	bindSwipe('.dia');
 	setupVouNaoVou();
 	exibirPalestraAtual();
@@ -31,12 +37,12 @@ function setupVouNaoVou() {
 		palestraId = linha.find('input[type=hidden]').val();
 		if (linha.hasClass('active')) {
 			jQuery.get('/schedules/uncheck', { 'palestra': palestraId }, function(data) {
-				linha.removeClass('active');
+				jQuery('div.linha').find('input[value='+palestraId+']').parent().removeClass('active')
 				linha.removeClass('load');
 			}, 'json');
 		} else {
 			jQuery.get('/schedules/check', { 'palestra': palestraId }, function(data) {
-				linha.addClass('active');
+				jQuery('div.linha').find('input[value='+palestraId+']').parent().addClass('active')
 				linha.removeClass('load');
 			}, 'json');
 		}
