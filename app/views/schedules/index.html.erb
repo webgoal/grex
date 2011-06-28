@@ -15,6 +15,7 @@
   <div class="dia">
     <div class="trilha geral">
 		<div class="titulo-lista">Geral <span class="nav-quatro-foward">****</span></div>
+        <div class="slider">
 		<% for talk in @tracks[:geral] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -33,9 +34,11 @@
               	</div>
             </div>
 		<% end %>
+		</div>
     </div>
     <div class="trilha engenharia" >
     	<div class="titulo-lista"><span class="nav-um-back">*</span>Engenharia<span class="nav-tres-foward">***</span></div>
+        <div class="slider">
 		<% for talk in @tracks[:engenharia] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <div class="horario">
@@ -54,9 +57,11 @@
                 </div>
             </div>
 		<% end %>
+        </div>
     </div>
     <div class="trilha relatos" >
     	<div class="titulo-lista"><span class="nav-dois-back">**</span>Relatos<span class="nav-dois-foward">**</span></div>
+        <div class="slider">
 		<% for talk in @tracks[:relatos] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -75,9 +80,11 @@
                 </div>
             </div>
 		<% end %>
+        </div>
     </div>
     <div class="trilha gestao" >
     	<div class="titulo-lista"><span class="nav-tres-back">***</span>Gest&atilde;o<span class="nav-um-foward">*</span></div>
+        <div class="slider">
 		<% for talk in @tracks[:gestao] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -96,9 +103,11 @@
                 </div>
             </div>
 		<% end %>
+        </div>
     </div>
     <div class="trilha auditorio" >
     	<div class="titulo-lista"><span class="nav-quatro-back">****</span>Audit&oacute;rio</div>
+        <div class="slider">
 		<% for talk in @tracks[:principal] do %>
 			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -117,6 +126,7 @@
                 </div>
             </div>
 		<% end %>
+        </div>
     </div>
   </div>
 </div>

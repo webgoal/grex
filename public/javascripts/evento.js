@@ -1,8 +1,19 @@
 jQuery(document).ready(function(){
+	var inicio = 0;
+	var trilhaVisivel = null;
 	document.addEventListener('touchstart', function(event) {
-		curX = event.touches[0].pageX;
-		curY = event.touches[0].pageY;
-		jQuery('.menu ul li a').html(curX + " " + curY);
+		trilhaVisivel = jQuery('.trilha:visible .slider');
+		inicio = event.touches[0].pageX;
+	}, false);
+	document.addEventListener('touchmove', function(event) {
+		variacao = event.touches[0].pageX - inicio;
+		trilhaVisivel.offset({ top: this.top, left: variacao });
+		if (Math.abs(variacao) > 100)
+			jQuery(document).touchend();
+	}, false);
+	document.addEventListener('touchend', function(event) {
+		trilhaVisivel.offset({ top: this.top, left: 0 })
+		inicio = 0;
 	}, false);
 	
 	bindSwipe('.dia');
