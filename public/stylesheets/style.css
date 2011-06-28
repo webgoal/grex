@@ -8,6 +8,45 @@ body{
 	font-size: 0.7em;
 }
 
+span.nav-next, span.nav-back{
+	display:block;
+	width:40px;
+	height:40px;
+	text-indent:-99999px;
+}
+
+span.nav-next {
+    background: url("../images/arrow-right.png") no-repeat scroll right center transparent;
+    float: right;
+    margin:-36px 0 0;
+}
+
+span.nav-back{
+	background:url('../images/arrow-left.png') no-repeat center left;
+	float:left;
+}
+
+ul.ball {
+    margin:-10px auto 0;
+    overflow: auto;
+    padding: 0;
+    width:100px;
+}
+
+ul.ball li {
+    background: url("../images/ball-disable.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: left;
+    height: 7px;
+    margin: 0 3px 0 0;
+    text-indent: -99999px;
+    width: 7px;
+}
+ul.ball li.active{
+	background:url('../images/ball-enable.png') no-repeat;
+}
+
+
 #inicial{
 	width:290px;
 	margin:0 auto;
@@ -135,24 +174,7 @@ body{
 	border-top:0;
 }
 
-span.nav-next, span.nav-back{
-	display:block;
-	width:40px;
-	height:40px;
-	text-indent:-99999px;
-}
 
-span.nav-next{
-	background:url('../images/arrow-right.png') no-repeat center;
-	float:right;
-	margin:0 5px 0 0;
-}
-
-span.nav-back{
-	background:url('../images/arrow-left.png') no-repeat center;
-	float:left;
-	margin:0 0 0 5px;
-}
 
 
 

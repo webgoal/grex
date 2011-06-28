@@ -1,9 +1,9 @@
 jQuery(document).ready(function(){
 	document.addEventListener('touchstart', function(event) {
-		curX = event.touches[0].pageX;
-		curY = event.touches[0].pageY;
-		jQuery('.menu ul li a').html(curX + " " + curY);
-	}, false);
+				curX = event.touches[0].pageX;
+				curY = event.touches[0].pageY;
+				jQuery('.menu ul li a').html(curX + " " + curY);
+			}, false);
 	
 	bindSwipe('.dia');
 	setupVouNaoVou();
