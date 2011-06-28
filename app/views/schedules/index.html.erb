@@ -1,7 +1,7 @@
 <div class="header">
   <h1>grex</h1>
-  <%= link_to "@"+current_user.twitter, "/users/list", { :class=>'twitter', :title => "@"+current_user.twitter } if signed_in? %>
-  <%= link_to "Log out", "/sessions/logout", { :class=>'sair', :title => 'Sair' } if signed_in? %></a>
+	<%= link_to "Minha programação", "/users/list", { :class=>'twitter', :title => "@"+current_user.twitter} if signed_in? %>
+  	<%= link_to "Sair", "/sessions/logout", { :class=>'sair', :title => 'Sair' } if signed_in? %></a>
 </div>
 <div class="menu">
   <ul>
@@ -14,19 +14,55 @@
 <div class="content">
   <div class="dia">
     <div class="trilha geral">
-		<div class="titulo">Geral <span class="nav-quatro-foward">****</span></div>
+		<div class="titulo-lista">Geral <span class="nav-quatro-foward">****</span></div>
 		<% for talk in @tracks[:geral] do %>
-			<div class="linha-nova <%=is_talk_selected? talk.id, @user_tracks%>">
+			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
                 <div class="horario">
-                    <div class="inicio">
-                      <span class="hora"><%= talk.start.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.start.min.to_s.rjust(2, '0') %></span>
-                    </div>
-                    <div class="fim">
-                      <span class="hora"><%= talk.end.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.end.min.to_s.rjust(2, '0') %></span>
-                    </div>
+                	<p><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></p>
+                	<p class="fim"><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></p>
+                </div>
+                <div class="escolha">
+                    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
+                    <span class="quantidade"><%= talk.viewers %></span>
+                </div>
+                <div class="descricao">
+                    <p class="ver-detalhes"><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
+                    <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+	                <p class="tipo"><%= talk.type %> - <%= show_talk_level talk.level %></p>
+              	</div>
+            </div>
+		<% end %>
+    </div>
+    <div class="trilha engenharia" >
+    	<div class="titulo-lista"><span class="nav-um-back">*</span>Engenharia<span class="nav-tres-foward">***</span></div>
+		<% for talk in @tracks[:engenharia] do %>
+			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
+                <div class="horario">
+                	<p><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></p>
+                	<p class="fim"><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></p>
+                </div>
+                <input type="hidden" value="<%= talk.id %>" >
+                <div class="escolha">
+                    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
+                    <span class="quantidade"><%= talk.viewers %></span>
+                </div>
+                <div class="descricao">
+                    <p class="ver-detalhes"><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
+                    <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+	                <p><%= talk.type %> - <%= show_talk_level talk.level %></p>
+                </div>
+            </div>
+		<% end %>
+    </div>
+    <div class="trilha relatos" >
+    	<div class="titulo-lista"><span class="nav-dois-back">**</span>Relatos<span class="nav-dois-foward">**</span></div>
+		<% for talk in @tracks[:relatos] do %>
+			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
+                <input type="hidden" value="<%= talk.id %>" >
+                <div class="horario">
+                	<p><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></p>
+                	<p class="fim"><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></p>
                 </div>
                 <div class="escolha">
                     <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
@@ -36,85 +72,25 @@
                     <p class="ver-detalhes"><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
 	                <p><%= talk.type %> - <%= show_talk_level talk.level %></p>
-              	</div>
-            </div>
-		<% end %>
-    </div>
-    <div class="trilha engenharia" >
-    	<div class="titulo"><span class="nav-um-back">*</span>Engenharia<span class="nav-tres-foward">***</span></div>
-		<% for talk in @tracks[:engenharia] do %>
-			<div class="linha-nova <%=is_talk_selected? talk.id, @user_tracks%>">
-                <div class="horario">
-                    <div class="inicio">
-                      <span class="hora"><%= talk.start.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.start.min.to_s.rjust(2, '0') %></span>
-                    </div>
-                    <div class="fim">
-                      <span class="hora"><%= talk.end.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.end.min.to_s.rjust(2, '0') %></span>
-                    </div>
-                </div>
-                <input type="hidden" value="<%= talk.id %>" >
-                <div class="escolha">
-                    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
-                    <span class="quantidade"><%= talk.viewers %></span>
-                </div>
-                <div class="descricao">
-                    <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
-                    <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-	                <p><%= talk.type %> - <%= show_talk_level talk.level %></p>
-                </div>
-            </div>
-		<% end %>
-    </div>
-    <div class="trilha relatos" >
-    	<div class="titulo"><span class="nav-dois-back">**</span>Relatos<span class="nav-dois-foward">**</span></div>
-		<% for talk in @tracks[:relatos] do %>
-			<div class="linha-nova <%=is_talk_selected? talk.id, @user_tracks%>">
-                <input type="hidden" value="<%= talk.id %>" >
-                <div class="horario">
-                    <div class="inicio">
-                      <span class="hora"><%= talk.start.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.start.min.to_s.rjust(2, '0') %></span>
-                    </div>
-                    <div class="fim">
-                      <span class="hora"><%= talk.end.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.end.min.to_s.rjust(2, '0') %></span>
-                    </div>
-                </div>
-                <div class="escolha">
-                    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
-                    <span class="quantidade"><%= talk.viewers %></span>
-                </div>
-                <div class="descricao">
-                    <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
-                    <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-	                <p><%= talk.type %> - <%= show_talk_level talk.level %></p>
                 </div>
             </div>
 		<% end %>
     </div>
     <div class="trilha gestao" >
-    	<div class="titulo"><span class="nav-tres-back">***</span>Gest&atilde;o<span class="nav-um-foward">*</span></div>
+    	<div class="titulo-lista"><span class="nav-tres-back">***</span>Gest&atilde;o<span class="nav-um-foward">*</span></div>
 		<% for talk in @tracks[:gestao] do %>
-			<div class="linha-nova <%=is_talk_selected? talk.id, @user_tracks%>">
+			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
-                <div class="horario">
-                    <div class="inicio">
-                      <span class="hora"><%= talk.start.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.start.min.to_s.rjust(2, '0') %></span>
-                    </div>
-                    <div class="fim">
-                      <span class="hora"><%= talk.end.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.end.min.to_s.rjust(2, '0') %></span>
-                    </div>
-                </div>
+                	<div class="horario">
+	                	<p><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></p>
+	                	<p class="fim"><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></p>
+	                </div>
                 <div class="escolha">
                     <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
                     <span class="quantidade"><%= talk.viewers %></span>
                 </div>
                 <div class="descricao">
-                    <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
+                    <p class="ver-detalhes"><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
 	                <p><%= talk.type %> - <%= show_talk_level talk.level %></p>
                 </div>
@@ -122,26 +98,20 @@
 		<% end %>
     </div>
     <div class="trilha auditorio" >
-    	<div class="titulo"><span class="nav-quatro-back">****</span>Audit&oacute;rio</div>
+    	<div class="titulo-lista"><span class="nav-quatro-back">****</span>Audit&oacute;rio</div>
 		<% for talk in @tracks[:principal] do %>
-			<div class="linha-nova <%=is_talk_selected? talk.id, @user_tracks%>">
+			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
                 <input type="hidden" value="<%= talk.id %>" >
                 <div class="horario">
-                    <div class="inicio">
-                      <span class="hora"><%= talk.start.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.start.min.to_s.rjust(2, '0') %></span>
-                    </div>
-                    <div class="fim">
-                      <span class="hora"><%= talk.end.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.end.min.to_s.rjust(2, '0') %></span>
-                    </div>
+                	<p><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></p>
+                	<p class="fim"><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></p>
                 </div>
                 <div class="escolha">
                     <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
                     <span class="quantidade"><%= talk.viewers %></span>
                 </div>
                 <div class="descricao">
-                    <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
+                    <p class="ver-detalhes"><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
 	                <p><%= talk.type %> - <%= show_talk_level talk.level %></p>
                 </div>

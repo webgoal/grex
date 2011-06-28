@@ -1,28 +1,22 @@
 <div class="header">
-  <h1>grex</h1>
+	<h1>grex</h1>
 	<a href="/schedules" class="voltar">Voltar</a>
-  <%= link_to "@"+current_user.twitter, "/users/list", { :class=>'twitter', :title => "@"+current_user.twitter } if signed_in? %>
-  <%= link_to "Log out", "/sessions/logout", { :class=>'sair', :title => 'Sair' } if signed_in? %></a>
+   <%= link_to "Sair", "/sessions/logout", { :class=>'sair', :title => 'Sair' } if signed_in? %></a>
 </div>
 
 <div class="content">
+<div class="titulo-principal">Minha programação</div>
   <div class="dia">
     <div class="trilha geral">
 		<div class="titulo">29/06</div>
 		<% for talk in @talks[:first] do %>
-			<div class="linha-nova active">
+			<div class="linha active">
                 <input type="hidden" value="<%= talk.id %>" >
                 <div class="horario">
-                    <%= hidden_field_tag("start_#{talk.start.to_time.to_i}", talk.start.to_time.to_i, {:class => 'start'}) %> 
-                    <%= hidden_field_tag("end_#{talk.end.to_time.to_i}"    , talk.end.to_time.to_i  , {:class => 'end'  }) %> 
-                    <div class="inicio">
-                      <span class="hora"><%= talk.start.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.start.min.to_s.rjust(2, '0') %></span>
-                    </div>
-                    <div class="fim">
-                      <span class="hora"><%= talk.end.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.end.min.to_s.rjust(2, '0') %></span>
-                    </div>
+                	<%= hidden_field_tag("start_#{talk.start.to_time.to_i}", talk.start.to_time.to_i, {:class => 'start'}) %> 
+                    <%= hidden_field_tag("end_#{talk.end.to_time.to_i}"    , talk.end.to_time.to_i  , {:class => 'end'  }) %>
+					<p><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></p>
+                	<p class="fim"><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></p>
                 </div>
                 <div class="escolha">
                     <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
@@ -37,19 +31,13 @@
 		<% end %>
 		<div class="titulo">30/06</div>
 		<% for talk in @talks[:second] do %>
-			<div class="linha-nova active">
+			<div class="linha active">
                 <input type="hidden" value="<%= talk.id %>" >
 				<div class="horario">
-                    <%= hidden_field_tag("start_#{talk.start.to_time.to_i}", talk.start.to_time.to_i, {:class => 'start'}) %> 
-                    <%= hidden_field_tag("end_#{talk.end.to_time.to_i}"    , talk.end.to_time.to_i  , {:class => 'end'  }) %> 
-                    <div class="inicio">
-                      <span class="hora"><%= talk.start.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.start.min.to_s.rjust(2, '0') %></span>
-                    </div>
-                    <div class="fim">
-                      <span class="hora"><%= talk.end.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.end.min.to_s.rjust(2, '0') %></span>
-                    </div>
+                	<%= hidden_field_tag("start_#{talk.start.to_time.to_i}", talk.start.to_time.to_i, {:class => 'start'}) %> 
+                    <%= hidden_field_tag("end_#{talk.end.to_time.to_i}"    , talk.end.to_time.to_i  , {:class => 'end'  }) %>
+					<p><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></p>
+                	<p class="fim"><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></p>
                 </div>
                 <div class="escolha">
                     <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
@@ -64,19 +52,13 @@
 		<% end %>
 		<div class="titulo">01/07</div>
 		<% for talk in @talks[:third] do %>
-			<div class="linha-nova active">
+			<div class="linha active">
                 <input type="hidden" value="<%= talk.id %>" >
 				<div class="horario">
-                    <%= hidden_field_tag("start_#{talk.start.to_time.to_i}", talk.start.to_time.to_i, {:class => 'start'}) %> 
-                    <%= hidden_field_tag("end_#{talk.end.to_time.to_i}"    , talk.end.to_time.to_i  , {:class => 'end'  }) %> 
-                    <div class="inicio">
-                      <span class="hora"><%= talk.start.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.start.min.to_s.rjust(2, '0') %></span>
-                    </div>
-                    <div class="fim">
-                      <span class="hora"><%= talk.end.hour.to_s.rjust(2, '0') %></span>
-                      <span class="minuto"><%= ':'+talk.end.min.to_s.rjust(2, '0') %></span>
-                    </div>
+                	<%= hidden_field_tag("start_#{talk.start.to_time.to_i}", talk.start.to_time.to_i, {:class => 'start'}) %> 
+                    <%= hidden_field_tag("end_#{talk.end.to_time.to_i}"    , talk.end.to_time.to_i  , {:class => 'end'  }) %>
+					<p><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></p>
+                	<p class="fim"><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></p>
                 </div>
                 <div class="escolha">
                     <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>

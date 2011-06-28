@@ -16,19 +16,22 @@
         <p><%= @talk.title %></p>
     </div>
 	<div class="descricao">
-        <p class="palestrante"><%= print_speakers @talk.speakers %></p>
-        <p><%= @talk.type %> - <%= show_talk_level @talk.level %></p>
-		<p><%= @talk.room %></p>
-		<p><%= @talk.description %></p>			
+        <p class="speakers"><%= print_speakers @talk.speakers %></p>
+        <p class="type"><%= @talk.type %> - <%= show_talk_level @talk.level %></p>
+		<p class="room"><%= @talk.room %></p>
+		<p class="description"><%= @talk.description %></p>			
+		<div class="quemvai">
+	        <p>Quem Vai (<%= @talk.viewers %>)</p>
+	        <ul>
+			<li>
+	        <% @talk.users.each do |user| %>
+	            <a href="<%= url_for "/users/from_user/#{user.id}" %>"><img src="<%=user.avatar%>" title="<%=user.twitter%>"/></a>
+	        <% end %>
+	        </li>
+			</ul>
+	    </div>
 	</div>  
     
-    <div class="quemvai">
-        <p>Quem Vai (<%= @talk.viewers %>)</p>
-        <ul>
-        <% @talk.users.each do |user| %>
-            <a href="<%= url_for "/users/from_user/#{user.id}" %>"><img src="<%=user.avatar%>" title="<%=user.twitter%>"/></a>
-        <% end %>
-        </ul>
-    </div>
+    
 </div>
 
