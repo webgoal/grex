@@ -17,10 +17,7 @@ jQuery(document).ready(function(){
 	bindSwipe();
 	setupVouNaoVou();
 	exibirPalestraAtual();
-	jQuery('.menu a').click(function(e){
-		e.preventDefault();
-		jQuery('body').load(this.href);
-	});
+	
 });
 
 function bindSwipe() {
@@ -53,7 +50,8 @@ function paginaEsquerda() {
 }
 
 function setupVouNaoVou() {
-	jQuery('a.btn-vo').click(function() {
+	jQuery('a.btn-vo').click(function(event) {
+		event.preventDefault();
 		link = jQuery(this);
 		linha = link.parent().parent();
 		linha.addClass('load');

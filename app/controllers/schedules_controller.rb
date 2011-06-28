@@ -5,9 +5,9 @@ class SchedulesController < ApplicationController
   
   def index
     @my_user = current_user
-    
+
     params[:date] ||= "2011-06-29"
-    
+
     @tracks = {
       :geral => Talk.track_day(params[:date], "geral"),
       :engenharia => Talk.track_day(params[:date], "engenharia"),
@@ -18,6 +18,7 @@ class SchedulesController < ApplicationController
     
     @user_tracks = current_user.talk_ids params[:date]
     @date = params[:date]
+    
   end
   
   def check
@@ -25,7 +26,7 @@ class SchedulesController < ApplicationController
     @notebook.user_id = current_user.id
     @notebook.talk_id = params[:palestra] 
     @notebook.save
-    respond_with(@notebook)
+    respond_with({})
   end
   
   def uncheck
