@@ -109,7 +109,6 @@ body{
 	line-height:40px;
 	background-color:#FFF;
 	font-size:1.5em;
-	padding-left:10px;
 	color:#000;
 	clear:both;
 	position: relative;
@@ -122,10 +121,13 @@ body{
 	font-size:1.5em;
 }
 
+.titulo, .titulo-principal{
+	padding-left:10px;
+}
+
 .titulo-principal{
 	color:#FFF;
 	background-color:#AAA;
-	padding-left:10px;
 }
 
 .titulo-lista{
