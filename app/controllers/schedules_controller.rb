@@ -15,6 +15,7 @@ class SchedulesController < ApplicationController
       :gestao => Talk.track_day(params[:date], "gest"),
       :principal => Talk.track_day(params[:date], "principal")
     }
+    
     @user_tracks = current_user.talk_ids params[:date]
     @date = params[:date]
   end

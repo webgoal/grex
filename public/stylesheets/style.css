@@ -46,16 +46,19 @@ body{
 
 .header h1{
 	font-size:18px;
-	color:#FFF;
 	margin:0;
 	float:left;
-	line-height:40px;
+	line-height:34px;
+}
+
+.header h1 a{
+	text-decoration:none;
+	color:#FFF;
 }
 
 .header a{
 	display:block;
 	text-decoration:none;
-	line-height:32px;
 	text-align:center;
 	margin:4px 0 0 0;
 	outline: none;
@@ -64,21 +67,26 @@ body{
 .header a.twitter,
 .header a.voltar{
 	width:auto;
-	height:32px;
+	height:30px;
+	line-height:33px;	
 	color:#FFF;
 	float:left;
 	margin-left:10px;
 	font-size:1em;
 	font-weight:bold;
-	border:solid 1px #333;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
 }
 
 .header a.twitter{
-	background:#333 url('../images/seta-lista-vou.png') no-repeat 95% center;
-	padding:0 20px 0 10px;
+	background:url("../images/seta-lista-vou.png") no-repeat scroll 96% 63%;
+	padding:0 20px 0 0;
+}
+
+.header a.twitter img{
+	width:25px;
+	height:25px;
+	float:left;
+	border:solid 2px #FFF;
+	margin: 0 5px 0 0;
 }
 
 .header a.voltar{
@@ -87,10 +95,13 @@ body{
 }
 
 
-.header a.sair{
-	float:right;
-	color:#FFF;
-	text-decoration:underline;
+.header a.sair {
+    color: #FFFFFF;
+    display: block;
+    float: right;
+    height: 35px;
+    line-height: 33px;
+    text-decoration: underline;
 }
 
 .menu, .titulo, .titulo-lista, .titulo-principal{
