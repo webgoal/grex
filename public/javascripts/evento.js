@@ -27,17 +27,31 @@ jQuery(document).ready(function(){
 
 function bindSwipe(dia) {
 	jQuery(dia+' .trilha').live('swipeleft', function(e){
-		trilha = jQuery(this);
-		if(trilha.next(dia+' .trilha').length){
-			trilha.hide().next(dia+' .trilha').show();
-		}
+		paginaEsquerda(dia);
 	});
 	jQuery(dia+' .trilha').live('swiperight', function(e){
-		trilha = jQuery(this);
-		if(trilha.prev(dia+' .trilha').length) {
-			trilha.hide().prev(dia+' .trilha').show();
-		}
+		paginaDireita(dia);
 	});
+	jQuery('.trilha .nav-next').live('click', function(e) {
+		paginaEsquerda(dia);
+	});	
+	jQuery('.trilha .nav-back').live('click', function(e) {
+		paginaDireita(dia);
+	});
+}
+
+function paginaEsquerda(dia) {
+	trilha = jQuery('div.trilha:visible');
+	if(trilha.next(dia+' .trilha').length){
+		trilha.hide().next(dia+' .trilha').show();
+	}	
+}
+
+function paginaDireita(dia) {
+	trilha = jQuery('div.trilha:visible');
+	if(trilha.prev(dia+' .trilha').length) {
+		trilha.hide().prev(dia+' .trilha').show();
+	}
 }
 
 function setupVouNaoVou() {
