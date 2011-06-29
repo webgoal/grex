@@ -1,6 +1,6 @@
 class Talk < ActiveRecord::Base
   has_and_belongs_to_many :speakers, :join_table => "talks_speakers"
-  has_and_belongs_to_many :users, :join_table => "notebooks", :foreign_key => "talk_id"
+  has_and_belongs_to_many :users, :join_table => "notebooks", :foreign_key => "talk_id", :uniq => true
   
   scope :in_order, order(:start)
   scope :from_track, lambda {|track| where('track like ?', '%'+track+'%')}
