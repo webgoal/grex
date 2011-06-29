@@ -228,10 +228,28 @@ span.quantidade{
 }
 
 .descricao p span{
-	background-color: yellow;
 	padding:0 2px;
 	margin:0 0 0 15px;
 }
+
+.descricao p span.todos{
+	background-color:#CCC;
+}
+
+.descricao p span.iniciante{
+	background-color: yellow;
+}
+
+.descricao p span.intermediario{
+	background-color:#0099CC;
+	color:#FFF;
+}
+
+.descricao p span.avancado{
+	background-color:#009900;
+	color:#FFF;
+}
+
 
 .detail-talk div {
     padding: 2px 7px;
