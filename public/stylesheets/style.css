@@ -30,7 +30,7 @@ span.nav-back{
 
 ul.ball {
     margin:-10px auto 0;
-    overflow: auto;
+    overflow: hidden;
     padding: 0;
     width:100px;
 }
