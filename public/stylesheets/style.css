@@ -20,7 +20,7 @@ span.nav-next, span.nav-back{
 span.nav-next {
     background: url("../images/arrow-right.png") no-repeat scroll right center transparent;
     float: right;
-    margin:-36px 0 0;
+    margin:-28px 0 0;
 }
 
 span.nav-back{
@@ -29,10 +29,10 @@ span.nav-back{
 }
 
 ul.ball {
-    margin:-10px auto 0;
+    margin:-10px auto;
     overflow: hidden;
     padding: 0;
-    width:100px;
+    width:50px;
 }
 
 ul.ball li {
@@ -461,3 +461,14 @@ div.trilha.auditorio { display: none; }
 
 
 div.load{ background-image:url(../images/loading.gif);background-repeat: no-repeat;background-position: 100% 0 ; }
+
+div.webgoal {
+    background-color: #598BAB;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 26px;
+    text-align: right;
+    vertical-align: middle;
+}
