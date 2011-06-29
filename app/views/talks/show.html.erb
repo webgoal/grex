@@ -1,5 +1,5 @@
 <div class="header">
-  <a href="/schedules" class="twitter">Voltar</a>
+  <a href="/schedules" class="voltar">Voltar</a>
 </div>
 <div class="detail-talk">
     <div class='top'>
@@ -27,7 +27,7 @@
         <p>Quem Vai (<%= @talk.viewers %>)</p>
         <ul>
         <% @talk.users.each do |user| %>
-            <img src="<%=user.avatar%>" title="<%=user.twitter%>"/>
+            <a href="<%= url_for "/users/from_user/#{user.id}" %>"><img src="<%=user.avatar%>" title="<%=user.twitter%>"/></a>
         <% end %>
         </ul>
     </div>

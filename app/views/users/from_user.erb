@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="descricao">
-                    <p><%= talk.title %></p>
+                    <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= print_speakers talk.speakers %></p>
                     <p><%= talk.type %> <span class='<%= normalize_string(talk.level) unless talk.level.nil?%>' ><%= talk.level %></p> 
                 </div>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="descricao">
-                    <p><%= talk.title %></p>
+                    <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= print_speakers talk.speakers %></p>
                     <p><%= talk.type %> <span class='<%= normalize_string(talk.level) unless talk.level.nil?%>' ><%= talk.level %></p> 
                 </div>
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="descricao">
-                    <p><%= talk.title %></p>
+                    <p><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
                     <p class="palestrante"><%= print_speakers talk.speakers %></p>
                     <p><%= talk.type %> <span class='<%= normalize_string(talk.level) unless talk.level.nil?%>' ><%= talk.level %></p> 
                 </div>
