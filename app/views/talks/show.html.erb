@@ -7,7 +7,6 @@
         <div class="date"><%= @talk.start.strftime('%d/%m') %> - <%= @talk.start.strftime('%H:%M') %> a <%= @talk.end.strftime('%H:%M') %></div>
 		<span class="quantidade"><%= @talk.viewers %> <% if @talk.viewers == 1 %>pessoa irá<% else %>pessoas irão<% end %></span>
     </div>
-
     <div class="title <%=is_talk_selected? @talk.id, @user_tracks %>">
         <input type="hidden" value="<%= @talk.id %>" />
         <div class="escolha">

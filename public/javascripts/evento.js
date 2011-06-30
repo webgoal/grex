@@ -62,13 +62,14 @@ function setupVouNaoVou() {
 		qtd = linha.find('.quantidade');
 		if (linha.hasClass('active')) {
 			jQuery.get('/schedules/uncheck', { 'palestra': palestraId }, function(data) {
-				jQuery('div.linha').find('input[value='+palestraId+']').parent().removeClass('active');
+				jQuery('div.linha, div.title').find('input[value='+palestraId+']').parent().removeClass('active');
 				linha.removeClass('load');
 				qtd.html(parseInt(qtd.html())-1);
 			}, 'json');
 		} else {
 			jQuery.get('/schedules/check', { 'palestra': palestraId }, function(data) {
-				jQuery('div.linha').find('input[value='+palestraId+']').parent().addClass('active');
+				parent = jQuery('div.linha, div.title').find('input[value='+palestraId+']').parent();
+				parent.addClass('active');
 				linha.removeClass('load');
 				qtd.html(parseInt(qtd.html())+1);
 			}, 'json');
