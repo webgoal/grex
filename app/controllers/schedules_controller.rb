@@ -6,7 +6,7 @@ class SchedulesController < ApplicationController
   def index
     @my_user = current_user
 
-    params[:date] ||= "2011-06-29"
+    params[:date] ||= Time.new.strftime("%Y-%m-%d")
 
     @tracks = {
       :geral => Talk.track_day(params[:date], "geral"),
