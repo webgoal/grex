@@ -333,7 +333,8 @@ span.quantidade{
 }
 
 .descricao p span{
-	padding:0 2px;
+	padding:1px 2px;
+	margin: 0 4px 0 0;
 }
 
 .descricao p span.todos{
@@ -353,7 +354,11 @@ span.quantidade{
 	background-color:#009900;
 	color:#FFF;
 }
-
+.descricao p span.track {
+	border:1px solid #ccc;
+	background-color:#444;
+	color:#dedede;
+}
 .detail-talk .speakers{
 	font-weight: bold;	
 	border-top:solid 1px #CCC;
