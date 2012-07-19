@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 
 body{
-	background-color:#5a8ba9;
+	background: url("../images/background-index.png") #49718B repeat-x top;
 	margin:0 auto; 
 	padding:0;
 	font-family: Helvetica,sans-serif;
@@ -70,17 +70,36 @@ ul.ball li.active{
 	color: #FFF;
 }
 
-#inicial a{
+#cracha {
+	width: 310px;
+	height: 400px;
+	margin:0 auto;
+	text-align:center;
+	background: url("../images/grex-card.png");
+}
+
+#cracha a{
 	display:block;
-	width:283px;
+	width:200px;
 	height:43px;
 	line-height:43px;
-	background:url('../images/btn-logar.png') no-repeat;
+	background:url('../images/btn-logar-small.png') no-repeat;
 	text-decoration:none;
 	color:#000;
 	font-weight:bold;
 	font-size:18px;
-	margin:0 auto;
+	margin: 240px 55px 0;
+	float: left;	
+}
+
+#cracha .notice {
+	width: 200px;
+	margin: 6px 55px;
+	color: #BC8A2C;
+	background: #FFFF99;
+	float: left;
+	padding: 6px 0;
+	border: 1px solid #D8A035;
 }
 
 .header{
@@ -476,4 +495,9 @@ div.webgoal {
     padding: 0 26px;
     text-align: right;
     vertical-align: middle;
+}
+
+.rounded {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 }

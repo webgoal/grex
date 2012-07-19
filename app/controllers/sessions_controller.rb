@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
   end
   
   def failure
-    redirect_to "/", :notice => "Erro ao conectar com twitter"
+    redirect_to "/", :notice => "Erro ao conectar com Twitter"
   end
   
   def login
