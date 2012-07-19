@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2) {
+	#cracha{
+		background: url('../images/grex-card@2x.png');
+		-webkit-background-size: 100%  100% ;  
+		-moz-background-size: 100%  100% ;  
+		background-size: 100%  100% ;
+	}
+
+	#cracha .login{
+		background: url('../images/btn-logar-small@2x.png');
+		-webkit-background-size: 100%  100% ;  
+		-moz-background-size: 100%  100% ;  
+		background-size: 100%  100% ;
+	}
+
+}

@@ -1,15 +1,5 @@
 @CHARSET "UTF-8";
 
-body{
-	background: url("../images/background-index.png") #49718B repeat-x top;
-	margin:0 auto; 
-	padding:0;
-	font-family: Helvetica,sans-serif;
-	font-size: 0.7em;
-}
-
-
-
 span.nav-next, span.nav-back{
 	display:block;
 	width:40px;
@@ -68,50 +58,6 @@ ul.ball li.active{
 .subtitle{
 	margin:0 0 30px 0;
 	color: #FFF;
-}
-
-#cracha {
-	width: 310px;
-	height: 400px;
-	margin:0 auto;
-	text-align:center;
-	background: url("../images/grex-card.png");
-}
-
-#cracha a{
-	display:block;
-	width:200px;
-	height:43px;
-	line-height:43px;
-	background:url('../images/btn-logar-small.png') no-repeat;
-	text-decoration:none;
-	color:#000;
-	font-weight:bold;
-	font-size:18px;
-	margin: 240px 55px 0;
-	float: left;	
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2) {
-	#cracha{
-		background: url("../images/grex-card@2x.png");
-		-webkit-background-size: 100%  100% ;  
-		-moz-background-size: 100%  100% ;  
-		background-size: 100%  100% ;
-	}
-}
-
-#cracha .notice {
-	width: 200px;
-	margin: 6px 55px;
-	color: #BC8A2C;
-	background: #FFFF99;
-	float: left;
-	padding: 6px 0;
-	border: 1px solid #D8A035;
 }
 
 .header{

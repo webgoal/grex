@@ -1,0 +1,69 @@
+@CHARSET "UTF-8";
+
+body{
+	background: url("../images/background-index.png") #49718B repeat-x top;
+	margin:0 auto; 
+	padding:0;
+	font-family: Helvetica,sans-serif;
+	font-size: 0.7em;
+}
+
+#cracha {
+	width: 310px;
+	height: 400px;
+	margin:0 auto;
+	text-align:center;
+	background: url("../images/grex-card.png");
+}
+
+#cracha .evento {
+	width: 200px;
+	float: left;
+	margin: 217px 55px 0;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFF;
+	text-shadow: 0 1px 1px #777;
+}
+
+#cracha .login{
+	display:block;
+	width:200px;
+	height:43px;
+	line-height:43px;
+	background:url('../images/btn-logar-small.png') no-repeat;
+	text-decoration:none;
+	color:#777;
+	text-shadow: 0 1px 0 #DDD;
+	font-weight:bold;
+	font-size:15px;
+	margin: 10px 55px 0;
+	float: left;	
+}
+
+#cracha .notice {
+	width: 200px;
+	margin: 6px 55px;
+	color: #BC8A2C;
+	background: #FFFF99;
+	float: left;
+	padding: 6px 0;
+	border: 1px solid #D8A035;
+}
+
+#cracha #made-by {
+	margin: 42px 45px 0 0;
+	float: right;
+	color: #BED2DE;
+	font-size: 12px;
+}
+
+#cracha #made-by a {
+	font-weight: bold;
+	color: #C9E0EB;
+	text-decoration: none;
+}
+
+#cracha #made-by a:hover {
+	color: #FFF;
+}
