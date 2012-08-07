@@ -8,12 +8,20 @@ class SchedulesController < ApplicationController
 
     params[:date] ||= Time.new.strftime("%Y-%m-%d")
 
-    @tracks = {
+    @tracks2 = {
       :geral => Talk.track_day(params[:date], "geral"),
       :engenharia => Talk.track_day(params[:date], "engenharia"),
       :relatos => Talk.track_day(params[:date], "relatos"),
       :gestao => Talk.track_day(params[:date], "gest"),
       :principal => Talk.track_day(params[:date], "principal")
+    }
+    
+    @tracks = {
+      :desenvolvimento => Talk.track_day(params[:date], "desenvolvimento"),
+      :analise => Talk.track_day(params[:date], "lise"),
+      :gestao => Talk.track_day(params[:date], "gest"),
+      :inovacao => Talk.track_day(params[:date], "inova"),
+      :relatos => Talk.track_day(params[:date], "relatos")
     }
     
     @user_tracks = current_user.talk_ids params[:date]

@@ -160,7 +160,7 @@ ul.ball li.active{
 
 
 
-.titulo.nav-engenharia{
+.titulo.nav-desenvolvimento{
 	background: #FFF url('../images/navegacao-trilhas.gif') no-repeat 98% center;
 }
 
@@ -284,7 +284,7 @@ div.descricao{
 	font-size:1.1em;
 }
 
-a.btn-vo{
+a.btn-vou{
 	display:block;
 	height:33px;
 	width:32px;
@@ -293,7 +293,7 @@ a.btn-vo{
 	outline:0;
 }
 
-.active a.btn-vo{
+.active a.btn-vou{
 	background-position:left;
 }
 
@@ -436,10 +436,10 @@ span.quantidade{
 	font-weight: bold;
 }
 
-div.trilha.engenharia,
-div.trilha.gestao,
+div.trilha.analise,
+div.trilha.inovacao,
 div.trilha.relatos,
-div.trilha.auditorio { display: none; }
+div.trilha.gestao { display: none; }
 
 
 div.load{ background-image:url(../images/loading.gif);background-repeat: no-repeat;background-position: 100% 0 ; }

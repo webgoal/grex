@@ -4,7 +4,8 @@
 only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-o-min-device-pixel-ratio: 2/1),
 only screen and (min-device-pixel-ratio: 2) {
-	#cracha{
+
+	#cracha {
 		background: url('../images/grex-card@2x.png');
 		-webkit-background-size: 100%  100% ;  
 		-moz-background-size: 100%  100% ;  
