@@ -33,7 +33,11 @@ dia = 5
         else  
           trilha = !((tbl_sessao/"tr/th.trilha").inner_text).empty? ? (tbl_sessao/"tr/th.trilha").inner_text : ""
         end
-          
+        
+        if((tbl_sessao/"/tr/td.titulo").inner_text == "Lightning Talks")
+           trilha = 'desenvolvimento;lise;gest;inova;relatos';
+        end
+           
         tipo = !((tbl_sessao/"tr/th.tipo").inner_text).empty? ? (tbl_sessao/"tr/th.tipo").inner_text : ""  
         nivel = !((tbl_sessao/"tr/th.nivel").inner_text).empty? ? (tbl_sessao/"tr/th.nivel").inner_text : ""
         
