@@ -12,16 +12,52 @@
 </div>
 
 <div class="content">
-  <div class="dia">
-    <div class="trilha desenvolvimento">
+  <div class="dia">	
+	<div class="trilha convidados">
 		<div class="titulo-lista">
-			<span class="trial-title">Desenvolvimento e Teste</span>
+			<span class="trial-title">Convidados Especiais</span>
 			<ul class="ball">
 				<li class="active">1</li>
 				<li>2</li>
 				<li>3</li>
 				<li>4</li>
 				<li>5</li>
+				<li>6</li>
+			</ul>
+			<span class="nav-next">&gt;</span>
+		</div>
+        <div class="slider">
+		<% for talk in @tracks[:convidados] do %>
+			<div class="linha <%=is_talk_selected? talk.id, @user_tracks%>">
+                <input type="hidden" value="<%= talk.id %>" >
+                <div class="horario">
+                	<p><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></p>
+                	<p class="fim"><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></p>
+                </div>
+                <div class="escolha">
+                    <a href="#" title="Eu vou!" class="btn-vou">Eu vou!</a>
+                    <span class="quantidade"><%= talk.viewers %></span>
+                </div>
+                <div class="descricao">
+                    <p class="ver-detalhes"><%= link_to talk.title, "/talks/show/#{talk.id}" %></p>
+                    <p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+	                <p class="tipo"><%= talk.type %> - <%= show_talk_level talk.level %></p>
+              	</div>
+            </div>
+		<% end %>
+		</div>
+	</div>	
+	<div class="trilha desenvolvimento">
+		<div class="titulo-lista">
+			<span class="nav-back">&lt;</span>
+			<span class="trial-title">Desenvolvimento e Teste</span>
+			<ul class="ball">
+				<li>1</li>
+				<li class="active">2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
 			</ul>
 			<span class="nav-next">&gt;</span>
 		</div>
@@ -52,10 +88,11 @@
 			<span class="trial-title">Análise e Planejamento</span>
 			<ul class="ball">
 				<li>1</li>
-				<li class="active">2</li>
-				<li>3</li>
+				<li>2</li>
+				<li class="active">3</li>
 				<li>4</li>
 				<li>5</li>
+				<li>6</li>
 			</ul>
 			<span class="nav-next">&gt;</span>
 		</div>
@@ -87,9 +124,10 @@
 			<ul class="ball">
 				<li>1</li>
 				<li>2</li>
-				<li class="active">3</li>
-				<li>4</li>
+				<li>3</li>
+				<li class="active">4</li>
 				<li>5</li>
+				<li>6</li>
 			</ul>
 			<span class="nav-next">&gt;</span>
 		</div>
@@ -122,8 +160,9 @@
 				<li>1</li>
 				<li>2</li>
 				<li>3</li>
-				<li class="active">4</li>
-				<li>5</li>
+				<li>4</li>
+				<li class="active">5</li>
+				<li>6</li>
 			</ul>
 			<span class="nav-next">&gt;</span>
 		</div>
@@ -157,7 +196,8 @@
 				<li>2</li>
 				<li>3</li>
 				<li>4</li>
-				<li class="active">5</li>
+				<li>5</li>
+				<li class="active">6</li>
 			</ul>
 		</div>
         <div class="slider">
@@ -180,8 +220,7 @@
             </div>
 		<% end %>
 		</div>
-    </div>
-	
+    </div>	
   </div>
   <div class="webgoal">
 	@webgoal #feedback

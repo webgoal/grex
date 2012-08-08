@@ -28,8 +28,13 @@ dia = 5
           end
         end
         
-        trilha = !((tbl_sessao/"tr/th.trilha").inner_text).empty? ? (tbl_sessao/"tr/th.trilha").inner_text : ""
-        tipo = !((tbl_sessao/"tr/th.tipo").inner_text).empty? ? (tbl_sessao/"tr/th.tipo").inner_text : ""
+        if(!(tbl_sessao/"tr/th.convidado").inner_text.empty?)
+          trilha = 'convidado'
+        else  
+          trilha = !((tbl_sessao/"tr/th.trilha").inner_text).empty? ? (tbl_sessao/"tr/th.trilha").inner_text : ""
+        end
+          
+        tipo = !((tbl_sessao/"tr/th.tipo").inner_text).empty? ? (tbl_sessao/"tr/th.tipo").inner_text : ""  
         nivel = !((tbl_sessao/"tr/th.nivel").inner_text).empty? ? (tbl_sessao/"tr/th.nivel").inner_text : ""
         
         sessoes << Hash[

@@ -22,7 +22,7 @@ ul.ball {
     margin:-10px auto;
     overflow: hidden;
     padding: 0;
-    width:50px;
+    width:60px;
 }
 
 ul.ball li {
@@ -437,6 +437,7 @@ span.quantidade{
 }
 
 div.trilha.analise,
+div.trilha.desenvolvimento,
 div.trilha.inovacao,
 div.trilha.relatos,
 div.trilha.gestao { display: none; }
