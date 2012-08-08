@@ -4,6 +4,7 @@ require 'hpricot'
 doc = open("programacao.html") { |f| Hpricot(f) }
 
 sessoes = []
+autors = []
 
 dia = 5
 (doc/"table.programacao").each do |tbl_prog|
@@ -26,13 +27,27 @@ dia = 5
             hora_fim = hora_inicio_splited[0] + ':30'
           end
         end
+        
+        trilha = !((tbl_sessao/"tr/th.trilha").inner_text).empty? ? (tbl_sessao/"tr/th.trilha").inner_text : ""
+        tipo = !((tbl_sessao/"tr/th.tipo").inner_text).empty? ? (tbl_sessao/"tr/th.tipo").inner_text : ""
+        nivel = !((tbl_sessao/"tr/th.nivel").inner_text).empty? ? (tbl_sessao/"tr/th.nivel").inner_text : ""
+        
         sessoes << Hash[
-          'dia' => '2012-09-0' + dia.to_s,
+          'data_inicio' => ('2012-09-0' + dia.to_s) + ' ' + hora_inicio + ":00",
+          'data_fim' => ('2012-09-0' + dia.to_s) + ' ' + hora_fim + ":00",
           'sala' => sala,
-          'hora_inicio' => hora_inicio + ":00",
-          'hora_fim' => hora_fim + ":00",
+          'trilha' => trilha,
+          'tipo' => tipo,
+          'nivel' => nivel,
+          'autores' => (tbl_sessao/"tr/td.autores").inner_text.gsub(/( e )|(, )|( \+ )/,"$").split("$"),
           'titulo' => (tbl_sessao/"/tr/td.titulo").inner_text,
         ]
+        
+        autor_pre = (tbl_sessao/"tr/td.autores").inner_text.gsub(/( e )|(, )|( \+ )/,"$").split("$")
+        
+        if(!autor_pre.empty?)
+          autors = autors | autor_pre
+        end
         sala += 1
       end
     end
@@ -40,5 +55,23 @@ dia = 5
   dia += 1
 end
 
-puts sessoes
-puts sessoes.length
+autors.each do |autor|
+  puts 'insert into evento_development.speakers (name,created_at,updated_at) values ("'+autor+'","2012-08-08 09:00:00","2012-08-08 09:00:00");'
+end
+
+sessoes.each do |sessao|
+  puts 'insert into evento_development.talks (title,start,end,type,level,room,track,created_at,updated_at) values ("'+sessao["titulo"]+'","'+sessao["data_inicio"]+'","'+sessao["data_fim"]+'","'+sessao["tipo"]+'","'+sessao["nivel"]+'","'+sessao["sala"].to_s+'","'+sessao["trilha"]+'","2012-08-08 09:00:00","2012-08-08 09:00:00");'
+end  
+
+sessoes.each do |sessao|
+  sessao["autores"].each do |autor|
+      if(sessao["titulo"] != "Lightning Talks")
+        puts 'INSERT INTO evento_development.talks_speakers (talk_id,speaker_id) VALUES ((SELECT id from evento_development.talks where title like "'+sessao["titulo"]+'"),(SELECT id from evento_development.speakers where name like "'+ autor +'"));'
+      end  
+  end 
+end  
+
+#puts autors.sort
+#puts autors.length
+#puts sessoes
+#puts sessoes.length
