@@ -50,7 +50,7 @@ function paginaEsquerda() {
 }
 
 function setupVouNaoVou() {
-	jQuery('a.btn-vo').click(function(event) {
+	jQuery('a.btn-vou').click(function(event) {
 		event.preventDefault();
 		link = jQuery(this);
 		linha = link.parent().parent();
