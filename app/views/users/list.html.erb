@@ -8,8 +8,8 @@
 <div class="titulo-principal">Minha programação</div>
   <div class="dia">
     <div class="trilha geral">
-		<a name="2011-06-29"></a>
-		<div class="titulo">29/06</div>
+		<a name="2012-09-05"></a>
+		<div class="titulo">05/09</div>
 		<% for talk in @talks[:first] do %>
 			<div class="linha active">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -20,7 +20,7 @@
                 	<p class="fim"><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></p>
                 </div>
                 <div class="escolha">
-                    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
+                    <a href="#" title="Eu vou!" class="btn-vou">Eu vou!</a>
                     <span class="quantidade"><%= talk.viewers %></span>
                 </div>
                 <div class="descricao">
@@ -30,8 +30,8 @@
                 </div>
             </div>
 		<% end %>
-		<a name="2011-06-30"></a>
-		<div class="titulo">30/06</div>
+		<a name="2012-09-06"></a>
+		<div class="titulo">06/09</div>
 		<% for talk in @talks[:second] do %>
 			<div class="linha active">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -42,7 +42,7 @@
                 	<p class="fim"><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></p>
                 </div>
                 <div class="escolha">
-                    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
+                    <a href="#" title="Eu vou!" class="btn-vou">Eu vou!</a>
                     <span class="quantidade"><%= talk.viewers %></span>
                 </div>
                 <div class="descricao">
@@ -52,8 +52,8 @@
                 </div>
             </div>
 		<% end %>
-		<a name="2011-07-01"></a>
-		<div class="titulo">01/07</div>
+		<a name="2012-09-07"></a>
+		<div class="titulo">07/09</div>
 		<% for talk in @talks[:third] do %>
 			<div class="linha active">
                 <input type="hidden" value="<%= talk.id %>" >
@@ -64,7 +64,7 @@
                 	<p class="fim"><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></p>
                 </div>
                 <div class="escolha">
-                    <a href="#" title="Eu vou!" class="btn-vo">Eu vo!</a>
+                    <a href="#" title="Eu vou!" class="btn-vou">Eu vou!</a>
                     <span class="quantidade"><%= talk.viewers %></span>
                 </div>
                 <div class="descricao">

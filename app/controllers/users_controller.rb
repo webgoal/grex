@@ -13,9 +13,9 @@ class UsersController < ApplicationController
   private
   def list_from_user(user)
     @talks = {
-      :first => user.talks.by_day("2011-06-29").in_order,
-      :second => user.talks.by_day("2011-06-30").in_order,
-      :third => user.talks.by_day("2011-07-01").in_order
+      :first => user.talks.by_day("2012-09-05").in_order,
+      :second => user.talks.by_day("2012-09-06").in_order,
+      :third => user.talks.by_day("2012-09-07").in_order
     }
   end
 

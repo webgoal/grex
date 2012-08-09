@@ -1,6 +1,6 @@
 <div class="header">
   <h1><%= link_to "grex", "/", {:title => 'grex' } %></a></h1>
-	<% if signed_in? %><a href="<%= url_for :controller => 'users', :action => 'list', :anchor => @date %>" class="twitter"><img src="<%=current_user.avatar%>" title="<%=current_user.twitter%>"/>Minha programação</a><% end %>
+	<% if signed_in? %><a href="<%= url_for :controller => 'users', :action => 'list' %>" class="twitter"><img src="<%=current_user.avatar%>" title="<%=current_user.twitter%>"/>Minha programação</a><% end %>
   	<%= link_to "Sair", "/sessions/logout", { :class=>'sair', :title => 'Sair' } if signed_in? %></a>
 </div>
 <div class="menu">
