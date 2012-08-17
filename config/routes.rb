@@ -3,7 +3,7 @@ Evento::Application.routes.draw do
 
   get "user/list"
 
-  match '/auth/twitter/callback', :to => 'sessions#create'
+  match '/auth/(:provider)/callback', :to => 'sessions#create'
   match '/auth/failure' => 'sessions#failure'
   
   # The priority is based upon order of creation:

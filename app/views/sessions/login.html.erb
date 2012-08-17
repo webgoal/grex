@@ -1,6 +1,7 @@
 <div id="cracha">
 	<span class="evento">- Agile Brazil 2012 -</span>
 	<%= link_to 'Entrar com o Twitter', '/auth/twitter', :class => 'login' %>
+	<%= link_to 'Entrar com o Facebook', '/auth/facebook', :class => 'login' %>
 	<% if flash[:notice] %>
 		<div class="notice rounded"><%= flash[:notice] %></div>
 	<% end %>
