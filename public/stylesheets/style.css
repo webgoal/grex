@@ -1,161 +1,462 @@
-/* Reset */
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+@CHARSET "UTF-8";
+
+span.nav-next, span.nav-back{
+	display:block;
+	width:40px;
+	height:40px;
+	text-indent:-99999px;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
+span.nav-next {
+    background: url("../images/arrow-right.png") no-repeat scroll right center transparent;
+    float: right;
+    margin:-28px 0 0;
 }
 
-body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-size:small; }
-
-/*Fonts para o IE */
-@font-face {
-	font-family: ClanWeb-Medium;
-	src: url("/stylesheets/fonts/ClanWeb-Medium.eot");
+span.nav-back{
+	background:url('../images/arrow-left.png') no-repeat center left;
+	float:left;
 }
 
-@font-face {
-	font-family: ClanWeb-Book;
-	src: url("/stylesheets/fonts/ClanWeb-Book.eot");
+ul.ball {
+    margin:-10px auto;
+    overflow: hidden;
+    padding: 0;
+    width:60px;
 }
 
-@font-face {
-	font-family: ClanWeb-Thin;
-	src: url("/stylesheets/fonts/ClanWeb-Thin.eot");
+ul.ball li {
+    background: url("../images/ball-disable.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: left;
+    height: 7px;
+    margin: 0 3px 0 0;
+    text-indent: -99999px;
+    width: 7px;
 }
-
-/* then for WOFF-capable browsers */
-@font-face {
-	font-family: ClanWeb-Medium;
-	src: url("/stylesheets/fonts/ClanWeb-Medium.woff") format("woff");
-}
-
-@font-face {
-	font-family: ClanWeb-Book;
-	src: url("/stylesheets/fonts/ClanWeb-Book.woff") format("woff");
-}
-
-@font-face {
-	font-family: ClanWeb-Thin;
-	src: url("/stylesheets/fonts/ClanWeb-Thin.woff") format("woff");
+ul.ball li.active{
+	background:url('../images/ball-enable.png') no-repeat;
 }
 
 
+#inicial{
+	width:290px;
+	margin:0 auto;
+	text-align:center;
+	padding:80px 10px 100px 10px;
+}
 
+.logo{
+	display:block;
+	width:133px;
+	height:134px;
+	background:url('../images/logo-grex.png') no-repeat;
+	text-indent:-9999px;
+	margin:0 auto 10px;
+}
 
+.subtitle{
+	margin:0 0 30px 0;
+	color: #FFF;
+}
 
-/* --------------------------------------------
-  Mobile
--------------------------------------------- */
-
-@media (max-width: 1024px) {
-
-	#container{width: inherit;}
-	#container.busca{background-color: #797A7A; overflow: auto}
-
-	#content , #content.busca{margin-top:110px;}
-	#content.detalhes, #content.palestrante{margin-top:50px;}
-	
-	.header{background:#f0f0f1;height:50px;position:fixed;top:0;width: 100%; overflow: auto;}
-		.header a{display: block; width:50px; height:50px; float:left;text-indent: -90000px}
-			.header a.voltar{width:50px;height:50px;background: url('/images/btn-voltar.png') no-repeat 50% 50%; float: left;}
-			.header a.programacao{width:50px;height:50px;background: url('/images/btn-programacao.png') no-repeat 50% 50%; float: right;}
-			.header a.busca{width:50px;height:50px;background: url('/images/btn-busca.png') no-repeat 50% 50% ;float: right;}
-
-	nav{position:fixed; height:60px;background-color: #a6a8ab;display: block;float: left;width: 100%; top:50px; overflow: auto}
-		nav h2{float: left; font-size: 22px;line-height: 40px; padding-left: 44px; background: url('/images/icon-agenda.png') no-repeat 0% 115%; margin-top: 10px;}		
-		nav span.dia{font-size:12px;}
-		nav .botoes{float:right;width: 100px;}
-		nav a{margin-top:5px;width:50px;height:50px; display: block; float: left;text-indent: -90000px}
-			nav a.anterior{background:url('/images/btn-anterior.png') no-repeat; }
-			nav a.proximo{background:url('/images/btn-proximo.png') no-repeat; }
-
-	.itens-lista{}
-		.itens-lista div{float: left}
-		.itens-lista ul{float:left; margin:0 15px;}
-		.itens-lista li{float: left;width: 100%;list-style: none;}
-		.itens-lista h2.horario{height:40px; line-height:40px;font-size:22px; background:url('/images/icon-relogio.png') no-repeat 0% 40%; padding: 15px 0 15px 40px; border-bottom: solid 1px #000; clear: both;}
-		.itens-lista .sala{width: 18%;font-size: 10px;}
-			.itens-lista .sala h3{text-transform: uppercase;color:#929497;}	
-			.itens-lista .sala p{background:url('/images/icon-vou.png') no-repeat; padding-left: 20px; margin-top: 5px;padding-top: 3px}
-		
-		.itens-lista .info{width: 65%;}
-		.itens-lista .detalhe{width: 10%;}
-			.itens-lista .detalhe a{display: block; width: 50px; height:50px; background:url('/images/btn-detalhe.png') no-repeat; text-indent: -90000px}
-		
-		.itens-lista .tipo p{font-size:8px;}
-
-		.detalhes .tipo{padding:5px; margin:10px 0 5px 7px;}
-
-		.tipo{overflow: auto;}
-		
-		.tipo p{float:left;font-size:12px; margin-right: 4px; padding: 2px}
-		
-		.tipo p.trilha, .itens-lista .tipo p.nivel{color:#FFF;}
-		.tipo p.trilha{background-color:#57585b;}
-		.tipo p.nivel{background-color:#8ac53e;}
-		
-		.itens-lista li{border-bottom: solid 1px #BFBFBF; padding: 20px 0;}
-			.itens-lista li h2{margin-bottom: 10px; font-size:14px;line-height:14px; font-family: 'ClanWeb-Thin', sans-serif;}
-			.itens-lista li p.palestrante{margin-bottom: 10px; color: #929497; font-size:11px;}
-
-	.detalhes h2{font-size: 24px; padding:10px;}
-	.detalhes .data-horario {display: block}	
-		.detalhes .data-horario h3{float:left; width: 30px}
-		.detalhes .data-horario .data{background:url('/images/icon-agenda.png') no-repeat 0% 50%; height:50px; line-height:50px; padding-left: 40px;}
-		.detalhes .data-horario .horario{background:url('/images/icon-relogio.png') no-repeat; height:50px; line-height:50px; padding-left: 40px}
-	
-	.detalhes .info-palestrante{position:relative; clear: both; border-top:solid 1px #BFBFBF; border-bottom:solid 1px #BFBFBF; padding: 10px 0;font-size:12px; overflow: auto; margin:0 12px;}
-		.detalhes .info-palestrante p{color:#929497; font-size:11px;width:80%;}
-	.detalhes p.descricao{margin-bottom: 100px; font-size:14px;padding:0 10px;}
-		.detalhes .info-palestrante img{float:left; margin:0 10px 0 0;}
-		.detalhes .info-palestrante h3{font-weight:bold;}
-		.detalhes .info-palestrante a{display: block; width: 50px; height:50px; background:url('/images/btn-detalhe.png') no-repeat; text-indent: -90000px;float:right; margin-top: -40px}
-
-	
-	.detalhes .vou{height:68px;position: fixed; bottom:0; background-color: #404041; width:100%;}
-
-	.detalhes .vou.aberto{height:68px;position: relative; /*top:210px;*/ background-color: #404041; margin-top:50px;}
-
-	.detalhes .lista-avatar{min-height:280px; background-color:#58595B;}
-	.detalhes .lista-avatar img{float: left; margin:10px;}
-
-		.detalhes .vou a.vao{background:url('/images/icon-seta-vao.png') no-repeat 0 50%; padding-left: 30px; display:block;position: relative; bottom: 0; height:68px;  z-index:1000;font-size:60px;color:#FFF; letter-spacing: -3px; text-decoration: none;margin:0 12px;}
-		.detalhes .vou a.btn-vou{display:block;width: 64px;height:58px;background:url('/images/btn-vou.png') no-repeat; color:#FFF; text-decoration: none; text-transform: uppercase; font-size: 26px; line-height: 58px; padding-left: 35px; position: absolute;right:5px; top:6px;z-index:9000}
-
-
-	.palestrante .info-palestrante{position:relative; clear: both; padding: 10px 0;font-size:26px; overflow: auto; margin:0 12px;}
-		.palestrante .info-palestrante img{float:left; margin:0 10px 10px 0;}
-		.palestrante .info-palestrante p{font-size:14px; color:#929497;}
-		.palestrante .info-palestrante p.twitter a{font-size:12px; color:#929497; color:#0684d4; margin-top:5px; text-decoration: none; display: block}
-	.palestrante p.descricao{margin:0 12px; font-size:14px;}
-
-	.form-busca{position:fixed; background-color: #A6A8AB;height:40px; top: 50px; width: 100%; padding:10px 0}
-		.form-busca input{border:none; width: 92%; height: 36px; border:solid 1px #E6E7E8; font-size: 14px; text-transform: uppercase; margin: 0 12px}
-		.form-busca h1{font-size:22px; line-height: 22px; font-weight:bold; margin:10px 0 10px 12px;}
-	
-	.busca{padding:0 7px;}
-		.busca h1{font-size:22px; border-bottom: solid 1px #000; margin: 10px 0 10px 0; padding-bottom: 10px; font-weight: bold; float: left; width: 100%}
-		.busca ul{list-style: none; clear:both; margin-bottom: 10px}
-			.busca ul li{border-bottom: solid 1px #A6A8AB; padding:20px 0; font-size:18px;}
-				.busca li a{color: #FFF; text-decoration:none; width: 100%; display: block;}
-
+.header{
+	background: #333 url('../images/bg-header.jpg');
+	height:40px;
+	padding:5px 10px;
 	
 }
 
+.header h1{
+	font-size:18px;
+	margin:0;
+	float:left;
+	line-height:30px;
+}
+
+.header h1 a{
+	text-decoration:none;
+	color:#FFF;
+}
+
+.header a{
+	display:block;
+	text-decoration:none;
+	text-align:center;
+	margin:4px 0 0 0;
+	outline: none;
+}
+
+.header a.twitter,
+.header a.voltar{
+	width:auto;
+	height:30px;
+	line-height:33px;	
+	color:#FFF;
+	float:left;
+	margin-left:10px;
+	font-size:1em;
+	font-weight:bold;
+}
+
+.header a.twitter{
+	background:url("../images/seta-lista-vou.png") no-repeat scroll 96% 63%;
+	padding:0 16px 0 0;
+}
+
+.header a.twitter img{
+	width:25px;
+	height:25px;
+	float:left;
+	border:solid 2px #FFF;
+	margin: 0 5px 0 0;
+}
+
+.header a.voltar{
+	background:url('../images/seta-header-voltar.png') no-repeat 5% center;
+	padding:0 10px 0 12px;
+}
+
+
+.header a.sair {
+    color: #FFFFFF;
+    display: block;
+    float: right;
+    height: 35px;
+    line-height: 33px;
+    text-decoration: underline;
+}
+
+.menu, .titulo, .titulo-lista, .titulo-principal{
+	height:40px;
+	line-height:40px;
+	background-color:#FFF;
+	font-size:1.5em;
+	color:#000;
+	clear:both;
+	position: relative;
+	border-bottom:solid 1px #CCC;	
+	font-weight:bold;
+}
+
+.menu{
+	border-bottom:0;
+	font-size:1.5em;
+}
+
+.titulo, .titulo-principal{
+	padding-left:10px;
+}
+
+.titulo-principal{
+	color:#FFF;
+	background-color:#AAA;
+}
+
+.titulo-lista{
+	text-align:center;
+	border-top:0;
+}
+
+
+
+.titulo.nav-desenvolvimento{
+	background: #FFF url('../images/navegacao-trilhas.gif') no-repeat 98% center;
+}
+
+.menu ul{
+	padding:0;
+	margin:0;
+}
+
+.menu li{
+	list-style:none;
+	line-height:40px;
+	text-align:center;
+	background: #000;
+}
+
+.menu li a{
+	display:block;
+	float:left;
+	width:33.3%;
+	height:40px;
+	text-decoration:none;
+	color:#000;
+	font-size:1em;
+	font-weight:bold; 
+	
+	background-color:#CCC;
+	box-shadow:inset 0 0 3px #666;
+	-moz-box-shadow:inset 0 0 3px #666;
+	-webkit-box-shadow:inset 0 0 3px #666;
+}
+
+.menu li a.active {
+	background-color:#FFF;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	
+}
+
+.linha .twitter {
+	border: 1px solid #000000;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 3px #000000 inset;
+    color: #FFFFFF;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    height: 32px;
+    margin-left: 10px;
+    padding: 10px 5px 0;
+	padding-top:10px;
+    width: auto;
+    
+}
+
+.linha.now {
+	background-color:#edf
+}
+
+.linha p.tipo{
+	font-size:.8em;
+}
+
+.from-user .linha .descricao{
+	float: left;
+	margin-left:10px;
+}
+
+
+div.horario {
+	float: left;
+    margin: 0 6px;
+    width:32px;
+}
+
+div.horario{
+	font-weight:bold;
+}
+
+div.horario div.inicio {
+	border-bottom: 1px solid #bbb;
+}
+
+.linha{
+	border-top:solid 1px #FFF;
+	border-bottom:solid 1px #CCC;
+	background-color:#EEE;
+	padding: 6px 0;
+	overflow: hidden;
+}
+
+.linha p{
+	margin:0 0 5px 0;
+	color:#333;
+}
+
+.linha p.palestrante{
+	font-weight:bold;
+	font-size:.9em;
+}
+
+.escolha{
+	float:left;
+	weight:32px;
+	margin:0 5px;
+	height:63px;
+}
+
+.detail-talk .descricao{
+	float:none;
+	width:auto;
+}
+
+div.descricao{
+	float:left;
+	width:70%;
+}
+
+.ver-detalhes a{
+	display:block;
+	font-size:1.1em;
+}
+
+a.btn-vou{
+	display:block;
+	height:33px;
+	width:32px;
+	text-indent:-9999px;
+	background:url("../images/checked.png") no-repeat right;
+	outline:0;
+}
+
+.active a.btn-vou{
+	background-position:left;
+}
+
+span.quantidade{
+	padding:0 0 0 10px;
+	background:url("../images/icon-participantes.png") no-repeat left;
+	display:block;
+	margin:5px 0 0 0;
+}
+
+.descricao p a{
+	color:#333;
+	text-decoration:none;
+}
+
+.descricao p span{
+	padding:1px 2px;
+	margin: 0 4px 0 0;
+}
+
+.descricao p span.todos{
+	background-color:#CCC;
+}
+
+.descricao p span.iniciante{
+	background-color: yellow;
+}
+
+.descricao p span.intermediario{
+	background-color:#0099CC;
+	color:#FFF;
+}
+
+.descricao p span.avancado{
+	background-color:#009900;
+	color:#FFF;
+}
+.descricao p span.track {
+	border:1px solid #ccc;
+	background-color:#444;
+	color:#dedede;
+}
+.detail-talk .speakers{
+	font-weight: bold;	
+	border-top:solid 1px #CCC;
+	clear:both;
+}
+
+.detail-talk div {
+    background-color:#FFF;
+	padding:5px 10px;
+}
+
+.detail-talk div div {
+	padding:0;
+}
+
+.detail-talk .top {
+    height: 30px;
+    line-height: 30px;
+}
+
+.detail-talk .escolha {
+	height:auto;
+	margin:0 8px 0 0;
+}
+
+.detail-talk .date {
+	float: left;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.detail-talk .quantidade {
+    float:right;
+}
+
+.detail-talk .escolha,
+.detail-talk .title p {
+	float:left;
+}
+
+.detail-talk .escolha{
+	width:32px;
+}
+
+.detail-talk .title {
+    height:40px;
+	font-size: 1.5em;
+}
+
+.detail-talk .title p {
+	margin:0;
+	width:80%;
+	padding:0 0 5px 0;
+}
+
+.detail-talk .descricao p {
+	margin:0;
+	padding:10px 0;
+	font-size:1.2em;
+}
+
+
+.detail-talk .type, .detail-talk .speakers, .detail-talk .room, .detail-talk .quemvai p {
+    border-bottom:1px solid #ccc;
+}
+
+.detail-talk .quemvai {
+	overflow:auto;
+}
+
+.detail-talk .quemvai p{
+	margin:0;
+	font-weight:bold;
+	font-size:1.2em;
+}
+
+.detail-talk .quemvai ul {
+	margin:0;
+	padding:0;
+}
+
+.detail-talk .quemvai li {
+	list-style:none;
+	margin:0 0 10px 0;
+}
+
+.detail-talk .quemvai li a {
+	float:left;
+	border: solid 2px #EEE;
+	margin-right:5px;
+	height:auto;
+}
+
+.notice {
+	padding: 30px 0;
+	font-size: 1.1em;
+	color: #FCDCDC;
+	font-weight: bold;
+}
+
+div.trilha.analise,
+div.trilha.desenvolvimento,
+div.trilha.inovacao,
+div.trilha.relatos,
+div.trilha.gestao { display: none; }
+
+
+div.load{ background-image:url(../images/loading.gif);background-repeat: no-repeat;background-position: 100% 0 ; }
+
+div.webgoal {
+    background-color: #598BAB;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 26px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.rounded {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 }
