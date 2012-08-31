@@ -54,12 +54,12 @@ function setupVouNaoVou() {
 		event.preventDefault();
 		link = jQuery(this);
 		linha = link.parent().parent();
-		if(linha.hasClass('load')) {
-			return true;
-		}
-		linha.addClass('load');
+		//if(linha.hasClass('load')) {
+		//	return true;
+		//}
+		//linha.addClass('load');
 		palestraId = linha.find('input[type=hidden]').val();
-		qtd = linha.find('.quantidade');
+		qtd = linha.find('a.vao');
 		if (linha.hasClass('active')) {
 			jQuery.get('/schedules/uncheck', { 'palestra': palestraId }, function(data) {
 				jQuery('div.linha, div.title').find('input[value='+palestraId+']').parent().removeClass('active');

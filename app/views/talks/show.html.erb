@@ -28,7 +28,7 @@
 			<% end %>
 		</div>
 
-		<p class="descricao"><%= @talk.description %></p>
+		<p class="descricao"><%= @talk.description.html_safe %></p>
 
 		<div class="vou">
 			<a class="vao" href="" title="VAO"><%= @talk.viewers %></a>

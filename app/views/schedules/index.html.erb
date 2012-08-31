@@ -1,6 +1,5 @@
 <div id="container">
 	<div class="header">
-		<a class="voltar" href="/schedules">Voltar</a>
 		<a class="programacao" href="<%= url_for :controller => 'users', :action => 'list' %>">Minha programação</a>
 	</div>
 	
@@ -18,7 +17,7 @@
 					<li>
 						<input type="hidden" value="<%= talk.id %>" >
 						<div class="sala">
-							<h3>Sala <%= talk.room %></h3>
+							<h3><%= talk.room %></h3>
 							<h3><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></h3>
                 			<h3><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></h3>
 							<p><%= talk.viewers %></p>
