@@ -136,8 +136,9 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		font-size: 22px;
 		line-height: 40px;
 		padding-left: 44px;
-		background: url('/images/icon-agenda.gif') no-repeat 0% 115%;
+		background: url('/images/icon-agenda.png') no-repeat;
 		margin-top: 10px;
+		margin-left: 10px;
 	}
 			
 	nav span.dia {
@@ -155,7 +156,7 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		height:50px;
 		display: block;
 		float: left;
-		text-indent: -90000px
+		text-indent: -9999px;
 	}
 	
 	nav a.anterior {
@@ -164,15 +165,14 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	nav a.proximo {
 		background:url('/images/btn-proximo.png') no-repeat;
 	}
-
-	.itens-lista{}
 	
-	.itens-lista div {
-		float: left
+	.itens-lista {
+		float: left;
+		width: 100%;		
 	}
 	
 	.itens-lista ul {
-		float:left;
+		
 		margin:0 15px;
 	}
 	
@@ -193,7 +193,8 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	}
 	
 	.itens-lista .sala {
-		width: 18%;
+		float: left;
+		width: 100px;
 		font-size: 10px;
 	}
 	
@@ -210,11 +211,12 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	}
 		
 	.itens-lista .info {
-		width: 65%;
+		float: left;
 	}
 	
 	.itens-lista .detalhe {
-		width: 10%;
+		width: 50px;
+		float: right;
 	}
 	
 	.itens-lista .detalhe a {
