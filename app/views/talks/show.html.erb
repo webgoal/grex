@@ -1,36 +1,41 @@
-<div class="header">
-	<h1><%= link_to "grex", "/", {:title => 'grex' } %></a></h1>
-	<a href="/schedules" class="voltar">Voltar</a>
-</div>
-<div class="detail-talk">
-    <div class='top'>
-        <div class="date"><%= @talk.start.strftime('%d/%m') %> - <%= @talk.start.strftime('%H:%M') %> a <%= @talk.end.strftime('%H:%M') %></div>
-		<span class="quantidade"><%= @talk.viewers %> <% if @talk.viewers == 1 %>pessoa irá<% else %>pessoas irão<% end %></span>
-    </div>
-    <div class="title <%=is_talk_selected? @talk.id, @user_tracks %>">
-        <input type="hidden" value="<%= @talk.id %>" />
-        <div class="escolha">
-            <a href="#" title="Eu vou!" class="btn-vou">Eu vo!</a>
-        </div>
-        <p><%= @talk.title %></p>
-    </div>
-	<div class="descricao">
-        <p class="speakers"><%= print_speakers @talk.speakers %></p>
-        <p class="type"><%= @talk.type %> - <%= show_talk_level @talk.level %></p>
-		<p class="room">Sala <%= @talk.room %></p>
-		<p class="description"><%= @talk.description %></p>			
-		<div class="quemvai">
-	        <p>Quem Vai (<%= @talk.viewers %>)</p>
-	        <ul>
-			<li>
-	        <% @talk.users.each do |user| %>
-	            <a href="<%= url_for "/users/from_user/#{user.id}" %>"><img src="<%=user.avatar%>" title="<%=user.twitter%>"/></a>
-	        <% end %>
-	        </li>
-			</ul>
-	    </div>
-	</div>  
-    
-    
-</div>
+<div id="container">
+	<div class="header">
+		<a class="voltar" href="/schedules">Voltar</a>
+		<a class="programacao" href="<%= url_for :controller => 'users', :action => 'list' %>">Minha programação</a>
+	</div>
+	
+	<div id="content" class="detalhes">
 
+		<h2><%= @talk.title %></h2>
+		
+		<div class="data-horario">
+			<h3 class="data"><%= @talk.start.strftime('%d/%m') %> </h2>
+			<h3 class="horario"><%= @talk.start.strftime('%H:%M') %> às <%= @talk.end.strftime('%H:%M') %></h2>
+		</div>
+
+		<div class="info-palestrante">
+			<img src="/images/foto-palestrante.png" alt="Foto do Palestrante" />
+			<h3><%= print_speakers @talk.speakers %></h3>
+			<p>...</p>
+		</div>
+		<div class="tipo">
+			<p class="trilha"><%= @talk.track %></p>
+			<% if @talk.level != "" %>
+				<p class="nivel"><%= @talk.level %></p>
+			<% end %>
+			<% if @talk.type != "" %>
+				<p><%= @talk.type %></p>
+			<% end %>
+		</div>
+
+		<p class="descricao"><%= @talk.description %></p>
+
+		<div class="vou">
+			<a class="vao" href="" title="VAO"><%= @talk.viewers %></a>
+			<div class="escolha">
+				<input type="hidden" value="<%= @talk.id %>" />
+	            <a href="#" title="Eu vou!" class="btn-vou">Vou</a>
+	        </div>
+		</div>
+	</div>
+</div>

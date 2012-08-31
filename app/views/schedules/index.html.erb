@@ -1,8 +1,7 @@
 <div id="container">
 	<div class="header">
-		<a class="voltar" href="">Voltar</a>
-		<a class="busca" href="">Busca</a>
-		<a class="programacao" href="#">Minha programação</a>
+		<a class="voltar" href="/schedules">Voltar</a>
+		<a class="programacao" href="<%= url_for :controller => 'users', :action => 'list' %>">Minha programação</a>
 	</div>
 	
 	<nav>
@@ -12,90 +11,197 @@
 			<a class="proximo" href="">Próximo</a>
 	</nav>
 	<div id="content">
-		<div class="itens-lista">
-			<h2 class="horario">11:00</h2>
+		<div class="itens-lista convidados">
+			<h2 class="horario">Convidados</h2>
 			<ul>
-				<li>
-					<div class="sala">
-						<h3>Auditório</h3>
-						<p>76</p>
-					</div>
-					<div class="info">
-						<h2>Integrando equipes ágeis: Um overview sobre os problemas em escalar agilidade</h2>
-						<p class="palestrante">Reedy Feggins</p>
-						<div class="tipo">
-							<p class="trilha">Inovação e empreendedorismo</p>
-							<p class="nivel">Experiente</p>
-							<p>Mão-na-massa</p>
+				<% for talk in @tracks[:convidados] do %>
+					<li>
+						<input type="hidden" value="<%= talk.id %>" >
+						<div class="sala">
+							<h3>Sala <%= talk.room %></h3>
+							<h3><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></h3>
+                			<h3><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></h3>
+							<p><%= talk.viewers %></p>
 						</div>
-					</div>
-					<div class="detalhe">
-						<a href="">Detalhe</a>
-					</div>
-				</li>
-
-				<li>
-					<div class="sala">
-						<h3>Sala 1</h3>
-						<p>76</p>
-					</div>
-					<div class="info">
-						<h2>Integrando equipes ágeis: Um overview sobre os problemas em escalar agilidade</h2>
-						<p class="palestrante">Reedy Feggins</p>
-						<div class="tipo">
-							<p class="trilha">Inovação e empreendedorismo</p>
-							<p class="nivel">Experiente</p>
-							<p>Mão-na-massa</p>
+						<div class="info">
+							<h2><%= talk.title %></h2>
+							<p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+							<div class="tipo">
+								<p class="trilha"><%= talk.track %></p>
+								<% if talk.level != "" %>
+									<p class="nivel"><%= talk.level %></p>
+								<% end %>
+								<% if talk.type != "" %>
+									<p><%= talk.type %></p>
+								<% end %>
+							</div>
 						</div>
-					</div>
-					<div class="detalhe">
-						<a href="">Detalhe</a>
-					</div>
-				</li>
-
-				<li>
-					<div class="sala">
-						<h3>Sala 1</h3>
-						<p>76</p>
-					</div>
-					<div class="info">
-						<h2>Integrando equipes ágeis: Um overview sobre os problemas em escalar agilidade</h2>
-						<p class="palestrante">Reedy Feggins</p>
-						<div class="tipo">
-							<p class="trilha">Inovação e empreendedorismo</p>
-							<p class="nivel">Experiente</p>
-							<p>Mão-na-massa</p>
+						<div class="detalhe">
+							<%= link_to "Detalhe", "/talks/show/#{talk.id}" %>
 						</div>
-					</div>
-					<div class="detalhe">
-						<a href="">Detalhe</a>
-					</div>
-				</li>
-
-				<li>
-					<div class="sala">
-						<h3>Sala 1</h3>
-						<p>76</p>
-					</div>
-					<div class="info">
-						<h2>Integrando equipes ágeis: Um overview sobre os problemas em escalar agilidade</h2>
-						<p class="palestrante">Reedy Feggins</p>
-						<div class="tipo">
-							<p class="trilha">Inovação e empreendedorismo</p>
-							<p class="nivel">Experiente</p>
-							<p>Mão-na-massa</p>
-						</div>
-					</div>
-					<div class="detalhe">
-						<a href="">Detalhe</a>
-					</div>
-				</li>
-				
+					</li>					
+				<% end %>				
 			</ul>
-
 		</div>
-
-
+		<div class="itens-lista desenvolvimento">
+			<h2 class="horario">Desenvolvimento e Testes</h2>
+			<ul>
+				<% for talk in @tracks[:desenvolvimento] do %>
+					<li>
+						<input type="hidden" value="<%= talk.id %>" >
+						<div class="sala">
+							<h3>Sala <%= talk.room %></h3>
+							<h3><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></h3>
+                			<h3><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></h3>
+							<p><%= talk.viewers %></p>
+						</div>
+						<div class="info">
+							<h2><%= talk.title %></h2>
+							<p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+							<div class="tipo">
+								<p class="trilha"><%= talk.track %></p>
+								<% if talk.level != "" %>
+									<p class="nivel"><%= talk.level %></p>
+								<% end %>
+								<% if talk.type != "" %>
+									<p><%= talk.type %></p>
+								<% end %>
+							</div>
+						</div>
+						<div class="detalhe">
+							<%= link_to "Detalhe", "/talks/show/#{talk.id}" %>
+						</div>
+					</li>					
+				<% end %>				
+			</ul>
+		</div>
+		<div class="itens-lista analise">
+			<h2 class="horario">Análise e Planejamento</h2>
+			<ul>
+				<% for talk in @tracks[:analise] do %>
+					<li>
+						<input type="hidden" value="<%= talk.id %>" >
+						<div class="sala">
+							<h3>Sala <%= talk.room %></h3>
+							<h3><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></h3>
+                			<h3><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></h3>
+							<p><%= talk.viewers %></p>
+						</div>
+						<div class="info">
+							<h2><%= talk.title %></h2>
+							<p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+							<div class="tipo">
+								<p class="trilha"><%= talk.track %></p>
+								<% if talk.level != "" %>
+									<p class="nivel"><%= talk.level %></p>
+								<% end %>
+								<% if talk.type != "" %>
+									<p><%= talk.type %></p>
+								<% end %>
+							</div>
+						</div>
+						<div class="detalhe">
+							<%= link_to "Detalhe", "/talks/show/#{talk.id}" %>
+						</div>
+					</li>					
+				<% end %>				
+			</ul>
+		</div>
+		<div class="itens-lista gestao">
+			<h2 class="horario">Gestão e Cultura</h2>
+			<ul>
+				<% for talk in @tracks[:gestao] do %>
+					<li>
+						<input type="hidden" value="<%= talk.id %>" >
+						<div class="sala">
+							<h3>Sala <%= talk.room %></h3>
+							<h3><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></h3>
+                			<h3><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></h3>
+							<p><%= talk.viewers %></p>
+						</div>
+						<div class="info">
+							<h2><%= talk.title %></h2>
+							<p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+							<div class="tipo">
+								<p class="trilha"><%= talk.track %></p>
+								<% if talk.level != "" %>
+									<p class="nivel"><%= talk.level %></p>
+								<% end %>
+								<% if talk.type != "" %>
+									<p><%= talk.type %></p>
+								<% end %>
+							</div>
+						</div>
+						<div class="detalhe">
+							<%= link_to "Detalhe", "/talks/show/#{talk.id}" %>
+						</div>
+					</li>					
+				<% end %>				
+			</ul>
+		</div>
+		<div class="itens-lista inovacao">
+			<h2 class="horario">Inovação e Empreendedorismo</h2>
+			<ul>
+				<% for talk in @tracks[:inovacao] do %>
+					<li>
+						<input type="hidden" value="<%= talk.id %>" >
+						<div class="sala">
+							<h3>Sala <%= talk.room %></h3>
+							<h3><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></h3>
+                			<h3><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></h3>
+							<p><%= talk.viewers %></p>
+						</div>
+						<div class="info">
+							<h2><%= talk.title %></h2>
+							<p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+							<div class="tipo">
+								<p class="trilha"><%= talk.track %></p>
+								<% if talk.level != "" %>
+									<p class="nivel"><%= talk.level %></p>
+								<% end %>
+								<% if talk.type != "" %>
+									<p><%= talk.type %></p>
+								<% end %>
+							</div>
+						</div>
+						<div class="detalhe">
+							<%= link_to "Detalhe", "/talks/show/#{talk.id}" %>
+						</div>
+					</li>					
+				<% end %>				
+			</ul>
+		</div>
+		<div class="itens-lista relatos">
+			<h2 class="horario">Relatos de Experiência</h2>
+			<ul>
+				<% for talk in @tracks[:relatos] do %>
+					<li>
+						<input type="hidden" value="<%= talk.id %>" >
+						<div class="sala">
+							<h3>Sala <%= talk.room %></h3>
+							<h3><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></h3>
+                			<h3><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></h3>
+							<p><%= talk.viewers %></p>
+						</div>
+						<div class="info">
+							<h2><%= talk.title %></h2>
+							<p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+							<div class="tipo">
+								<p class="trilha"><%= talk.track %></p>
+								<% if talk.level != "" %>
+									<p class="nivel"><%= talk.level %></p>
+								<% end %>
+								<% if talk.type != "" %>
+									<p><%= talk.type %></p>
+								<% end %>
+							</div>
+						</div>
+						<div class="detalhe">
+							<%= link_to "Detalhe", "/talks/show/#{talk.id}" %>
+						</div>
+					</li>					
+				<% end %>				
+			</ul>
+		</div>
 	</div>
-
 </div>
