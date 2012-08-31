@@ -14,14 +14,52 @@ jQuery(document).ready(function(){
 		inicio = 0;
 	}, false);
 
+
+	bindDayChange();
 	bindSwipe();
 	setupVouNaoVou();
 	exibirPalestraAtual();
 	
 });
 
+function bindDayChange() {
+	
+	jQuery(".2012-09-06").hide();
+	jQuery(".2012-09-07").hide();
+	
+	jQuery('.botoes .anterior').click(function(event){
+		event.preventDefault();
+		
+		data = new Date(jQuery(".dia").attr("atual"));
+		dia = data.getDate()+1;
+		
+		if(dia > 5) {
+			dia--;
+			jQuery(".dia").attr("atual",("2012-09-0" + dia.toString()));
+			
+			jQuery(".grupo").hide();
+			jQuery(".2012-09-0" + dia.toString()).show();
+		}
+	});
+	
+	jQuery('.botoes .proximo').click(function(event){
+		event.preventDefault();
+		
+		data = new Date(jQuery(".dia").attr("atual"));
+		dia = data.getDate()+1;
+		
+		if(dia < 7) {
+			dia++;
+			jQuery(".dia").attr("atual",("2012-09-0" + dia.toString()));
+			
+			jQuery(".grupo").hide();
+			jQuery(".2012-09-0" + dia.toString()).show();
+		}
+	});
+}
+
 function bindSwipe() {
-	jQuery('.trilha').live('swipeleft', function(e){
+	/*jQuery('.trilha').live('swipeleft', function(e){
 		paginaDireita();
 	});
 	jQuery('.trilha').live('swiperight', function(e){
@@ -32,21 +70,21 @@ function bindSwipe() {
 	});	
 	jQuery('.trilha .nav-back').live('click', function(e) {
 		paginaEsquerda();
-	});
+	});*/
 }
 
 function paginaDireita() {
-	trilha = jQuery('div.trilha:visible');
+	/*trilha = jQuery('div.trilha:visible');
 	if(trilha.next('.trilha').length){
 		trilha.hide().next('.trilha').show();
-	}	
+	}*/	
 }
 
 function paginaEsquerda() {
-	trilha = jQuery('div.trilha:visible');
+	/*trilha = jQuery('div.trilha:visible');
 	if(trilha.prev('.trilha').length) {
 		trilha.hide().prev('.trilha').show();
-	}
+	}*/
 }
 
 function setupVouNaoVou() {
