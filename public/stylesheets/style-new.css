@@ -1,70 +1,98 @@
 @CHARSET "UTF-8";
 
 body{
-	background: url("../images/background-index.png") #49718B repeat-x top;
+	background: url("../images/background-index.png") #eee repeat-x top;
 	margin:0 auto; 
 	padding:0;
 	font-family: Helvetica,sans-serif;
 	font-size: 0.7em;
 }
 
-#cracha {
-	width: 310px;
-	height: 400px;
-	margin:0 auto;
-	text-align:center;
-	background: url("../images/grex-card.png");
+#login {
+	margin-top: 35px;
 }
 
-#cracha .evento {
-	width: 200px;
+#login .logo {
+	display: block;
+	width: 164px;
+	height: 81px;
+	margin: 0 auto;
+	background: url("../images/grex-logo.gif");
+	text-indent: -9999px;
+}
+
+#login .btns {
+	display: block;
+	width: 170px;
+	height: 80px;
+	margin: 20px auto;
+}
+
+#login .btns .facebook {
+	display: block;
+	float: right;
+	width: 80px;
+	height: 80px;
+	background: url("../images/btn-facebook.gif");
+	text-indent: -9999px;
+}
+
+#login .btns .twitter {
+	display: block;
 	float: left;
-	margin: 217px 55px 0;
+	width: 80px;
+	height: 80px;
+	background: url("../images/btn-twitter.gif");
+	text-indent: -9999px;
+}
+
+#login .sobre {
+	width: 80%;
+	text-align: center;
 	font-size: 14px;
-	font-weight: bold;
-	color: #FFF;
-	text-shadow: 0 1px 1px #777;
+	padding: 1%;
+	margin: 0 auto;
+	color: #888;
+	background: #F5F5F5;
+	border: 1px solid #D9D9D9;
 }
 
-#cracha .login{
-	display:block;
-	width:200px;
-	height:43px;
-	line-height:43px;
-	background:url('../images/btn-logar-small.png') no-repeat;
-	text-decoration:none;
-	color:#777;
-	text-shadow: 0 1px 0 #DDD;
-	font-weight:bold;
-	font-size:15px;
-	margin: 10px 55px 0;
-	float: left;	
+#login .sobre a {
+	text-decoration: none;
+	color: #8AC53E;
 }
 
-#cracha .notice {
-	width: 200px;
-	margin: 6px 55px;
+#login .notice {
+	margin-top: 5px;
 	color: #BC8A2C;
 	background: #FFFF99;
-	float: left;
-	padding: 6px 0;
 	border: 1px solid #D8A035;
 }
 
-#cracha #made-by {
-	margin: 42px 45px 0 0;
+#login .flag a{
+	display: block;
 	float: right;
-	color: #BED2DE;
-	font-size: 12px;
-	background: none;
-}
-
-#cracha #made-by a {
+	padding: 10px 20px;
+	margin: 25px 0 25px 0;
+	background: #F5F5F5;
+	border: 1px solid #DDD;
+	font-size: 14px;
 	font-weight: bold;
-	color: #C9E0EB;
+	color: #57585B;
+	font-family:ClanWeb-Book, sans-serif;
+	
+	-moz-border-radius: 4px 0 0 4px;
+	-webkit-border-radius: 4px 0 0 4px;
+	border-radius: 4px 0 0 4px;
 	text-decoration: none;
 }
 
-#cracha #made-by a:hover {
-	color: #FFF;
+#login .flag a .webgoal {
+	color: #8AC53E;
+}
+
+.rounded {
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;	
 }

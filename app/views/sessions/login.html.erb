@@ -1,10 +1,18 @@
-<div id="cracha">
-	<span class="evento">- Agile Brazil 2012 -</span>
-	<%= link_to 'Entrar com o Twitter', '/auth/twitter', :class => 'login' %>
-	<%= link_to 'Entrar com o Facebook', '/auth/facebook', :class => 'login' %>
+<div id="login">
+	<span class="logo">Grex</span>
+
+	<div class="btns">
+		<%= link_to 'Entrar com o Twitter', '/auth/twitter', :class => 'twitter' %>
+		<%= link_to 'Entrar com o Facebook', '/auth/facebook', :class => 'facebook' %>
+	</div>
+	
+	<div class="sobre rounded">
+		Faça login para acompanhar as apresentações do <strong><%= link_to 'Agile Brazil 2012', 'http://www.agilebrazil.com/2012/pt/', :target => '_blank' %>!</strong>
+	</div>		
+		
 	<% if flash[:notice] %>
-		<div class="notice rounded"><%= flash[:notice] %></div>
+		<div class="sobre notice rounded"><%= flash[:notice] %></div>
 	<% end %>
-	<div id="made-by">feito pela <%= link_to 'Webgoal', 'http://www.webgoal.com.br' %></div>
+	<div class="flag"><%= link_to 'feito pela  <span class="webgoal">Webgoal</span>'.html_safe, 'http://www.webgoal.com.br', :target => '_blank' %></div>
 </div>	
 
