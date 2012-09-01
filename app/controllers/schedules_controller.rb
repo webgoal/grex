@@ -7,12 +7,12 @@ class SchedulesController < ApplicationController
   def index
     @my_user = current_user
     
-    @days = ["2012-09-05","2012-09-06","2012-09-07"]
+    @days = {"dia_5" => "2012-09-05","dia_6" => "2012-09-06","dia_7" => "2012-09-07"}
 
     @lista = Hash.new
 
-    for dia in @days do
-      @lista[dia] = {
+    for grupo, dia in @days do
+      @lista[grupo] = {
         :convidados => {:name => "Convidados", :talks => Talk.track_day(dia, "convidado")},
         :desenvolvimento => {:name => "Desenvolvimento e Teste", :talks => Talk.track_day(dia, "desenvolvimento")},
         :analise => {:name => "Análise e Planejamento", :talks => Talk.track_day(dia, "lise")},

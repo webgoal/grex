@@ -1,90 +1,57 @@
 jQuery(document).ready(function(){
-	var inicio = 0;
-	var trilhaVisivel = null;
-	document.addEventListener('touchstart', function(event) {
-		trilhaVisivel = jQuery('.trilha:visible .slider');
-		inicio = event.touches[0].pageX;
-	}, false);
-	document.addEventListener('touchmove', function(event) {
-		variacao = event.touches[0].pageX - inicio;
-		trilhaVisivel.offset({ top: this.top, left: variacao });
-	}, false);
-	document.addEventListener('touchend', function(event) {
-		trilhaVisivel.offset({ top: this.top, left: 0 })
-		inicio = 0;
-	}, false);
-
-
 	bindDayChange();
-	bindSwipe();
 	setupVouNaoVou();
 	exibirPalestraAtual();
-	
 });
 
 function bindDayChange() {
 	
-	jQuery(".2012-09-06").hide();
-	jQuery(".2012-09-07").hide();
-	
-	jQuery('.botoes .anterior').click(function(event){
-		event.preventDefault();
-		
-		data = new Date(jQuery(".dia").attr("atual"));
-		dia = data.getDate()+1;
-		
-		if(dia > 5) {
-			dia--;
-			jQuery(".dia").attr("atual",("2012-09-0" + dia.toString()));
-			
-			jQuery(".grupo").hide();
-			jQuery(".2012-09-0" + dia.toString()).show();
-		}
-	});
-	
-	jQuery('.botoes .proximo').click(function(event){
-		event.preventDefault();
-		
-		data = new Date(jQuery(".dia").attr("atual"));
-		dia = data.getDate()+1;
-		
-		if(dia < 7) {
-			dia++;
-			jQuery(".dia").attr("atual",("2012-09-0" + dia.toString()));
-			
-			jQuery(".grupo").hide();
-			jQuery(".2012-09-0" + dia.toString()).show();
-		}
-	});
-}
+	jQuery(".dia_6").hide();
+	jQuery(".dia_7").hide();
 
-function bindSwipe() {
-	/*jQuery('.trilha').live('swipeleft', function(e){
-		paginaDireita();
-	});
-	jQuery('.trilha').live('swiperight', function(e){
-		paginaEsquerda();
-	});
-	jQuery('.trilha .nav-next').live('click', function(e) {
+	jQuery('.botoes .proximo').live('click', function(e) {
+		e.preventDefault();
 		paginaDireita();
 	});	
-	jQuery('.trilha .nav-back').live('click', function(e) {
+	jQuery('.botoes .anterior').live('click', function(e) {
+		e.preventDefault();
 		paginaEsquerda();
-	});*/
+	});
 }
 
 function paginaDireita() {
-	/*trilha = jQuery('div.trilha:visible');
-	if(trilha.next('.trilha').length){
-		trilha.hide().next('.trilha').show();
-	}*/	
+	dia = parseInt(jQuery(".dia").attr("atual")[4]);
+	
+	if(dia < 7) {
+		dia++;
+		jQuery(".dia").attr("atual",("dia_" + dia.toString()));
+		
+		jQuery(".grupo").hide();
+		jQuery(".dia_" + dia.toString()).show();
+	}	
+	atualizaDia(dia);
 }
 
-function paginaEsquerda() {
-	/*trilha = jQuery('div.trilha:visible');
-	if(trilha.prev('.trilha').length) {
-		trilha.hide().prev('.trilha').show();
-	}*/
+function paginaEsquerda() {	
+	dia = parseInt(jQuery(".dia").attr("atual")[4]);
+	
+	if(dia > 5) {
+		dia--;
+		jQuery(".dia").attr("atual",("dia_" + dia.toString()));
+		
+		jQuery(".grupo").hide();
+		jQuery(".dia_" + dia.toString()).show();
+	}
+	atualizaDia(dia);
+}
+
+function atualizaDia(dia) {
+	dias = { 5 : "Quarta-feira",
+			 6 : "Quinta-feira", 
+			 7 : "Sexta-feira" }
+			
+	jQuery(".numero").html(dia+"/9");		
+	jQuery(".dia").html(dias[dia]);		
 }
 
 function setupVouNaoVou() {
