@@ -13,11 +13,15 @@
 			<h3 class="horario"><%= @talk.start.strftime('%H:%M') %> às <%= @talk.end.strftime('%H:%M') %></h2>
 		</div>
 
-		<div class="info-palestrante">
-			<img src="/images/foto-palestrante.png" alt="Foto do Palestrante" />
-			<h3><%= print_speakers @talk.speakers %></h3>
-			<p>...</p>
-		</div>
+		<ul class="info-palestrante">
+		  <% @talk.speakers.each do |speaker| %>
+		  <li>
+			  <img src="/images/foto-palestrante.png" alt="Foto do Palestrante" />
+  			<h3><%= speaker.name %></h3>
+  			<p>...</p>
+			</li>
+			<% end %>
+		</ul>
 		<div class="tipo">
 			<p class="trilha"><%= @talk.track %></p>
 			<% if @talk.level != "" %>

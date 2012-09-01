@@ -313,8 +313,7 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		width: 120px;
 	}
 	
-	.detalhes .info-palestrante {
-		position:relative; 
+	.detalhes .info-palestrante { 
 		clear: both; 
 		border-top:solid 1px #BFBFBF; 
 		border-bottom:solid 1px #BFBFBF; 
@@ -322,6 +321,19 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		font-size:12px; 
 		overflow: auto; 
 		margin:0 12px;
+	}
+	
+	.detalhes .info-palestrante ul {
+	  list-style:none;
+  }
+	
+	.detalhes .info-palestrante li {
+	  display:block;
+	  height:50px;
+	}
+	
+	.detalhes .info-palestrante li + li {
+	  padding-top:7px;
 	}
 	
 	.detalhes .info-palestrante p {
