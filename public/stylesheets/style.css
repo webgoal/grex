@@ -379,17 +379,23 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	}
 
 	.detalhes .vou.aberto {
-		height:68px;position: relative;
-		/*top:210px;*/
+		height:68px;
+		position: relative;
+		/*top:210px; */
 		background-color: #404041;
 		margin-top:50px;
 	}
 
 	.detalhes .lista-avatar {
-		min-height:280px;
-		background-color:#58595B;
+		display:none;
 	}
-		
+
+	.detalhes .vou.aberto + .lista-avatar {
+	  min-height:280px;
+		background-color:#58595B;
+	  display:block;
+  }
+
 	.detalhes .lista-avatar img {
 		float: left; 
 		margin:10px;
@@ -408,6 +414,10 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		letter-spacing: -3px;
 		text-decoration: none;
 		margin:0 12px;
+	}
+
+	.detalhes .vou.aberto a.vao {
+		background-image:url('/images/icon-seta-vao-aberto.png');
 	}
 	
 	.detalhes .vou a.btn-vou {

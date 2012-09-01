@@ -1,45 +1,51 @@
 <div id="container">
-	<div class="header">
-		<a class="voltar" href="/schedules">Voltar</a>
-		<a class="programacao" href="<%= url_for :controller => 'users', :action => 'list' %>">Minha programação</a>
-	</div>
-	
-	<div id="content" class="detalhes">
+  <div class="header">
+    <a class="voltar" href="/schedules">Voltar</a>
+    <a class="programacao" href="<%= url_for :controller => 'users', :action => 'list' %>">Minha programação</a>
+  </div>
 
-		<h2><%= @talk.title %></h2>
-		
-		<div class="data-horario">
-			<h3 class="data"><%= @talk.start.strftime('%d/%m') %> </h2>
-			<h3 class="horario"><%= @talk.start.strftime('%H:%M') %> às <%= @talk.end.strftime('%H:%M') %></h2>
-		</div>
+  <div id="content" class="detalhes">
+    <h2><%= @talk.title %></h2>
+    <div class="data-horario">
+      <h3 class="data"><%= @talk.start.strftime('%d/%m') %></h3>
+      <h3 class="horario"><%= @talk.start.strftime('%H:%M') %> às <%= @talk.end.strftime('%H:%M') %></h3>
+    </div>
 
-		<ul class="info-palestrante">
-		  <% @talk.speakers.each do |speaker| %>
-		  <li>
-			  <img src="/images/foto-palestrante.png" alt="Foto do Palestrante" />
-  			<h3><%= speaker.name %></h3>
-  			<p>...</p>
-			</li>
-			<% end %>
-		</ul>
-		<div class="tipo">
-			<p class="trilha"><%= @talk.track %></p>
-			<% if @talk.level != "" %>
-				<p class="nivel"><%= @talk.level %></p>
-			<% end %>
-			<% if @talk.type != "" %>
-				<p><%= @talk.type %></p>
-			<% end %>
-		</div>
+    <ul class="info-palestrante">
+      <% @talk.speakers.each do |speaker| %>
+      <li>
+        <img src="/images/foto-palestrante.png" alt="Foto do Palestrante" />
+        <h3><%= speaker.name %></h3>
+        <p>...</p>
+      </li>
+      <% end %>
+    </ul>
+    
+    <div class="tipo">
+      <p class="trilha"><%= @talk.track %></p>
+      <% if @talk.level != "" %>
+      <p class="nivel"><%= @talk.level %></p>
+      <% end %>
+      <% if @talk.type != "" %>
+      <p><%= @talk.type %></p>
+      <% end %>
+    </div>
 
-		<div class="descricao"><%= @talk.description.html_safe %></div>
+    <div class="descricao"><%= @talk.description.html_safe %></div>
 
-		<div class="vou">
-			<a class="vao" href="" title="VAO"><%= @talk.viewers %></a>
-			<div class="escolha">
-				<input type="hidden" value="<%= @talk.id %>" />
-	            <a href="#" title="Eu vou!" class="btn-vou">Vou</a>
-	        </div>
-		</div>
-	</div>
+    <div class="vou">
+      <a class="vao" title="Veja quem vai"><%= @talk.viewers %></a>
+      <div class="escolha">
+        <input type="hidden" value="<%= @talk.id %>" />
+        <a href="#" title="Eu vou!" class="btn-vou">Vou</a>
+      </div>
+    </div>
+
+    <div class="lista-avatar">
+      <% @talk.users.each do |user| %>
+      <a href="<%= url_for "/users/from_user/#{user.id}" %>"><img src="<%=user.avatar%>" title="<%=user.twitter%>"/></a>
+      <% end %>
+    </div>
+
+  </div>
 </div>
