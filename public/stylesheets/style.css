@@ -342,9 +342,11 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		width:80%;
 	}
 	
-	.detalhes p.descricao {
-		margin-bottom: 100px; 
+	.detalhes div.descricao p {
+		margin-bottom: 10px; 
+		text-align:justify;
 		font-size:14px;
+		line-height:1.4;
 		padding:0 10px;
 	}
 	
