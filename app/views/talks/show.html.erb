@@ -14,7 +14,7 @@
     <ul class="info-palestrante">
       <% @talk.speakers.each do |speaker| %>
       <li>
-        <img src="<%= (speaker.avatar.present?) ? speaker.avatar : '/images/foto-palestrante.png' %>"/>
+        <img src="<%= (speaker.avatar.present?) ? speaker.avatar : '/images/foto-palestrante.jpg' %>"/>
         <h3><%= speaker.name %></h3>
         <% if (speaker.bio.present?) then %>
           <p><%= truncate(speaker.bio.gsub(/<.+?>/,''), :length => 50) %></p>

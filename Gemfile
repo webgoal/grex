@@ -10,6 +10,7 @@ gem 'rake', '0.9.2'
 gem 'mysql2', '<0.3'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'multipart-post', '1.1.5'
 
 # Use unicorn as the web server
 # gem 'unicorn'
