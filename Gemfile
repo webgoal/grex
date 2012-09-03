@@ -33,3 +33,6 @@ gem 'capistrano'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+# extrator
+gem 'hpricot', '0.8.6'
