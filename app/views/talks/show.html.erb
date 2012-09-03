@@ -35,18 +35,24 @@
 
     <div class="descricao"><%= @talk.description.html_safe %></div>
 
-    <div class="vou">
+    <div class="vou <%= is_talk_selected? @talk.id, @user_tracks %>">
       <a class="vao" title="Veja quem vai"><%= @talk.viewers %></a>
       <div class="escolha">
-        <input type="hidden" value="<%= @talk.id %>" />
+        <input id="talk_id" type="hidden" value="<%= @talk.id %>" />
         <a href="#" title="Eu vou!" class="btn-vou">Vou</a>
       </div>
     </div>
 
     <div class="lista-avatar">
       <% @talk.users.each do |user| %>
-      <a href="<%= url_for "/users/from_user/#{user.id}" %>"><img src="<%=user.avatar%>" title="<%=user.twitter%>"/></a>
+        <a <%= "class='current_user_attending'" if user.id == current_user.id %> href="<%= url_for "/users/from_user/#{user.id}" %>">
+          <img src="<%=user.avatar%>" title="<%=user.twitter%>"/>
+        </a>
       <% end %>
+    </div>
+
+    <div style='display:none'>
+      <a class='current_user_attending' href="<%= url_for "/users/from_user/#{current_user.id}" %>"><img src="<%=current_user.avatar%>" title="<%=current_user.twitter%>"/></a>
     </div>
 
   </div>

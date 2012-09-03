@@ -1,7 +1,7 @@
 jQuery(document).ready(function(){
   bindDayChange();
-  bindToggleGoingButton();
-  setupVouNaoVou();
+  bindToggleAttendeesTab();
+  bindGoButton();
   exibirPalestraAtual();
 });
 
@@ -20,7 +20,7 @@ function bindDayChange() {
   });
 }
 
-function bindToggleGoingButton() {
+function bindToggleAttendeesTab() {
   jQuery(".vao").click(function(event) {
     jQuery(".vou").toggleClass('aberto');
     if (jQuery(".vou").hasClass('aberto'))
@@ -67,31 +67,31 @@ function atualizaDia(dia) {
   jQuery(".dia").html(dias[dia]);
 }
 
-function setupVouNaoVou() {
+function bindGoButton() {
   jQuery('a.btn-vou').click(function(event) {
     event.preventDefault();
-    link = jQuery(this);
-    linha = link.parent().parent();
-    //if(linha.hasClass('load')) {
-    //	return true;
-    //}
-    //linha.addClass('load');
-    palestraId = linha.find('input[type=hidden]').val();
-    qtd = linha.find('a.vao');
-    if (linha.hasClass('active')) {
-      jQuery.get('/schedules/uncheck', { 'palestra': palestraId }, function(data) {
-        jQuery('div.linha, div.title').find('input[value='+palestraId+']').parent().removeClass('active');
-        linha.removeClass('load');
-        qtd.html(parseInt(qtd.html())-1);
-      }, 'json');
+
+    talk_id = jQuery('#talk_id').val();
+    if (!jQuery('.vou').hasClass('active')) {
+      jQuery('.vou').addClass('active');
+      jQuery('.vao').html(parseInt(jQuery('.vao').text())+1);
+      jQuery.get('/schedules/check', {'palestra': talk_id});
+
+      if (jQuery('.lista-avatar .current_user_attending').length == 0)
+        jQuery('.lista-avatar').append(jQuery('.current_user_attending'))
+      else
+        jQuery('.lista-avatar .current_user_attending').show()
+
     } else {
-      jQuery.get('/schedules/check', { 'palestra': palestraId }, function(data) {
-        parent = jQuery('div.linha, div.title').find('input[value='+palestraId+']').parent();
-        parent.addClass('active');
-        linha.removeClass('load');
-        qtd.html(parseInt(qtd.html())+1);
-      }, 'json');
+      jQuery('.vou').removeClass('active');
+      jQuery('.vao').html(parseInt(jQuery('.vao').text())-1);
+      jQuery.get('/schedules/uncheck', {'palestra': talk_id});
+
+      if (jQuery('.lista-avatar .current_user_attending'))
+        jQuery('.lista-avatar .current_user_attending').hide()
+
     }
+
   });
 }
 
