@@ -3,8 +3,8 @@
 	<a href="/schedules" class="voltar">Voltar</a>
    <%= link_to "Sair", "/sessions/logout", { :class=>'sair', :title => 'Sair' } if signed_in? %></a>
 </div>
-
-<div class="content">
+<div id="container">
+<div id="content">
 <div class="titulo-principal">Minha programação</div>
   <div class="dia">
     <div class="trilha geral">
@@ -75,4 +75,5 @@
             </div>
 		<% end %>
     </div>
+</div>
 </div>
