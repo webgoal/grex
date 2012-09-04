@@ -54,10 +54,8 @@
 
     <div class="vou <%= is_talk_selected? @talk.id, @user_tracks %>">
       <a class="vao" title="Veja quem vai"><%= @talk.viewers %></a>
-      <div class="escolha">
-        <input id="talk_id" type="hidden" value="<%= @talk.id %>" />
-        <a href="#" title="Eu vou!" class="btn-vou">Vou</a>
-      </div>
+      <a href="#" title="Eu vou!" class="btn-vou">Vou</a>
+      <input id="talk_id" type="hidden" value="<%= @talk.id %>" />
     </div>
     <div class="lista-avatar">
       <% @talk.users.each do |user| %>
