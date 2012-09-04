@@ -2,8 +2,6 @@ jQuery(document).ready(function(){
   bindDayChange();
   bindToggleAttendeesTab();
   bindGoButton();
-  bindStick();
-  stickFooter();
   exibirPalestraAtual();
 });
 
