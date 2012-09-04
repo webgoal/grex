@@ -2,6 +2,8 @@ jQuery(document).ready(function(){
   bindDayChange();
   bindToggleAttendeesTab();
   bindGoButton();
+  bindStick();
+  stickFooter();
   exibirPalestraAtual();
 });
 
@@ -31,7 +33,7 @@ function bindToggleAttendeesTab() {
 }
 
 function paginaDireita() {
-  dia = parseInt(jQuery(".dia").attr("atual")[4]);
+  var dia = parseInt(jQuery(".dia").attr("atual")[4]);
 
   if(dia < 7) {
     dia++;
@@ -44,7 +46,7 @@ function paginaDireita() {
 }
 
 function paginaEsquerda() {	
-  dia = parseInt(jQuery(".dia").attr("atual")[4]);
+  var dia = parseInt(jQuery(".dia").attr("atual")[4]);
 
   if(dia > 5) {
     dia--;
@@ -57,7 +59,7 @@ function paginaEsquerda() {
 }
 
 function atualizaDia(dia) {
-  dias = {
+  var dias = {
     5 : "Quarta-feira",
     6 : "Quinta-feira",
     7 : "Sexta-feira"
@@ -71,7 +73,7 @@ function bindGoButton() {
   jQuery('a.btn-vou').click(function(event) {
     event.preventDefault();
 
-    talk_id = jQuery('#talk_id').val();
+    var talk_id = jQuery('#talk_id').val();
     if (!jQuery('.vou').hasClass('active')) {
       jQuery('.vou').addClass('active');
       jQuery('.vao').html(parseInt(jQuery('.vao').text())+1);
@@ -89,19 +91,18 @@ function bindGoButton() {
 
       if (jQuery('.lista-avatar .current_user_attending'))
         jQuery('.lista-avatar .current_user_attending').hide()
-
     }
 
   });
 }
 
 function exibirPalestraAtual() {
-  now = Math.round((new Date()).getTime() / 1000) - (new Date().getTimezoneOffset() * 60);
+  var now = Math.round((new Date()).getTime() / 1000) - (new Date().getTimezoneOffset() * 60);
   jQuery('.linha-nova').removeClass('now');
   jQuery('div.horario').each(function(){
-    me = jQuery(this);
+    var me = jQuery(this);
     start = me.find('.start').val();
-    end = me.find('.end').val();
+    var end = me.find('.end').val();
     if ((start-now) <= 0 && (end-now) > 0) {
       me.parent().addClass('now');
     }
