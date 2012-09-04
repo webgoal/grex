@@ -359,7 +359,7 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	
 	.detalhes .info-palestrante ul {
 	  list-style:none;
-  }
+  	}
 	
 	.detalhes .info-palestrante li {
 	  display:block;
@@ -433,7 +433,7 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	  min-height:280px;
 	  background-color:#58595B;
 	  display:block;
-  }
+  	}
 
 	.detalhes .lista-avatar img {
 		float: left; 
@@ -653,5 +653,4 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	.itens-lista .info {
 		width: 60%;
 	}
-
-
+}

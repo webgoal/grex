@@ -61,15 +61,10 @@
     </div>
     <div class="lista-avatar">
       <% @talk.users.each do |user| %>
-        <a <%= "class='current_user_attending'" if user.id == current_user.id %> href="<%= url_for "/users/from_user/#{user.id}" %>">
+        <a <%= "class='current_user_attending'" if user.id == current_user.id %> href="">
           <img src="<%=user.avatar%>" title="<%=user.twitter%>"/>
         </a>
       <% end %>
     </div>
-
-    <div style='display:none'>
-      <a class='current_user_attending' href="<%= url_for "/users/from_user/#{current_user.id}" %>"><img src="<%=current_user.avatar%>" title="<%=current_user.twitter%>"/></a>
-    </div>
-
   </div>
 </div>
