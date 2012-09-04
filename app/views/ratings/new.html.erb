@@ -12,12 +12,13 @@
 		<div class="envia-feedback">	
 			<%= form_for @rating do |f| %>
 				<%= f.label "Valor:", :class=> "label" %>
-				<%= radio_button("rating", "value", 1) %>
-				<%= radio_button("rating", "value", 2) %>
-				<%= radio_button("rating", "value", 3) %>	
-				<%= radio_button("rating", "value", 4) %>
-				<%= radio_button("rating", "value", 5) %>					
-
+				<div class="opcoes">
+					<label class="opcao">1<br><%= radio_button("rating", "value", 1) %></label>
+					<label class="opcao">2<br><%= radio_button("rating", "value", 2) %></label>
+					<label class="opcao">3<br><%= radio_button("rating", "value", 3) %></label>
+					<label class="opcao">4<br><%= radio_button("rating", "value", 4) %></label>
+					<label class="opcao"1>5<br><%= radio_button("rating", "value", 5) %></label>					
+				</div>
 				<%= f.label "Comentário:", :class=> "label" %>
 				<%= f.text_area :comment %><br />
 
