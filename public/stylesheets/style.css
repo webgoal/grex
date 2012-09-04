@@ -262,6 +262,7 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		margin:10px 0 5px 7px;
 	}
 
+
 	.tipo {
 		overflow: auto;
 	}
@@ -616,6 +617,28 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		width: 100%;
 		display: block;
 	}
+
+	.detalhes .comments {
+		clear: both;
+		border-top: solid 1px #BFBFBF;
+		border-bottom: solid 1px #BFBFBF;
+		overflow: auto;
+		margin: 0 12px;
+	}
+
+	.detalhes .comments h3 {
+		margin-top: 12px; 
+		font-weight: bold;
+	}
+
+	.detalhes div.descricao div.comments p {
+		padding: 0px; 
+	}
+	
+	.detalhes div.descricao div.comment h3 {
+		font-size: 90%;
+	}
+		
 
 	
 }

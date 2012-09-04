@@ -36,7 +36,21 @@
       <% end %>
     </div>
 
-    <div class="descricao"><%= @talk.description.html_safe %></div>
+    <div class="descricao">
+      <%= @talk.description.html_safe %>
+      <% ratings = @talk.ratings %>
+      <% if ratings.size > 0 %>
+        <div class="comments">
+          <h3>Comentários</h3>
+          <% for c in ratings do %>
+            <div class="comment">
+              <h3><%= c.user.twitter %></h3>
+              <p><%= c.comment.html_safe %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
 
     <div class="vou <%= is_talk_selected? @talk.id, @user_tracks %>">
       <a class="vao" title="Veja quem vai"><%= @talk.viewers %></a>
