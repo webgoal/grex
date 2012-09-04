@@ -634,13 +634,20 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	.detalhes div.descricao div.comments p {
 		padding: 0px; 
 	}
-	
+
 	.detalhes div.descricao div.comment h3 {
 		font-size: 90%;
 	}
 		
+	.minha-programacao a.voltar {
+		float: right;
+	}
 
-	
-}
+	.minha-programacao h2 a {
+		display: block;
+		text-indent: 0px;
+		text-decoration: none;
+		color: #444;
+	}
 
 
