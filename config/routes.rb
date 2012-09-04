@@ -6,6 +6,8 @@ Evento::Application.routes.draw do
   match '/auth/(:provider)/callback', :to => 'sessions#create'
   match '/auth/failure' => 'sessions#failure'
   
+  resources :ratings
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

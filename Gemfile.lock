@@ -114,6 +114,7 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano
+  multipart-post (= 1.1.5)
   mysql2 (< 0.3)
   omniauth-facebook
   omniauth-twitter

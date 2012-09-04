@@ -414,13 +414,54 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 
 	.detalhes .vou.aberto + .lista-avatar {
 	  min-height:280px;
-		background-color:#58595B;
+	  background-color:#58595B;
 	  display:block;
   }
 
 	.detalhes .lista-avatar img {
 		float: left; 
 		margin:10px;
+	}
+	
+	.envia-feedback {
+		background: #404041;
+		padding: 10px;
+		height: 220px;
+	}
+	
+	.envia-feedback .label {
+		display: block;
+		color: #EEE;
+	}
+	
+	.envia-feedback textarea {
+		width: 100%;
+		height: 100px;
+	}
+	
+	.envia-feedback .opcoes {
+		height: 50px;
+	}
+	
+	.envia-feedback .opcao{
+		float: left;
+		width: 30px;
+		color: #EEE;
+		text-align: center;
+	}
+	
+	.envia-feedback .btns {
+		float: right;
+	}
+	
+	.envia-feedback .btns input {
+		background: #AAA;
+		color: #EEE;
+		border: 0;
+		width: 100px;
+		margin-top: 5px;
+		padding: 5px;
+		font-size: 16px;
 	}
 
 	.detalhes .vou a.vao {

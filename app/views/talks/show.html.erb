@@ -9,6 +9,7 @@
     <div class="data-horario">
       <h3 class="data"><%= @talk.start.strftime('%d/%m') %></h3>
       <h3 class="horario"><%= @talk.start.strftime('%H:%M') %> às <%= @talk.end.strftime('%H:%M') %></h3>
+	  <h3><a id="avaliar" href="<%= url_for :controller => 'ratings', :action => 'new', :id => @talk.id %>">Avaliar</a></h3>
     </div>
 
     <ul class="info-palestrante">
@@ -42,7 +43,6 @@
         <a href="#" title="Eu vou!" class="btn-vou">Vou</a>
       </div>
     </div>
-
     <div class="lista-avatar">
       <% @talk.users.each do |user| %>
         <a <%= "class='current_user_attending'" if user.id == current_user.id %> href="<%= url_for "/users/from_user/#{user.id}" %>">

@@ -1,0 +1,35 @@
+<div id="container">
+	<div class="header">
+		<a class="voltar" href="/schedules">Voltar</a>
+		<a class="programacao" href="<%= url_for :controller => 'users', :action => 'list' %>">Minha programação</a>
+	</div>
+
+	<nav>
+		<h2>Avaliar apresentação: <%= @talk.title %></h2>		
+	</nav>
+	
+	<div id="content">
+		<div class="envia-feedback">	
+			<%= form_for @rating do |f| %>
+				<%= f.label "Valor:", :class=> "label" %>
+				<%= radio_button("rating", "value", 1) %>
+				<%= radio_button("rating", "value", 2) %>
+				<%= radio_button("rating", "value", 3) %>	
+				<%= radio_button("rating", "value", 4) %>
+				<%= radio_button("rating", "value", 5) %>					
+
+				<%= f.label "Comentário:", :class=> "label" %>
+				<%= f.text_area :comment %><br />
+
+				<%= hidden_field(:rating, :talk_id, :value => @talk.id) %>
+				<%= hidden_field(:rating, :user_id, :value => current_user.id) %>
+				
+				<div class="btns">
+					<%= f.submit "ENVIAR" %>
+				</div>	
+			<% end %>	
+		</div>	
+	</div>
+
+
+</div>
