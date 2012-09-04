@@ -1,11 +1,16 @@
 class Talk < ActiveRecord::Base
   has_and_belongs_to_many :speakers, :join_table => "talks_speakers"
   has_and_belongs_to_many :users, :join_table => "notebooks", :foreign_key => "talk_id", :uniq => true
-  
+  has_many :ratings
+
   scope :in_order, order(:start)
   scope :from_track, lambda {|track| where('track like ?', '%'+track+'%')}
   scope :by_day, lambda {|date| where('date(start) = ?', date)}
   
+  def average_rating
+    self.ratings.average(:value)
+  end
+
   def self.track_day(date, track)
     self.by_day(date).from_track(track).in_order
   end
