@@ -228,6 +228,14 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		padding-top: 3px;
 	}
 		
+	.itens-lista .sala span {
+		background:url('/images/icon-rating.png') no-repeat;
+		padding-left: 20px;
+		margin-top: 5px;
+		padding-top: 7px;
+		display: block;
+	}
+
 	.itens-lista .info {
 		float: left;
 	}
@@ -253,6 +261,7 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		padding:5px;
 		margin:10px 0 5px 7px;
 	}
+
 
 	.tipo {
 		overflow: auto;
@@ -350,7 +359,7 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	
 	.detalhes .info-palestrante ul {
 	  list-style:none;
-  }
+  	}
 	
 	.detalhes .info-palestrante li {
 	  display:block;
@@ -402,7 +411,6 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	
 	.detalhes .vou {
 		height:68px;
-		position: fixed; 
 		bottom:0; 
 		background-color: #404041; 
 		width:100%;
@@ -424,7 +432,7 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	  min-height:280px;
 	  background-color:#58595B;
 	  display:block;
-  }
+  	}
 
 	.detalhes .lista-avatar img {
 		float: left; 
@@ -481,7 +489,7 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	.detalhes .vou a.vao {
 		background:url('/images/icon-seta-vao.png') no-repeat 0 50%;
 		padding-left: 30px; 
-		display: block;
+		/*display: block;*/
 		position: relative;
 		bottom: 0; 
 		height:68px;
@@ -498,7 +506,7 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	}
 	
 	.detalhes .vou a.btn-vou {
-		display:block;
+		/*display:block;*/
 		width: 64px;
 		height:58px;
 		color:#FFF;
@@ -507,10 +515,12 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		font-size: 26px;
 		line-height: 58px;
 		padding-left: 35px;
-		position: absolute;
+		padding-right: 15px;
+		/*position: absolute;
 		right:5px;
-		top:6px;
+		top:6px;*/
 		z-index:9000;
+		float: right;
 	}
 	
 	.detalhes .vou.active a.btn-vou {
@@ -609,7 +619,39 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		display: block;
 	}
 
-	
+	.detalhes .comments {
+		clear: both;
+		border-top: solid 1px #BFBFBF;
+		border-bottom: solid 1px #BFBFBF;
+		overflow: auto;
+		margin: 0 12px;
+	}
+
+	.detalhes .comments h3 {
+		margin-top: 12px; 
+		font-weight: bold;
+	}
+
+	.detalhes div.descricao div.comments p {
+		padding: 0px; 
+	}
+
+	.detalhes div.descricao div.comment h3 {
+		font-size: 90%;
+	}
+		
+	.minha-programacao a.voltar {
+		float: right;
+	}
+
+	.minha-programacao h2 a {
+		display: block;
+		text-indent: 0px;
+		text-decoration: none;
+		color: #444;
+	}
+
+	.itens-lista .info {
+		width: 60%;
+	}
 }
-
-

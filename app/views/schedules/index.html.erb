@@ -25,6 +25,10 @@
 									<h3><%= talk.room %></h3>
 									<h3><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></h3>
 		                			<h3><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></h3>
+		                			<% average = talk.average_rating %>
+		                			<% unless average.nil? %>
+		                				<span><%= average %></span>
+		                			<% end %>
 									<p><%= talk.viewers %></p>
 								</div>
 								<div class="info">
