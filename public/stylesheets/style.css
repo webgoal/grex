@@ -410,17 +410,15 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 
 	
 	.detalhes .vou {
-		height:68px;
-		bottom:0; 
+		height: 68px;
+		position: relative;
+		bottom: 0; 
 		background-color: #404041; 
-		width:100%;
+		width: 100%;
 	}
 
 	.detalhes .vou.aberto {
-		height:68px;
-		position: relative;
 		/*top:210px; */
-		background-color: #404041;
 		margin-top:50px;
 	}
 
@@ -489,7 +487,7 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	.detalhes .vou a.vao {
 		background:url('/images/icon-seta-vao.png') no-repeat 0 50%;
 		padding-left: 30px; 
-		/*display: block;*/
+		display: block;
 		position: relative;
 		bottom: 0; 
 		height:68px;
@@ -506,7 +504,7 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	}
 	
 	.detalhes .vou a.btn-vou {
-		/*display:block;*/
+		display:block;
 		width: 64px;
 		height:58px;
 		color:#FFF;
@@ -515,10 +513,10 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		font-size: 26px;
 		line-height: 58px;
 		padding-left: 35px;
-		padding-right: 15px;
-		/*position: absolute;
+		padding-right: 10px;
+		position: absolute;
 		right:5px;
-		top:6px;*/
+		top:6px;
 		z-index:9000;
 		float: right;
 	}

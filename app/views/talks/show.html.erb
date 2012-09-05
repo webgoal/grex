@@ -59,10 +59,14 @@
     </div>
     <div class="lista-avatar">
       <% @talk.users.each do |user| %>
-        <a <%= "class='current_user_attending'" if user.id == current_user.id %> href="">
-          <img src="<%=user.avatar%>" title="<%=user.twitter%>"/>
-        </a>
+        <img src="<%=user.avatar%>" title="<%=user.twitter%>" <%= "class='current_user_attending'" if user == current_user %> />
       <% end %>
     </div>
+    
+    <% unless @talk.users.include? current_user then %>
+      <div style='display:none'>
+        <img src="<%=current_user.avatar%>" title="<%=current_user.twitter%>" class='current_user_attending'/>
+      </div>
+    <% end %>
   </div>
 </div>
