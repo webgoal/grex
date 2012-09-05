@@ -272,7 +272,7 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		font-size:9px;
 	}
 
-	.detalhes .tipo {
+	.tipo {
 		padding:5px;
 		margin:10px 0 5px 7px;
 	}
@@ -332,19 +332,18 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	}
 	
 	.detalhes .data-horario .data {
-		background:url('/images/icon-agenda.png') no-repeat 0% 50%;
-		height:50px;
-		line-height:50px;
-		padding-left: 40px;
+		background: url('/images/icon-calendar-small.png') no-repeat;
+		line-height: 33px;
+		margin-left: 10px;
 		width: 50px;
+		padding-left: 35px;
 	}
 	
 	.detalhes .data-horario .horario {
-		background:url('/images/icon-relogio.png') no-repeat;
-		height:50px;
-		line-height:50px;
-		padding-left: 40px;
-		width: 120px;
+		background:url('/images/icon-relogio-small.png') no-repeat;
+		line-height: 33px;
+		margin-left: 10px;
+		padding-left: 35px;
 	}
 	
 	.detalhes .data-horario .avaliar a {
