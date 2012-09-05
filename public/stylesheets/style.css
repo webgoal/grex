@@ -218,8 +218,8 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		height:40px;
 		line-height:40px;
 		font-size:22px;
-		background:url('/images/icon-relogio.png') no-repeat 0% 40%;
-		padding: 15px 0 15px 50px;
+		background: #F9F9F9 url('/images/icon-relogio.png') no-repeat 0% 40%;
+		padding: 5px 0 5px 10px;
 		border-bottom: solid 1px #000;
 		clear: both;
 	}
