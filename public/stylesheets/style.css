@@ -133,25 +133,40 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		overflow: auto;
 	}
 	
-	nav h2 {
+	nav .data {
+		background: url('/images/icon-calendar-white.png') no-repeat 0 5px;
+		padding-left: 50px;
 		float: left;
-		font-size: 22px;
-		line-height: 45px;
 		color: #EEE;
-		margin-top: 10px;
+		margin-top: 5px;
 		margin-left: 10px;
-	}
-			
-	nav span.dia {
-		font-size:12px;
-		color: #666;
-		font-weight: bold;
 	}
 	
 	nav .numero {
 		color: #EEE;
 		font-size: 26px;
+		display: block;
+		margin-top: 2px;
+		padding: 0;	
 	}
+	
+	nav span.dia {
+		font-size:12px;
+		color: #555;
+		font-weight: bold;
+		display: block;
+		margin-top: -3px;
+		padding: 0;
+	}
+	
+	nav h2 {
+		background: url('/images/icon-programacao.png') no-repeat 0 -8px;
+		color: #EEE;
+		margin-top: 12px;
+		line-height: 40px;
+		font-size: 22px;
+		padding-left: 50px;
+	}	
 	
 	nav .botoes {
 		float:right;
