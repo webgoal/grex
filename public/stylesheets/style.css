@@ -444,17 +444,15 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 
 	
 	.detalhes .vou {
-		height:68px;
-		bottom:0; 
+		height: 68px;
+		position: relative;
+		bottom: 0; 
 		background-color: #404041; 
-		width:100%;
+		width: 100%;
 	}
 
 	.detalhes .vou.aberto {
-		height:68px;
-		position: relative;
 		/*top:210px; */
-		background-color: #404041;
 		margin-top:50px;
 	}
 
@@ -523,7 +521,7 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	.detalhes .vou a.vao {
 		background:url('/images/icon-seta-vao.png') no-repeat 0 50%;
 		padding-left: 30px; 
-		/*display: block;*/
+		display: block;
 		position: relative;
 		bottom: 0; 
 		height:68px;
