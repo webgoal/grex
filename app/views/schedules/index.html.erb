@@ -2,10 +2,11 @@
 	<div class="header">
 		<h2>GREX</h2>
 		<a class="programacao" href="<%= url_for :controller => 'users', :action => 'list' %>">Minha programação</a>
+		<a class="sair" href="/sessions/logout">SAIR</a>
 	</div>
 	
 	<nav>
-		<h2><span class="numero">5/9</span> <span class="dia" atual="dia_5">Quarta-feira</span></h2>		
+		<div class="data"><span class="numero">5/9</span> <span class="dia" atual="dia_5">Quarta-feira</span></div>
 		<div class="botoes">
 			<a class="anterior" href="">Anterior</a>
 			<a class="proximo" href="">Próximo</a>
@@ -20,33 +21,32 @@
 					<ul>
 						<% for talk in track[:talks] do %>
 							<li>
-								<input type="hidden" value="<%= talk.id %>" >
-								<div class="sala">
-									<h3><%= talk.room %></h3>
-									<h3><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></h3>
-		                			<h3><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></h3>
-		                			<% average = talk.average_rating %>
-		                			<% unless average.nil? %>
-		                				<span><%= average %></span>
-		                			<% end %>
-									<p><%= talk.viewers %></p>
-								</div>
-								<div class="info">
-									<h2><%= talk.title %></h2>
-									<p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
-									<div class="tipo">
-										<p class="trilha"><%= (talk.track == 'desenvolvimento;lise;gest;inova;relatos') ? 'Lightning Talks' : talk.track %></p>
-										<% if talk.level != "" %>
-											<p class="nivel"><%= talk.level %></p>
-										<% end %>
-										<% if talk.type != "" %>
-											<p><%= talk.type %></p>
-										<% end %>
+								<a href="<%= url_for :controller => 'talks', :action => 'show', :id => talk.id %>">
+									<input type="hidden" value="<%= talk.id %>" >
+									<div class="mais">
+										<span class="sala"><%= talk.room %></span>
+										<span class="inicio"><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></span>
+			                			<span class="fim"><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></span>
+										<span class="vai"><%= talk.viewers %></span>
+										<% average = talk.average_rating %>
+			                			<% unless average.nil? %>
+			                				<span class="media"><%= average %> / 5.0</span>
+			                			<% end %>
 									</div>
-								</div>
-								<div class="detalhe">
-									<%= link_to "Detalhe", "/talks/show/#{talk.id}" %>
-								</div>
+									<div class="info">
+										<h2><%= talk.title %></h2>
+										<p class="palestrante"><%= talk.speakers.map {|speaker| speaker.name}.join(', ') %></p>
+										<div class="tipo">
+											<p class="trilha"><%= (talk.track == 'desenvolvimento;lise;gest;inova;relatos') ? 'Lightning Talks' : talk.track %></p>
+											<% if talk.level != "" %>
+												<p class="nivel"><%= talk.level %></p>
+											<% end %>
+											<% if talk.type != "" %>
+												<p><%= talk.type %></p>
+											<% end %>
+										</div>
+									</div>
+								</a>	
 							</li>					
 						<% end %>				
 					</ul>
