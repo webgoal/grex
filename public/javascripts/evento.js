@@ -6,7 +6,7 @@ jQuery(document).ready(function(){
 });
 
 function bindDayChange() {
-  jQuery(".dia_6").hide();
+  jQuery(".dia_5").hide();
   jQuery(".dia_7").hide();
 
   jQuery('.botoes .proximo').live('click', function(e) {
