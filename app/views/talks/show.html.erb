@@ -9,7 +9,9 @@
     <div class="data-horario">
       <h3 class="data"><%= @talk.start.strftime('%d/%m') %></h3>
       <h3 class="horario"><%= @talk.start.strftime('%H:%M') %> às <%= @talk.end.strftime('%H:%M') %></h3>
-	  <h3><a id="avaliar" href="<%= url_for :controller => 'ratings', :action => 'new', :id => @talk.id %>">Avaliar</a></h3>
+	  <% if Time.now > @talk.end %>
+	    <h3 class="avaliar"><a id="avaliar" href="<%= url_for :controller => 'ratings', :action => 'new', :id => @talk.id %>">Avaliar</a></h3>
+	  <% end %>
     </div>
 
     <ul class="info-palestrante">
