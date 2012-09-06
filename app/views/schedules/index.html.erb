@@ -28,10 +28,9 @@
 										<span class="inicio"><%= talk.start.hour.to_s.rjust(2, '0') %><%=':'+talk.start.min.to_s.rjust(2, '0') %></span>
 			                			<span class="fim"><%= talk.end.hour.to_s.rjust(2, '0') %><%= ':'+talk.end.min.to_s.rjust(2, '0') %></span>
 										<span class="vai"><%= talk.viewers %></span>
-										<% average = talk.average_rating %>
-			                			<% unless average.nil? %>
-			                				<span class="media"><%= average %> / 5.0</span>
-			                			<% end %>
+                      <% unless talk.average_rating.nil? %>
+			                  <span class="media"><%= talk.average_rating.round(2) %> / 5.0</span>
+                      <% end %>
 									</div>
 									<div class="info">
 										<h2><%= talk.title %></h2>
