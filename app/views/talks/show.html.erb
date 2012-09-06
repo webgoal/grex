@@ -38,7 +38,7 @@
 
     <div class="descricao">
       <%= @talk.description.html_safe %>
-      <% ratings = @talk.ratings %>
+      <% ratings = @talk.ratings.with_comments %>
       <% if ratings.size > 0 %>
         <div class="comments">
           <h3>Comentários</h3>
