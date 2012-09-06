@@ -13,6 +13,7 @@ class SchedulesController < ApplicationController
 
     for grupo, dia in @days do
       @lista[grupo] = {
+        :keynote => {:name => "Keynote", :talks => Talk.track_day(dia, "keynote")},
         :convidados => {:name => "Convidados", :talks => Talk.track_day(dia, "convidado")},
         :desenvolvimento => {:name => "Desenvolvimento e Teste", :talks => Talk.track_day(dia, "desenvolvimento")},
         :analise => {:name => "Análise e Planejamento", :talks => Talk.track_day(dia, "lise")},
