@@ -7,12 +7,12 @@ jQuery(document).ready(function(){
 
 function bindDayChange() {
   dia = new Date().toString().substring(9, 10);
-  if (dia <=5) {
+  if (dia <= 5) {
     jQuery(".dia_6").hide();
     jQuery(".dia_7").hide();
     jQuery(".data .numero").text("5/9");
     jQuery(".data .dia").text("Quarta-feira");
-  } else if (dia = 6) {
+  } else if (dia == 6) {
     jQuery(".dia_5").hide();
     jQuery(".dia_7").hide();
     jQuery(".data .numero").text("6/9");
