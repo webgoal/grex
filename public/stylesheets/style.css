@@ -86,10 +86,21 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	
 	.header a {
 		display: block;
-		width:50px;
-		height:50px;
 		float:left;
 		text-indent: -90000px
+	}
+	
+	.header .sair{
+		text-indent: 0;
+		float: right;
+		color: #FFF;
+		background: #999;
+		display: block;
+		line-height: 25px;
+		padding: 1px 5px;
+		margin-top: 11px;
+		font-size: 12px;
+		text-decoration: none;
 	}
 	
 	.header a.voltar {
@@ -133,25 +144,40 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		overflow: auto;
 	}
 	
-	nav h2 {
+	nav .data {
+		background: url('/images/icon-calendar-white.png') no-repeat 0 5px;
+		padding-left: 50px;
 		float: left;
-		font-size: 22px;
-		line-height: 45px;
 		color: #EEE;
-		margin-top: 10px;
+		margin-top: 5px;
 		margin-left: 10px;
-	}
-			
-	nav span.dia {
-		font-size:12px;
-		color: #666;
-		font-weight: bold;
 	}
 	
 	nav .numero {
 		color: #EEE;
 		font-size: 26px;
+		display: block;
+		margin-top: 2px;
+		padding: 0;	
 	}
+	
+	nav span.dia {
+		font-size:12px;
+		color: #555;
+		font-weight: bold;
+		display: block;
+		margin-top: -3px;
+		padding: 0;
+	}
+	
+	nav h2 {
+		background: url('/images/icon-programacao.png') no-repeat 0 -8px;
+		color: #EEE;
+		margin-top: 12px;
+		line-height: 40px;
+		font-size: 22px;
+		padding-left: 50px;
+	}	
 	
 	nav .botoes {
 		float:right;
@@ -173,21 +199,40 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	nav a.proximo {
 		background:url('/images/btn-proximo.png') no-repeat;
 	}
-	
+		
 	.itens-lista {
 		float: left;
 		width: 100%;		
 	}
 	
 	.itens-lista ul {
-		
 		margin:0;
 	}
 	
 	.itens-lista li {
+		border-bottom: solid 1px #BFBFBF;
+		padding: 10px 0;
 		float: left;
 		width: 100%;
 		list-style: none;
+	}
+	
+	.itens-lista li a {
+		color: #444;
+		text-decoration: none;
+	}
+	
+	.itens-lista li h2 {
+		margin-bottom: 5px;
+		font-size:14px;
+		line-height:14px;
+		font-family: 'ClanWeb-Thin', sans-serif;
+	}
+	
+	.itens-lista li p.palestrante {
+		margin-bottom: 5px;
+		color: #929497;
+		font-size:11px;
 	}
 	
 	.itens-lista h2.titulo {
@@ -199,50 +244,59 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		clear: both;
 	}
 	
-	.itens-lista h2.horario {
-		height:40px;
-		line-height:40px;
-		font-size:22px;
-		background:url('/images/icon-relogio.png') no-repeat 0% 40%;
-		padding: 15px 0 15px 50px;
-		border-bottom: solid 1px #000;
-		clear: both;
-	}
+  .itens-lista h2.horario {
+    height:40px;
+    line-height:40px;
+    font-size:22px;
+    background: #F9F9F9;
+    padding: 5px 0 5px 10px;
+    border-bottom: solid 1px #000;
+    clear: both;
+    overflow: hidden;
+  }
 	
-	.itens-lista .sala {
+	.itens-lista .mais {
 		float: left;
-		width: 100px;
-		font-size: 10px;
+		width: 60px;
+		font-size: 12px;
 		margin-left: 10px;
+		margin-right: 10px;
+		text-align: center;
 	}
 	
-	.itens-lista .sala h3 {
-		text-transform: uppercase;
-		color:#929497;
+	.itens-lista .mais .sala {
+		padding: 5px;	
+		background: #EEE;
+		display: block;
 	}	
 	
-	.itens-lista .sala p {
-		background:url('/images/icon-vou.png') no-repeat;
-		padding-left: 20px;
-		margin-top: 5px;
-		padding-top: 3px;
-	}
-		
-	.itens-lista .sala span {
-		background:url('/images/icon-rating.png') no-repeat;
-		padding-left: 20px;
-		margin-top: 5px;
-		padding-top: 7px;
+	.itens-lista .mais .inicio, .itens-lista .mais .fim {
+		padding: 2px;
+		font-weight: bold;
+		background: #EEE;
 		display: block;
+	}
+	
+	.itens-lista .mais .vai {
+		padding: 2px;
+		font-weight: bold;
+		background: #888;
+		display: block;
+		color: #FFF;
+	}
+
+		
+	.itens-lista .mais .media {
+		padding: 2px;
+		margin-top: 4px;
+		font-weight: bold;
+		background: #DDD;
+		display: block;
+		color: #666;
 	}
 
 	.itens-lista .info {
 		float: left;
-	}
-	
-	.itens-lista .detalhe {
-		
-		float: right;
 	}
 	
 	.itens-lista .detalhe a {
@@ -252,26 +306,22 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 		background:url('/images/btn-detalhe.png') no-repeat;
 		text-indent: -90000px
 	}
-		
-	.itens-lista .tipo p {
-		font-size:9px;
-	}
-
-	.detalhes .tipo {
-		padding:5px;
-		margin:10px 0 5px 7px;
-	}
-
 
 	.tipo {
+		margin: 5px 0;
+		overflow: auto;
+	}
+	
+	.tipo.detail {
+		margin: 5px 10px;
 		overflow: auto;
 	}
 		
 	.tipo p {
 		float:left;
-		font-size:12px;
+		font-size: 11px;
 		margin-right: 4px;
-		padding: 2px;
+		padding: 3px 5px;
 	}
 		
 	.tipo p.trilha, .itens-lista .tipo p.nivel {
@@ -285,27 +335,10 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	.tipo p.nivel {
 		background-color:#8ac53e;
 	}
-		
-	.itens-lista li {
-		border-bottom: solid 1px #BFBFBF;
-		padding: 20px 0;
-	}
-	
-	.itens-lista li h2 {
-		margin-bottom: 10px;
-		font-size:14px;
-		line-height:14px;
-		font-family: 'ClanWeb-Thin', sans-serif;
-	}
-	
-	.itens-lista li p.palestrante {
-		margin-bottom: 10px;
-		color: #929497;
-		font-size:11px;
-	}
 
 	.detalhes h2 {
-		font-size: 24px; padding:10px;
+		font-size: 24px;
+		padding: 10px;
 	}
 	
 	.detalhes .data-horario {
@@ -317,31 +350,33 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	}
 	
 	.detalhes .data-horario .data {
-		background:url('/images/icon-agenda.png') no-repeat 0% 50%;
-		height:50px;
-		line-height:50px;
-		padding-left: 40px;
+		background: url('/images/icon-calendar-small.png') no-repeat;
+		line-height: 33px;
+		margin-left: 10px;
 		width: 50px;
+		padding-left: 35px;
+		float: left;
 	}
 	
 	.detalhes .data-horario .horario {
-		background:url('/images/icon-relogio.png') no-repeat;
-		height:50px;
-		line-height:50px;
-		padding-left: 40px;
-		width: 120px;
+		background:url('/images/icon-relogio-small.png') no-repeat;
+		line-height: 33px;
+		margin-left: 10px;
+		padding-left: 35px;
+		float: left;
 	}
 	
 	.detalhes .data-horario .avaliar a {
 		display: block;
 		text-align: center;
-		padding: 5px;
-		width: 100px;
-		background: #eee;
+		padding: 6px 5px 5px 20px;
+		margin-bottom: 5px;
+		width: 60px;
+		background: #E1B300 url('/images/icon-star.png') no-repeat 10% 50%;
 		text-decoration: none;
-		color: #777;
-		margin-top: 8px;
-		
+		color: #FEF200;
+		float: left;
+		margin-left: 10px;
 		-moz-border-radius: 4px;
 		-webkit-border-radius: 4px;
 		border-radius: 4px;
@@ -410,22 +445,21 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 
 	
 	.detalhes .vou {
-		height:68px;
-		bottom:0; 
+		height: 68px;
+		position: relative;
+		bottom: 0; 
 		background-color: #404041; 
-		width:100%;
+		width: 100%;
 	}
 
 	.detalhes .vou.aberto {
-		height:68px;
-		position: relative;
-		/*top:210px; */
-		background-color: #404041;
-		margin-top:50px;
+		float:left;
 	}
 
 	.detalhes .lista-avatar {
 		display:none;
+		float:left;
+		width: 100%;
 	}
 
 	.detalhes .vou.aberto + .lista-avatar {
@@ -437,6 +471,8 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	.detalhes .lista-avatar img {
 		float: left; 
 		margin:10px;
+		width: 48px;
+		height: 48px;	
 	}
 	
 	.envia-feedback {
@@ -489,7 +525,7 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	.detalhes .vou a.vao {
 		background:url('/images/icon-seta-vao.png') no-repeat 0 50%;
 		padding-left: 30px; 
-		/*display: block;*/
+		display: block;
 		position: relative;
 		bottom: 0; 
 		height:68px;
@@ -506,25 +542,26 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	}
 	
 	.detalhes .vou a.btn-vou {
-		/*display:block;*/
+		background:url('/images/btn-vou-off.png') no-repeat;
 		width: 64px;
 		height:58px;
 		color:#FFF;
 		text-decoration: none;
 		text-transform: uppercase;
+		top: 0px;
+		right: 0px;
+		position: absolute;
 		font-size: 26px;
-		line-height: 58px;
-		padding-left: 35px;
+		line-height: 64px;
+		padding-left: 25px;
 		padding-right: 15px;
-		/*position: absolute;
-		right:5px;
-		top:6px;*/
 		z-index:9000;
-		float: right;
+
+		margin-top: 5px;
 	}
 	
 	.detalhes .vou.active a.btn-vou {
-	  background:url('/images/btn-vou.png') no-repeat;
+	  background:url('/images/btn-vou-on.png') no-repeat;
 	}
 	
 	.palestrante .info-palestrante {
@@ -652,6 +689,6 @@ body { font-family:ClanWeb-Book, sans-serif; font:16px/1.231 sans-serif; *font-s
 	}
 
 	.itens-lista .info {
-		width: 60%;
+		width: 70%;
 	}
 }

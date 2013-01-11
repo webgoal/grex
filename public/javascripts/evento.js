@@ -6,8 +6,26 @@ jQuery(document).ready(function(){
 });
 
 function bindDayChange() {
-  jQuery(".dia_6").hide();
-  jQuery(".dia_7").hide();
+  dia = new Date().toString().substring(9, 10);
+  if (dia <= 5) {
+    jQuery(".dia_6").hide();
+    jQuery(".dia_7").hide();
+    jQuery(".data .numero").text("5/9");
+    jQuery(".data .dia").text("Quarta-feira");
+  } else if (dia == 6) {
+    jQuery(".dia_5").hide();
+    jQuery(".dia_7").hide();
+    jQuery(".data .numero").text("6/9");
+    jQuery(".data .dia").text("Quinta-feira");
+  } else {
+    jQuery(".dia_5").hide();
+    jQuery(".dia_6").hide();
+    jQuery(".data .numero").text("7/9");
+    jQuery(".data .dia").text("Sexta-feira");
+  }
+
+  classe_dia_atual = ".dia_" + dia;
+  jQuery(classe_dia_atual).show();
 
   jQuery('.botoes .proximo').live('click', function(e) {
     e.preventDefault();

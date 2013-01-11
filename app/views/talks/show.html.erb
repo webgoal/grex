@@ -1,6 +1,6 @@
 <div id="container">
   <div class="header">
-    <a class="voltar" href="/schedules">Voltar</a>
+    <a class="voltar" href="<%= url_for(:back) %>">Voltar</a>
     <a class="programacao" href="<%= url_for :controller => 'users', :action => 'list' %>">Minha programação</a>
   </div>
 
@@ -10,7 +10,7 @@
       <h3 class="data"><%= @talk.start.strftime('%d/%m') %></h3>
       <h3 class="horario"><%= @talk.start.strftime('%H:%M') %> às <%= @talk.end.strftime('%H:%M') %></h3>
 	  <% if Time.now > @talk.end %>
-	    <h3 class="avaliar"><a id="avaliar" href="<%= url_for :controller => 'ratings', :action => 'new', :id => @talk.id %>">Avaliar</a></h3>
+	    <span class="avaliar"><a id="avaliar" href="<%= url_for :controller => 'ratings', :action => 'new', :id => @talk.id %>">Avaliar</a></span>
 	  <% end %>
     </div>
 
@@ -26,7 +26,7 @@
       <% end %>
     </ul>
     
-    <div class="tipo">
+    <div class="tipo detail">
       <p class="trilha"><%= (@talk.track == 'desenvolvimento;lise;gest;inova;relatos') ? 'Lightning Talks' : @talk.track %></p>
       <% if @talk.level != "" %>
       <p class="nivel"><%= @talk.level %></p>
@@ -38,7 +38,7 @@
 
     <div class="descricao">
       <%= @talk.description.html_safe %>
-      <% ratings = @talk.ratings %>
+      <% ratings = @talk.ratings.with_comments %>
       <% if ratings.size > 0 %>
         <div class="comments">
           <h3>Comentários</h3>
@@ -59,10 +59,14 @@
     </div>
     <div class="lista-avatar">
       <% @talk.users.each do |user| %>
-        <a <%= "class='current_user_attending'" if user.id == current_user.id %> href="">
-          <img src="<%=user.avatar%>" title="<%=user.twitter%>"/>
-        </a>
+        <img src="<%=user.avatar%>" title="<%=user.twitter%>" <%= "class='current_user_attending'" if user == current_user %> />
       <% end %>
     </div>
+    
+    <% unless @talk.users.include? current_user then %>
+      <div style='display:none'>
+        <img src="<%=current_user.avatar%>" title="<%=current_user.twitter%>" class='current_user_attending'/>
+      </div>
+    <% end %>
   </div>
 </div>

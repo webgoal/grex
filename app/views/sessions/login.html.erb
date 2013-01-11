@@ -7,12 +7,14 @@
 	</div>
 	
 	<div class="sobre rounded">
-		Faça login para acompanhar as apresentações do <strong><%= link_to 'Agile Brazil 2012', 'http://www.agilebrazil.com/2012/pt/', :target => '_blank' %>!</strong>
+		Faça login para acompanhar as apresentações do <strong><%= link_to 'Agile Brazil 2012', 'http://www.agilebrazil.com/2012/pt/', :target => '_blank' %>.</strong><br /><br />
+		<img src="/images/logo-agilebr.png" alt="Agile Brazil 2012">
 	</div>		
 		
 	<% if flash[:notice] %>
 		<div class="sobre notice rounded"><%= flash[:notice] %></div>
 	<% end %>
+	
 	<div class="flag"><%= link_to 'feito pela  <span class="webgoal">Webgoal</span>'.html_safe, 'http://www.webgoal.com.br', :target => '_blank' %></div>
 </div>	
 
